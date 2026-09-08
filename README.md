@@ -7,69 +7,69 @@
 Teooria: Mis on morfoloogia; produktiivsed käändtüübid
 
 15.09
-Teooria: Lõplikud muundurid 
+Teooria. Keel, korpus ja morfoloogiateooria
 
 22.09
+Teooria: Lõplikud muundurid 
+
+29.09
 Praktika: HFST süsteem üles sättida.
 Leksikoni kirjeld. lexc-formaadis 
 Kodutöö: 10 käändsõna lexc formaadis täisparadigmadena (peaaegu...)
 
-29.09
+06.10
 Praktika: twolc.
 Fonotaktika kirjeldamine twolc-formaadis
 Kodutöö: astmevahelduse kajastamine twolc formaadis
 
-06.10
+13.10
 Praktika: xfst.
 Sümbolite teisendamine: suurtähed väikseks (ka arvestades konteksti);
 muundurite kombineerimine
 Kodutöö: vigase ortograafia modelleerimine
 
-13.10
+20.10
 Praktika: lexc.
 Tuletuse kirjeld. lexc-formaadis
 Kodutöö: 4 tuletusliidet lexc formaadis
 
-20.10
+27.10
 Praktika: xfst.
 Muundurite kombineerimine;
 filtrid: paarissõnad
 Kodutöö: kombinatoorika piiramine
 
-27.10
+3.10
 Praktika: xfst.
 Muundurite kombineerimine;
 liitsõnamoodustus
 Kodutöö: kombinatoorika piiramine
 
-3.10
+10.11
 Praktika: lexc
 lipudiakriitikud liitsõnamoodustuse piiramisel
 kodutöö: kombinatoorika piiramine
 
-10.11
+17.11
 Praktika: lexc.
 Sõnamallide kirjeldamine oletamiseks
 Kodutöö: produktiivsed käändsõnamallid
 
-17.11
+24.11
 Praktika: lexc, xfst
 Analüüside järjestamine ja kaalud
-Ko06dutöö: kaalud leksikoni ja muundurisse
-
-24.11
-Praktika: xfst
-Silbitaja, mis oskab arvestada liitsõna struktuuri
-Kodutöö: vigase ortograafia parandaja (omaloodud sõnavara ulatuses)
- või võõrsõnade maakeelestaja (häälduspärane kirjapilt + käänamisviis)
+Kodutöö: kaalud leksikoni ja muundurisse
 
 1.12
+Ei toimu - vaba pärastlõuna
+
+8.12
 Praktika: Python
 Muunduri kasutamine Pythonis
 Kodutöö: oma muunduri poolt ära tuntavate sõnade järjestamine korpuses esinemise sageduse alusel
 või korpuse vigase ortograafia parandamine (omaloodud sõnavara ulatuses)
 
-8.12
+15.12
 Kokkuvõte ja arutelu
 
 --------------------
