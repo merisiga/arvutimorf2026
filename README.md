@@ -91,24 +91,25 @@ Järgnev praktikum algab esitatud tööde kommenteerimise ja küsimustele vastam
 -----
 Hinne kujuneb koduülesannete alusel. 
 
-Kokku on 11 ülesannet.
+Kokku on 10 ülesannet.
 
 Muundur teeb rohkem ja/või elegantsemalt kui varasema õpetuse pealt võiks oodata - 5 p
 
 Muundur teeb seda, mida vaja ja kommentaarid-küsimused viitavad lisavõimalustele - 4 p
 
 Muundur teeb seda, mida vaja  - 3 p
+
 Muundur ei tee päris seda, mida vaja; tudeng esitab puuduste kohta küsimusi ja/või omapoolseid seletusi - 2 p
 
 Muundur kas a) ei tee üldse seda, mida vaja, või b) ei tee päris seda, mida vaja ning tudeng ei esita ka ühtegi probleemi ega küsimust - 1 p
 
 | Hinne | Punkte |
 | --- | --- |
-| A | 55-33 |
-| B | 31-27 |
-| C | 26-22 |
-| D | 21-17 |
-| E | 16-11 |
+| A | 50-30 |
+| B | 29-24 |
+| C | 23-19 |
+| D | 18-15 |
+| E | 14-10 |
 
 
 
