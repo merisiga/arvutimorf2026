@@ -93,7 +93,7 @@ võib olla seesama mida kasutate Windowsi logimiseks
 kopeeri terminaliknast oma võti
 
 ```bash
-cat ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
 ```
 
 ja aseta veebilehel "Key" väljale
