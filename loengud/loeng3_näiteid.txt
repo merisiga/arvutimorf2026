@@ -1,0 +1,30 @@
+näited korpusepõhisest reeglist
+
+kas sõna võiks olla pärisnimi? s.t. kas algab suure tähega, millele järgnevad väikesed (standardortograafia)? 
+  äkki on ees Mc või Mac?
+  äkki on alguses üks väiketäht nagu eCommerce või iPhone vms?
+
+tüved, mis ei sobi oletamisel nimisõna viimaseks komponendiks
+induse, aade, anna, kiin, ... kokku 378 tk
+  
+näide üldisest reeglist: 
+ommatiidi - algvorm on ommatiit, ommatiid v ommatiidi ?
+
+magnetiit hominiid mileedi
+
+kahesilbiline vs mingi muu silbiline
+
+echo '<s> Torexi </s>' | vmeta 
+<s>
+Torexi    Torex+0 //_H_ sg g, //    Torexi+0 //_H_ sg g, //    Torexi+0 //_H_ sg n, //
+</s>
+hkaalep@laura:~/git/vabamorf_github/lib/etana
+$ echo '<s> Toreexi </s>' | vmeta 
+<s>
+Toreexi    Toreex+0 //_H_ adt, //    Toreex+0 //_H_ sg g, //    Toreex+0 //_H_ sg p, //    Toreexi+0 //_H_ sg g, //    Toreexi+0 //_H_ sg n, //
+</s>
+$ echo '<s> Toburexi </s>' | vmeta 
+<s>
+Toburexi    Toburex+0 //_H_ adt, //    Toburex+0 //_H_ sg g, //    Toburex+0 //_H_ sg p, //    Toburexi+0 //_H_ sg g, //    Toburexi+0 //_H_ sg n, //
+</s>
+ 

@@ -7,69 +7,69 @@
 Teooria: Mis on morfoloogia; produktiivsed käändtüübid
 
 15.09
-Teooria: Lõplikud muundurid 
+Teooria. Keel, korpus ja morfoloogiateooria
 
 22.09
+Teooria: Lõplikud muundurid 
+
+29.09
 Praktika: HFST süsteem üles sättida.
 Leksikoni kirjeld. lexc-formaadis 
 Kodutöö: 10 käändsõna lexc formaadis täisparadigmadena (peaaegu...)
 
-29.09
+06.10
 Praktika: twolc.
 Fonotaktika kirjeldamine twolc-formaadis
 Kodutöö: astmevahelduse kajastamine twolc formaadis
 
-06.10
+13.10
 Praktika: xfst.
 Sümbolite teisendamine: suurtähed väikseks (ka arvestades konteksti);
 muundurite kombineerimine
 Kodutöö: vigase ortograafia modelleerimine
 
-13.10
+20.10
 Praktika: lexc.
 Tuletuse kirjeld. lexc-formaadis
 Kodutöö: 4 tuletusliidet lexc formaadis
 
-20.10
+27.10
 Praktika: xfst.
 Muundurite kombineerimine;
 filtrid: paarissõnad
 Kodutöö: kombinatoorika piiramine
 
-27.10
+3.10
 Praktika: xfst.
 Muundurite kombineerimine;
 liitsõnamoodustus
 Kodutöö: kombinatoorika piiramine
 
-3.10
+10.11
 Praktika: lexc
 lipudiakriitikud liitsõnamoodustuse piiramisel
 kodutöö: kombinatoorika piiramine
 
-10.11
+17.11
 Praktika: lexc.
 Sõnamallide kirjeldamine oletamiseks
 Kodutöö: produktiivsed käändsõnamallid
 
-17.11
+24.11
 Praktika: lexc, xfst
 Analüüside järjestamine ja kaalud
-Ko06dutöö: kaalud leksikoni ja muundurisse
-
-24.11
-Praktika: xfst
-Silbitaja, mis oskab arvestada liitsõna struktuuri
-Kodutöö: vigase ortograafia parandaja (omaloodud sõnavara ulatuses)
- või võõrsõnade maakeelestaja (häälduspärane kirjapilt + käänamisviis)
+Kodutöö: kaalud leksikoni ja muundurisse
 
 1.12
+Ei toimu - vaba pärastlõuna
+
+8.12
 Praktika: Python
 Muunduri kasutamine Pythonis
 Kodutöö: oma muunduri poolt ära tuntavate sõnade järjestamine korpuses esinemise sageduse alusel
 või korpuse vigase ortograafia parandamine (omaloodud sõnavara ulatuses)
 
-8.12
+15.12
 Kokkuvõte ja arutelu
 
 --------------------
@@ -91,24 +91,25 @@ Järgnev praktikum algab esitatud tööde kommenteerimise ja küsimustele vastam
 -----
 Hinne kujuneb koduülesannete alusel. 
 
-Kokku on 11 ülesannet.
+Kokku on 10 ülesannet.
 
 Muundur teeb rohkem ja/või elegantsemalt kui varasema õpetuse pealt võiks oodata - 5 p
 
 Muundur teeb seda, mida vaja ja kommentaarid-küsimused viitavad lisavõimalustele - 4 p
 
 Muundur teeb seda, mida vaja  - 3 p
+
 Muundur ei tee päris seda, mida vaja; tudeng esitab puuduste kohta küsimusi ja/või omapoolseid seletusi - 2 p
 
 Muundur kas a) ei tee üldse seda, mida vaja, või b) ei tee päris seda, mida vaja ning tudeng ei esita ka ühtegi probleemi ega küsimust - 1 p
 
 | Hinne | Punkte |
 | --- | --- |
-| A | 55-33 |
-| B | 31-27 |
-| C | 26-22 |
-| D | 21-17 |
-| E | 16-11 |
+| A | 50-30 |
+| B | 29-24 |
+| C | 23-19 |
+| D | 18-15 |
+| E | 14-10 |
 
 
 
