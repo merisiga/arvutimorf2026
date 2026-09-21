@@ -87,7 +87,7 @@ võib olla seesama mida kasutate Windowsi logimiseks
 2.6.2 SSH võtme paigaldamine GITHUBi veebilehel
 
 * Logige [GITHUBi veebilehel](https://github.com/) kontole
-* (Paremast ülemisest nurgast pilt) My profile → Settings → SSH and GPG keys → New SSH key.
+* Klõpsa paremast ülemisest nurgas kasutajaokonto ikoonil → Settings → SSH and GPG keys → New SSH key.
 * Anna võtmele mingi nimi (**Title**)
 * Kopeeri oma faili `id_ed25519.pub` sisu **Key** aknasse (**Key type** olgu Authentication Key)
 
