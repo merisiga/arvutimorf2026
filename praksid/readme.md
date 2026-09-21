@@ -18,7 +18,9 @@ vali "Käivita administraatorina"
 wsl --install
 ```
 
-1.2 Kui arvuti on uuesti üles tulnud ja mõne aja jooksul ei avane aken kus küsitakse Linuxi
+Kui küsitakse linuxi kasutajanime ja parooli on kõige lihtsam on kasutada sama kasutajanime ja parooli mida kasutate Windowsis
+
+1.2 Tee arvutile reboot ja kui arvuti on uuesti üles tulnud ja mõne aja jooksul ei avane aken kus küsitakse Linuxi
 kasutajanime ja parooli siis käivita windowsi CMD administraatorina  ning sisesta terminali aknas käsk.
 
 ```cmdline
@@ -30,7 +32,8 @@ Kõige lihtsam on kasutada sama kasutajanime ja parooli mida kasutate Windowsis
 
 2 Vajalike programmide installlimine Ubuntu aknas
 
-2.1 Uuendame Linuxi uusima tarkvara peale
+2.1 Uuendame Linuxi uusima tarkvara peale. Tegumirea otsinguaknasse sisestage "ubuntu" ja käivitage ubuntu
+sisestage käsureale
 
 ```bash
 sudo apt-get update && sudo apt full-upgrade -y
