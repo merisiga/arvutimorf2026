@@ -18,9 +18,10 @@ vali "Käivita administraatorina"
 wsl --install
 ```
 
-Kui küsitakse linuxi kasutajanime ja parooli on kõige lihtsam on kasutada sama kasutajanime ja parooli mida kasutate Windowsis
+Kui küsitakse linuxi kasutajanime ja parooli on kõige lihtsam on kasutada sama kasutajanime ja parooli mida kasutate Windowsis.
+Kui siinkohal küsiti kasutajanime ja parooli mine kohe sammu 2.1 juurde.
 
-1.2 Tee arvutile reboot ja kui arvuti on uuesti üles tulnud ja mõne aja jooksul ei avane aken kus küsitakse Linuxi
+Vastasel juhul tee arvutile reboot ja kui arvuti on uuesti üles tulnud ja mõne aja jooksul ei avane aken kus küsitakse Linuxi
 kasutajanime ja parooli siis käivita windowsi CMD administraatorina  ning sisesta terminali aknas käsk.
 
 ```cmdline
