@@ -153,8 +153,6 @@ kalajt.lexc
 naide1.lexc
 
 ... on lexc-tüüpi; lexc on mõeldud leksikonide kirjeldamiseks, s.t. vastab sõnastikutegija intuitsioonile; on mugav aglutinatiivse morfotaktika kirjeldamiseks, kusjuures muutetunnused on sõna lõpus
-
-
 faili struktuur:
 
 ```bash
