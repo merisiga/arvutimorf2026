@@ -1,0 +1,26 @@
+Multichar_Symbols
+
++Sg                ! ainsus
++Pl                ! mitmus
++Nom               ! nimetav
++Gen               ! omastav
+
+
+LEXICON Root
+
+kala Lõpp1 ; 
+tala  Lõpp1 ;
+redel  Lõpp2 ;
+post  Lõpp2 ;
+
+LEXICON Lõpp1
++Sg+Nom: # ;
++Sg+Gen: # ;
++Pl+Nom:d # ;
+ 
+LEXICON Lõpp2
++Sg+Nom: # ;
++Sg+Gen:i # ;
++Pl+Nom:id # ;
+ 
+  

@@ -1,0 +1,32 @@
+Multichar_Symbols
+
++N                ! Nimisõna
++A                ! Omadussõna
++Sg
++Pl
++Nom
++Gen
++All              ! alaeütlev
+
+LEXICON Root
+
+koli+N:koli tüüp_ema ;    ! leksikaalne pool : pindesitus
+kena+A:kena tüüp_ema ;
+torssis+A:torssis # ;
+
+LEXICON tüüp_ema
+    +Sg: ema_sg ;
+    +Pl: ema_pl ;
+    
+LEXICON ema_sg
+
+    +Nom: # ;
+    +Gen: # ;
+    +All:le # ;
+    
+LEXICON ema_pl
+
+    +Nom:d # ;
+    +Gen:de # ;
+    +All:dele # ;
+
