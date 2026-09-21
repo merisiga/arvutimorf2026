@@ -89,7 +89,15 @@ võib olla seesama mida kasutate Windowsi logimiseks
 * Logige [GITHUBi veebilehel](https://github.com/) kontole
 * Klõpsa veebilehe paremas ülemises nurgas kasutajaokonto ikoonil → Settings → SSH and GPG keys → New SSH key.
 * Anna võtmele mingi nimi (**Title**)
-* Kopeeri oma faili `id_ed25519.pub` sisu **Key** aknasse (**Key type** olgu Authentication Key)
+* Kopeeri oma faili `id_ed25519.pub` sisu **Key** aknasse (**Key type** olgu Authentication Key) selleks 
+kopeeri terminaliknast oma võti
+
+```bash
+cat ~/.ssh/id_ed25519
+```
+
+ja aseta veebilehel "Key" väljale
+
 
 2.6.3 Nüüd peakski kõik olema tehtud ja mina saan kaastöötaja lisada repole merisiga/arvutimorf2024.
 
