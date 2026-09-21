@@ -99,7 +99,7 @@ cat ~/.ssh/id_ed25519.pub
 ja aseta veebilehel "Key" väljale
 
 
-2.6.3 Nüüd peakski kõik olema tehtud ja mina saan kaastöötaja lisada repole merisiga/arvutimorf2024.
+2.6.3 Nüüd peakski kõik olema tehtud ja mina saan kaastöötaja lisada repole merisiga/arvutimorf2026.
 
 3 Giti kasutamine linuxi terminaliaknas
 
@@ -111,14 +111,14 @@ git config --global user.name "õige nimi"
 git config --global core.quotePath false
 ```
 
-3.2 GITi igapäevane kastuamine
+3.2 GITi igapäevane kasutamine
 
 Kui GITi käsu peale küsitakse parooli, sisestage oma ssh-võtmele pandud parool
 
 3.2.1 Repo kloonimiseks GITHUBi veebilehelt endale sobivalt valitud kataloogi
 
 ```bash
-git clone git@github.com:merisiga/arvutimorf2024.git sobiv_kataloog
+git clone git@github.com:merisiga/arvutimorf2026.git sobiv_kataloog
 ```
 
 3.2.2 Tavaline tööprotsess (oma kataloogis) on järgmine:
