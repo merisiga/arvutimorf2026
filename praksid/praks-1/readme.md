@@ -148,27 +148,28 @@ Kuidas oma faile nimetada? Vaata soovitusi jaotises **Koduülesanne**
 
 ## Näidisfailid
 
-kalajt.lexc
+kalajt.lexc - slaididelt nähtud pisileksikoni esitus
 
-naide1.lexc
+naide1.lexc - pisinäide käändkondade esitamisest
 
 ... on lexc-tüüpi; lexc on mõeldud leksikonide kirjeldamiseks, s.t. vastab sõnastikutegija intuitsioonile; on mugav aglutinatiivse morfotaktika kirjeldamiseks, kusjuures muutetunnused on sõna lõpus
+
 faili struktuur:
 
 ```bash
 Multichar\_Symbols   <-- pole kohustuslik jaotis, aga tegelikult ilma selleta ei saa (sest mitmetähelisi sümboleid/märke on praktiliselt vaja)
+    
+LEXICON Root                    ! <-- kohustuslik; see on muunduri algus
 
-LEXICON Root       ! <-- kohustuslik; see on muunduri algus
+lexikaalne:pindesitus edasi1 ;  ! <-- leksikoni kirje, mis viitab ka stringipaari jätkamisele
 
-lexikaalne:pindesitus edasi1 ;
+LEXICON edasi1                  ! <-- jätkuklass, s.t. leksikon, millele viidatakse Root seest
 
-LEXICON edasi1  ! <-- jätkuklass, s.t. leksikon, millele viidatakse Root seest
+lexikaalne:pindesitus edasi2 ; 
 
-lexikaalne:pindesitus edasi2 ;
+lexikaalne:pindesitus # ;       ! <-- leksikoni kirje; stringipaari lõpp
 
-lexikaalne:pindesitus # ;
-
-LEXICON edasi2
+LEXICON edasi2                  ! <-- jätkuklass, s.t. leksikon, millele viidatakse edasi1 seest
 
 lexikaalne:pindesitus # ;
 ```
@@ -188,13 +189,14 @@ erimärgid
 
 \----------
 
+
 muunduri tegemiseks:
 
 ```bash
 hfst-lexc naide1.lexc > naide1.fst
 ```
 
-vaatamiseks:
+muunduri vaatamiseks (kui muunduris pole tsükleid):
 
 ```bash
 cat naide1.fst | hfst-fst2strings
@@ -211,7 +213,7 @@ graafi joonistamiseks on vaja tabel teisendada dot-i jaoks sobivale kujule;
 fst graafina:
 
 ```bash
-cat naide1.fst | hfst-fst2txt  | python3 att2dot.py | sed 's/@0@/ε/' | dot -Tpng -o naide1.png
+cat kalajt.lexc | hfst-lexc | hfst-fst2txt  | python3 att2dot.py | sed 's/@0@/ε/' | dot -Tpng -o kalajt.png
 ```
 
 muunduri ülemise ja alumise poole ära vahetamiseks
@@ -228,9 +230,11 @@ echo 'torssis' | hfst-flookup naide1.fst
 
 ## 4. Koduülesanne
 
-igaüks teeb lexc faili, milles on vähemalt neli sõna: eesnimi perenimi linn tänav; need võivad olla teie oma nimed ja elukohad/lemmikkohad, aga ei pruugi
+Igaüks teeb repos praks-1 kataloogi alla oma eesnimega alamkataloogi; sinna paneb ta oma kodutööna tehtud ja kompileeritud failid (ja tekstifailina omapoolsed kommentaarid, kui neid on).
 
-igale sõnale täisparadigma, s.t. nii ainsus kui mitmus, mõlemas 14 käänet
+Igaüks teeb lexc faili, milles on vähemalt neli sõna: eesnimi perenimi linn tänav; need võivad olla teie oma nimed ja elukohad/lemmikkohad, aga ei pruugi.
+
+Igale sõnale on olemas täisparadigma, s.t. nii ainsus kui mitmus, mõlemas 14 käänet. Proovige valida sõnu muudes muuttüüpides kui praksinäited või kirjeldada muuttüüpe teisiti kui praksinäidetes.  
 
 
 mida tähele panna:
@@ -244,6 +248,7 @@ järgmises praksis kommenteerin tehtud kodutöid
 
 \----------------------------
 
+
 oma lexc fail nimetada järgmiselt: **mingiomanimi.lexc**
 
 kompileeritud fail olgu **mingiomanimi.hfst**
@@ -256,5 +261,5 @@ testimiseks käsk:
 cat mingiomanimi.test | hfst-lookup mingiomanimi.hfst
 ```
 
-oma failid panna repos kataloogi praks1
+
 
