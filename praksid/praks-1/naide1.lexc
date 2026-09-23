@@ -1,32 +1,61 @@
 Multichar_Symbols
 
-+N                ! Nimisõna
-+A                ! Omadussõna
-+Sg
-+Pl
-+Nom
-+Gen
-+All              ! alaeütlev
++N  ! nimisõna		/ substantive		
++A  ! omadussõna		/ adjective		
+
++Sg  ! ainsus	/ singular
++Pl  ! mitmus	/ plural
++Nom  ! nimetav			/ nominative	
++Gen  ! omastav 			/ genitive	
++Par  ! osastav			/ partitive	
++Ill  ! sisseütlev			/ illative	
++Ine  ! seesütlev			/ inessive	
++Ela  ! seestütlev			/ elative	
++All  ! alaleütlev			/ allative	
++Ade  ! alalütlev			/ adessive	
++Abl  ! alaltütlev			/ ablative	
++Tra  ! saav				/ translative	
++Trm  ! rajav				/ terminative	
++Ess  ! olev				/ essive	
++Abe  ! ilmaütlev			/ abessive	
++Com  ! kaasaütlev			/ comitative	
 
 LEXICON Root
 
 koli+N:koli tüüp_ema ;    ! leksikaalne pool : pindesitus
 kena+A:kena tüüp_ema ;
-torssis+A:torssis # ;
+siil+N:siil tüüp_taud ;    
+torssis+A:torssis # ;     ! muutumatu omadussõna
 
 LEXICON tüüp_ema
-    +Sg: ema_sg ;
-    +Pl: ema_pl ;
-    
-LEXICON ema_sg
+    +Sg+Nom: # ;
+           : gen_jt ;
+    +Sg+Par: # ;
+        +Pl:de sem_käänded ;
 
-    +Nom: # ;
-    +Gen: # ;
-    +All:le # ;
-    
-LEXICON ema_pl
+LEXICON tüüp_taud
+    +Sg+Nom: # ;
+           :i gen_jt ;
+    +Sg+Par:i # ;
+    +Sg+Ill:i # ;      ! lühike sisseütlev
+        +Pl:ide sem_käänded ;
 
-    +Nom:d # ;
-    +Gen:de # ;
-    +All:dele # ;
+LEXICON gen_jt
+    +Pl+Nom:d # ;
+        +Sg: sem_käänded ;
+
+LEXICON sem_käänded
+       +Ill:sse # ;	
+       +Ine:s # ;	
+       +Ela:st # ;	
+       +All:le # ;	
+       +Ade:l # ;	
+       +Abl:lt # ;	
+       +Tra:ks # ;	
+       +Trm:ni # ;	
+       +Ess:na # ;	
+       +Abe:ta # ;	
+       +Com:ga # ;	
+
+    
 

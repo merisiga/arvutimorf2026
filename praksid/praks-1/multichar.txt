@@ -1,0 +1,103 @@
++N  ! nimisõna		/ substantive		
++A  ! omadussõna		/ adjective		
++Num  ! arvsõna		/ numeral
++Pron  ! asesõna		/ pronoun		
++V  ! tegusõna 		/ verb			
++Adv  ! määrsõna		/ adverb		
++Interj  ! hüüdsõna		/ interjection		
++CC  ! rinnastav sidesõna		/ co-ordinating conjunction
++CS  ! alistav sidesõna		/ subordinating conjunction		
++Adp  ! kaassõna	/ adposition, i.e. pre/postposition	
++Pref  ! prefiks         / prefix				
++Prop  ! pärisnimi	/ proper name		
++Card  ! põhiarvsõna	/ cardinal numeral
++Ord  ! järgarvsõna	/ ordinal numeral
++Comp  ! komparatiiv	/ comparative
++Superl  ! superlatiiv	/ superlative
++Sg  ! ainsus	/ singular
++Pl  ! mitmus	/ plural
++Nom  ! nimetav			/ nominative	
++Gen  ! omastav 			/ genitive	
++Par  ! osastav			/ partitive	
++Ill  ! sisseütlev			/ illative	
++Ine  ! seesütlev			/ inessive	
++Ela  ! seestütlev			/ elative	
++All  ! alaleütlev			/ allative	
++Ade  ! alalütlev			/ adessive	
++Abl  ! alaltütlev			/ ablative	
++Tra  ! saav				/ translative	
++Trm  ! rajav				/ terminative	
++Ess  ! olev				/ essive	
++Abe  ! ilmaütlev			/ abessive	
++Com  ! kaasaütlev			/ comitative	
++Impers  ! umbisikuline	/ impersonal
++Pers  ! isikuline	/ personal
++Prs  ! olevik	/ present
++Prt  ! minevik	/ past (i.e. not present)
++Ind  ! kindel	/ indicative
++Cond  ! tingiv	/ conditional
++Imprt  ! käskiv	/ imperative / jussive
++Quot  ! kaudne	/ quotative
++Sg1  ! ainsuse 1. pööre	/ singular 1st person
++Sg2  ! ainsuse 2. pööre	/ singular 2nd person
++Sg3  ! ainsuse 3. pööre	/ singular 3rd person
++Pl1  ! mitmuse 1. pööre	/ plural   1st person
++Pl2  ! mitmuse 2. pööre	/ plural   2nd person
++Pl3  ! mitmuse 3. pööre	/ plural   3rd person
++Aff  ! jaatav kõne	/ affirmative
++Neg  ! eitav kõne	/ negative
++Sup  ! ma-tegevusnimi / supine (ma-infinitive)
++Inf  ! da-tegevusnimi / infinitive (da-infinitive)a
++Ger  ! des-vorm	 / gerund (des-form)	
++Prc  ! kesksõna	 / participle
++Foc/gi  !
++Emph  ! long inflectional forms of personal pronouns *mina*, *sina*, *tema*, *meie*, *teie*, *nemad*
++Usage/Rare  ! norm, but rare 
++Usage/Hyp  !  norm, but so rare that norm is probaly wrong 
++Usage/NotNorm  !  not norm, but sometimes used 
++Usage/CommonNotNorm  !  not norm, and used more than norm 
++Guess  ! guessed analysis
++Pref  !
++Der/mine  !
++Der/ja  !
++Der/nu  !
++Der/mus  !
++Der/vus  !
++Der/ng  !
++Der/is  !
++Der/v  !
++Der/tav  !
++Der/nud  !
++Der/mata  !
++Der/matu  !
++Der/tamatu  !
++Der/tu  !
++Der/tud  !
++Der/lik  !
++Der/line  !
++Der/ne  !
++Der/lt  !
++Der/sti  !
++Der/ini  !
++Der/m  !
++Der/im  !
++Der/nna  !
++Der/kond  !
++Der/ist  !
++Der/lane  !  helveetslane:Helveetsia+N+Prop+Der/lane+N+Sg+Nom
++Der/us  !
++Der/ti  !
++Dim/ke  !  diminutive 
++Der/minus  !  shortening stem 
++Der/kas  !
++Use/Circ  ! for arabic and roman numerals; 
++Use/PMatch  ! for tokenisation with pmatch
++Use/-PMatch  ! for tokenisation with pmatch
++ABBR  ! Lühend / Abbreviation
++Symbol !!≈ * @CODE@ = independent symbols in the text stream, like £, €, ©
++ACR  ! Suurtähtlühend / Acronym
++CLB  ! Osalause piir (punkt, koma) / Clause border (full stop, comma..)
++PUNCT  ! Kirjavahemärk / Punctuation
++LEFT  ! Kirjavahemärgi asetus / Punctuation orientation
++RIGHT  ! Kirjavahemärgi asetus / Punctuation orientation
++Err/Orth  ! Ortograafiaviga (genereeritud failide sümbol)/ orthography error
