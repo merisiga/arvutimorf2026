@@ -1,0 +1,73 @@
+Multichar_Symbols
+
++Sg   ! ainsus
++Pl   ! mitmus
+
++Nom  ! nimetav			
++Gen  ! omastav 		
++Par  ! osastav			
++Ill  ! sisseütlev		
++Ine  ! seesütlev				
++Ela  ! seestütlev				
++All  ! alaleütlev		
++Ade  ! alalütlev		
++Abl  ! alaltütlev			
++Tra  ! saav				
++Trm  ! rajav			
++Ess  ! olev				
++Abe  ! ilmaütlev			
++Com  ! kaasaütlev			
+
+LEXICON Root
+
+Ellen tüüp1 ;
+Jõgi tüüp2 ;   ! käänamine perekonnananimena
+Tartu tüüp3 ;
+Lossi tüüp4 ;
+
+LEXICON tüüp1
+    +Sg+Nom: # ;
+           :i gen_jt ;
+    +Sg+Par:it # ;
+    +Pl+Par:eid # ;
+        +Pl:ite sem_käänded ;
+        
+LEXICON tüüp2
+    +Sg+Nom: # ;
+           : gen_jt ;
+    +Sg+Par: # ;
+    +Pl+Par:sid # ;
+        +Pl:de sem_käänded ;
+        
+LEXICON tüüp3
+    +Sg+Nom: # ;
+           : gen_jt ;
+    +Sg+Par:t # ;
+    +Sg+Ill: # ; 	! lühike sisseütlev
+    +Pl+Par:id # ;
+        +Pl:te sem_käänded ;
+
+LEXICON tüüp4
+    +Sg+Nom:_tänav # ;
+           :_tänava gen_jt ;
+    +Sg+Par:_tänavat # ;
+    +Pl+Par:_tänavaid # ;
+        +Pl:_tänavate sem_käänded ;
+
+LEXICON gen_jt
+    +Pl+Nom:d # ;
+    +Sg+Gen: # ;
+    	+Sg: sem_käänded ;
+
+LEXICON sem_käänded
+       +Ill:sse # ;	
+       +Ine:s # ;	
+       +Ela:st # ;	
+       +All:le # ;	
+       +Ade:l # ;	
+       +Abl:lt # ;	
+       +Tra:ks # ;	
+       +Trm:ni # ;	
+       +Ess:na # ;	
+       +Abe:ta # ;	
+       +Com:ga # ;
