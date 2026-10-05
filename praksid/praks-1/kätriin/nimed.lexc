@@ -1,0 +1,83 @@
+Multichar_Symbols
+
++N  ! nimisõna		 / substantive		
++A  ! omadussõna		 / adjective		
+
++Sg  ! ainsus	 / singular
++Pl  ! mitmus	 / plural
++Nom  ! nimetav			 / nominative	
++Gen  ! omastav 			 / genitive	
++Par  ! osastav			 / partitive	
++Ill  ! sisseütlev			 / illative	
++Ine  ! seesütlev			 / inessive	
++Ela  ! seestütlev			 / elative	
++All  ! alaleütlev			 / allative	
++Ade  ! alalütlev			 / adessive	
++Abl  ! alaltütlev			 / ablative	
++Tra  ! saav				 / translative	
++Trm  ! rajav				 / terminative	
++Ess  ! olev				 / essive	
++Abe  ! ilmaütlev			 / abessive	
++Com  ! kaasaütlev			 / comitative	
+
+LEXICON Root
+
+Karin:Karin tüüp_minut ;    ! leksikaalne pool : pindesitus
+Kana:Kana tüüp_saba ;
+Viljandi:Viljandi tüüp_veski ;    
+Fortuuna:Fortuuna tüüp_pere ;     
+
+LEXICON tüüp_minut
+    +Sg+Nom: # ;
+    +Sg+Gen:it #;
+    +Sg+Par:i # ;
+           :i gen_jt ;
+    +Pl+Gen:ite #;
+    +Pl+Par:eid #;
+        +Pl:ite sem_käänded ;
+
+LEXICON tüüp_saba
+    +Sg+Nom: # ;
+    +Sg+Gen: # ;
+    +Sg+Par: # ;
+           : gen_jt ;
+    +Pl+Gen:de #;
+    +Pl+Par:sid #;
+    +Pl+Par:u #; ! lühike osastav, kanu, ei tea kuidas tüve tähte eemaldada
+        +Pl:de sem_käänded ;
+
+LEXICON tüüp_veski
+    +Sg+Nom: # ;
+    +Sg+Gen: # ;
+    +Sg+Par:t # ;
+           : gen_jt ;
+    +Pl+Gen:te #;
+    +Pl+Par:eid #; ! Viljandieid jäi valeks, ei tea kuidas tüve tähte eemaldada
+        +Pl:te sem_käänded ;
+
+LEXICON tüüp_pere
+    +Sg+Nom: # ;
+    +Sg+Gen: #;
+    +Sg+Par:t # ;
+           : gen_jt ;
+    +Pl+Gen:de #;
+    +Pl+Par:sid #;
+        +Pl:de sem_käänded ;
+
+
+LEXICON gen_jt
+    +Pl+Nom:d # ;
+        +Sg: sem_käänded ;
+
+LEXICON sem_käänded
+       +Ill:sse # ;	
+       +Ine:s # ;	
+       +Ela:st # ;	
+       +All:le # ;	
+       +Ade:l # ;	
+       +Abl:lt # ;	
+       +Tra:ks # ;	
+       +Trm:ni # ;	
+       +Ess:na # ;	
+       +Abe:ta # ;	
+       +Com:ga # ;	
