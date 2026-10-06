@@ -1,0 +1,155 @@
+Multichar_Symbols
++Sg
++Pl
++Nom
++Gen
++Par
++Ill
++Ine
++Ela
++All
++Ade
++Abl
++Tra
++Ter
++Ess
++Abe
++Com
+
+LEXICON Root
+Ann Ann_Sg ;
+Salutee Salutee_Sg ;
+Tartu Tartu_Sg ;
+Ilmatsalu Ilmatsalu_Sg ;
+
+LEXICON Ann_Sg
++Sg+Nom: # ;
++Sg+Gen:i # ;
++Sg+Par:i # ;
++Sg+Ill:i # ;
++Sg+Ine:is # ;
++Sg+Ela:ist # ;
++Sg+All:ile # ;
++Sg+Ade:il # ;
++Sg+Abl:ilt # ;
++Sg+Tra:iks # ;
++Sg+Ter:ini # ;
++Sg+Ess:ina # ;
++Sg+Abe:ita # ;
++Sg+Com:iga # ;
+Ann_Pl ;
+
+LEXICON Ann_Pl
++Pl+Nom:id # ;
++Pl+Gen:ide # ;
++Pl+Par:isid # ;
++Pl+Ill:idesse # ;
++Pl+Ine:ides # ;
++Pl+Ela:idest # ;
++Pl+All:idele # ;
++Pl+Ade:idel # ;
++Pl+Abl:idelt # ;
++Pl+Tra:ideks # ;
++Pl+Ter:ideni # ;
++Pl+Ess:idena # ;
++Pl+Abe:ideta # ;
++Pl+Com:idega # ;
+
+LEXICON Salutee_Sg
++Sg+Nom: # ;
++Sg+Gen: # ;
++Sg+Par:d # ;
++Sg+Ill:sse # ;
++Sg+Ine:s # ;
++Sg+Ela:st # ;
++Sg+All:le # ;
++Sg+Ade:l # ;
++Sg+Abl:lt # ;
++Sg+Tra:ks # ;
++Sg+Ter:ni # ;
++Sg+Ess:na # ;
++Sg+Abe:ta # ;
++Sg+Com:ga # ;
+Salutee_Pl ;
+
+LEXICON Salutee_Pl
++Pl+Nom:d # ;
++Pl+Gen:de # ;
++Pl+Par:sid # ;
++Pl+Ill:desse # ;
++Pl+Ine:des # ;
++Pl+Ela:dest # ;
++Pl+All:dele # ;
++Pl+Ade:del # ;
++Pl+Abl:delt # ;
++Pl+Tra:deks # ;
++Pl+Ter:deni # ;
++Pl+Ess:dena # ;
++Pl+Abe:deta # ;
++Pl+Com:dega # ;
+
+LEXICON Tartu_Sg
++Sg+Nom: # ;
++Sg+Gen: # ;
++Sg+Par:t # ;
++Sg+Ill:sse # ;
++Sg+Ine:s # ;
++Sg+Ela:st # ;
++Sg+All:le # ;
++Sg+Ade:l # ;
++Sg+Abl:lt # ;
++Sg+Tra:ks # ;
++Sg+Ter:ni # ;
++Sg+Ess:na # ;
++Sg+Abe:ta # ;
++Sg+Com:ga # ;
+Tartu_Pl ;
+
+LEXICON Tartu_Pl
++Pl+Nom:d # ;
++Pl+Gen:de # ;
++Pl+Par:sid # ;
++Pl+Ill:desse # ;
++Pl+Ine:des # ;
++Pl+Ela:dest # ;
++Pl+All:dele # ;
++Pl+Ade:del # ;
++Pl+Abl:delt # ;
++Pl+Tra:deks # ;
++Pl+Ter:deni # ;
++Pl+Ess:dena # ;
++Pl+Abe:deta # ;
++Pl+Com:dega # ;
+
+LEXICON Ilmatsalu_Sg
++Sg+Nom: # ;
++Sg+Gen: # ;
++Sg+Par:t # ;
++Sg+Ill:sse # ;
++Sg+Ine:s # ;
++Sg+Ela:st # ;
++Sg+All:le # ;
++Sg+Ade:l # ;
++Sg+Abl:lt # ;
++Sg+Tra:ks # ;
++Sg+Ter:ni # ;
++Sg+Ess:na # ;
++Sg+Abe:ta # ;
++Sg+Com:ga # ;
+Ilmatsalu_Pl ;
+
+LEXICON Ilmatsalu_Pl
++Pl+Nom:d # ;
++Pl+Gen:de # ;
++Pl+Par:sid # ;
++Pl+Ill:desse # ;
++Pl+Ine:des # ;
++Pl+Ela:dest # ;
++Pl+All:dele # ;
++Pl+Ade:del # ;
++Pl+Abl:delt # ;
++Pl+Tra:deks # ;
++Pl+Ter:deni # ;
++Pl+Ess:dena # ;
++Pl+Abe:deta # ;
++Pl+Com:dega # ;

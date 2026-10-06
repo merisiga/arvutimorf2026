@@ -11,8 +11,31 @@
 
 1 WSLi installimine Windows'i
 
+1.0 Kontrolli, kas virtualiseerimine (VT-x / AMD-V) on BIOS-is sisse lülitatud
+
+1.0.1 Tegurmirea otsinguiaknasse  kirjuta "cmd" ja avanenud aknas vali "Ava" ja kirjuta käsureale
+
+```cmdline
+systeminfo
+```
+
+1.0.2 Keri tulemuste lõppu, kus on sektsioon Hyper-V Requirements,
+kui Virtualization Enabled In Firmware näitab Yes, on virtualiseerimine BIOS-is lubatud.
+Kui virtualiseerimine on keelatud (disabled), pead virtualiseerimise BIOS-is sisse lülitama.
+
+1.0.2.1 Taaskäivita arvuti ja mine BIOS/UEFI seadistustesse (tavaliselt tuleb arvuti käivitumisel
+vajutada klahvi F2, Del, F10 või Esc sõltvuvalt arvuti brändist).
+
+1.0.2.2 Otsi protsessori seadetest (Advanced, CPU Configuration või Virtualization):
+
+1.0.2.2.1 Intel protsessoritel: Intel Virtualization Technology, Intel VT-x või VTx
+
+1.0.2.2.2 AMD protsessoritel: AMD-V, SVM Mode või Secure Virtual Machine
+
+1.0.2.2.3 Muuda väärtuseks Enabled, salvesta muutused (Save and Exit, tavaliselt F10) ja taaskäivita arvuti1.
+
 1.1 Ava käsurida administraatorina. Tegumirea otsingiuaknasse kirjuta "cmd" ja avanenud aknast
-vali "Käivita administraatorina"
+vali "Käivita administraatorina" ja kirjuta käsureale
 
 ```cmdline
 wsl --install
