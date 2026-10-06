@@ -1,0 +1,85 @@
+Multichar_Symbols
+
++N  ! nimisõna		/ substantive		
++A  ! omadussõna		/ adjective		
+
++Sg  ! ainsus	/ singular
++Pl  ! mitmus	/ plural
++Nom  ! nimetav			/ nominative	
++Gen  ! omastav 			/ genitive	
++Par  ! osastav			/ partitive	
++Ill  ! sisseütlev			/ illative	
++Ine  ! seesütlev			/ inessive	
++Ela  ! seestütlev			/ elative	
++All  ! alaleütlev			/ allative	
++Ade  ! alalütlev			/ adessive	
++Abl  ! alaltütlev			/ ablative	
++Tra  ! saav				/ translative	
++Trm  ! rajav				/ terminative	
++Ess  ! olev				/ essive	
++Abe  ! ilmaütlev			/ abessive	
++Com  ! kaasaütlev			/ comitative	
+
+
+%>                ! morfeemi piir
+%{NA%}            ! nõrk aste
+
+G1                ! g või null
+B1                ! b või null
+D1                ! d või null
+
+LEXICON Root
+
+koli+N:koli tüüp_ema ;    ! leksikaalne pool : pindesitus
+kena+A:kena tüüp_ema ;    ! pl par keni on puudu
+sugu+N:suG1u tüüp_ema ;
+vidin+N:vidin tüüp_vidin ;
+redel+N:redel tüüp_redel ;
+torssis+A:torssis # ;
+
+LEXICON tüüp_ema
+  +Sg+Nom: # ;
+         :%{NA%} sg_gen_jt ; 
+  +Sg+Par:%> # ;              ! kas %> peaks siin üldse olema ?
+      +Pl:%>de semkäänded ;
+  +Pl+Par:%>sid # ;
+    
+LEXICON tüüp_vidin
+  +Sg+Nom: # ;
+         :a 2C; 
+
+LEXICON tüüp_redel
+  +Sg+Nom: # ;
+         :i 2C; 
+
+LEXICON 2C
+         : sg_gen_jt ; 
+  +Sg+Par:%>t # ;
+      +Pl:%>te semkäänded ;
+  +Pl+Par:%>id # ;
+
+
+LEXICON sg_gen_jt
+
+  +Sg+Gen: # ;
+         : semkäänded ;
+  +Pl+Nom:%>d # ;
+  
+
+LEXICON semkäänded
+
+       +Ill:sse # ;	
+       +Ine:s # ;	
+       +Ela:st # ;	
+       +All:le # ;	
+       +Ade:l # ;	
+       +Abl:lt # ;	
+       +Tra:ks # ;	
+       +Trm:ni # ;	
+       +Ess:na # ;	
+       +Abe:ta # ;	
+       +Com:ga # ;	
+
+
+
+
