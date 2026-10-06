@@ -32,6 +32,8 @@ LEXICON Root
 
 koli+N:koli tüüp_ema ;    ! leksikaalne pool : pindesitus
 kena+A:kena tüüp_ema ;    ! pl par keni on puudu
+siil+N:siil tüüp_taud ;    
+pott+N:pott tüüp_taud ;    
 sugu+N:suG1u tüüp_ema ;
 vidin+N:vidin tüüp_vidin ;
 redel+N:redel tüüp_redel ;
@@ -41,33 +43,39 @@ LEXICON tüüp_ema
   +Sg+Nom: # ;
          :%{NA%} sg_gen_jt ; 
   +Sg+Par:%> # ;              ! kas %> peaks siin üldse olema ?
-      +Pl:%>de semkäänded ;
+      +Pl:%>de gen_jt ;
   +Pl+Par:%>sid # ;
     
+LEXICON tüüp_taud
+    +Sg+Nom: # ;
+           :%{NA%}%>i sg_gen_jt ;
+    +Sg+Par:%>i # ;
+    +Sg+Ill:%>i # ;      ! lühike sisseütlev
+        +Pl:%>i%>de gen_jt ;
+    +Pl+Par:%>e # ;
+
 LEXICON tüüp_vidin
   +Sg+Nom: # ;
          :a 2C; 
 
 LEXICON tüüp_redel
   +Sg+Nom: # ;
-         :i 2C; 
+         :%>i 2C; 
 
 LEXICON 2C
          : sg_gen_jt ; 
   +Sg+Par:%>t # ;
-      +Pl:%>te semkäänded ;
+      +Pl:%>te gen_jt ;
   +Pl+Par:%>id # ;
 
 
 LEXICON sg_gen_jt
 
-  +Sg+Gen: # ;
-         : semkäänded ;
+      +Sg:%> gen_jt ;
   +Pl+Nom:%>d # ;
   
-
-LEXICON semkäänded
-
+LEXICON gen_jt
+       +Gen: # ;
        +Ill:sse # ;	
        +Ine:s # ;	
        +Ela:st # ;	

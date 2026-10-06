@@ -1,0 +1,80 @@
+Ann
+
+Olin üsna eksinud selle ülesandega. Lisaks pole üldse kindel, kui õigesti käänatud kõik on... Eks see eesti keel longab üle künga mul.
+
+HJK
+ test töötab
+
+kommentaar lexc faili sisu kohta:
+Tavaliselt sõnu ja nende paradigmasid ei defineerita nii, et kõik vormid on välja kirjutatud.
+Paari sõnaga näites on see OK, aga tuhandete sõnade puhul enam mitte.
+Sel juhul peaks vorme genereerima mingi programmiga, aga siis jääksid lexc võimalused kasutamata;
+kogu tarkus olekski selles vorme genereerivas programmis.
+
+Punktid: 5 
+------------
+
+Dmitrii 
+Sõnaga "vaher" tekkisid raskused, kui hakkasin kirjeldama selle omastava vormi ja sellest edaspidi.  
+
+HJK 
+katsed:
+cat Dmitrii/mingiomanimi.test | hfst-lookup  Dmitrii/mingiomanimi.fst 
+hfst-lookup: Error: Dmitrii/mingiomanimi.fst is not a valid transducer file
+
+cat Dmitrii/mingiomanimi.lexc | hfst-lexc > Dmitrii/mingiomanimi.hfst
+hfst-lexc: Warning: Defaulting to OpenFst tropical type
+<stdin>:1.2: Syntax error in lexer (no valid token found at the point): [near: `+']
+<stdin>:1.2: syntax error, unexpected ERROR, expecting LEXICON_START or LEXICON_START_WRONG_CASE: [near: `+']
+hfst-lexc: Error: The file <stdin> did not compile cleanly.
+
+kommentaar: lexc fail on vormiliselt vigane, sellest muundurit ei saagi teha
+lexc fail on väga sarnane Anni tehtuga, s.t. peaaegu koopia, aga seejuures omapoolsete vigadega
+
+punktid: 1
+
+--------------
+karoliina
+
+Ma polnud kindel, kuidas tänava käänamist teha, sest sõna ise ju tegelikult ei käänata, vaid käänatakse järgnevat liigisõna. Tegeliikult peaks jätma selle alati algvormi, aga siin otsustasin liita liigisõna alakriipsuga juurde, sest see tundus mulle hetkel parema illustratsioonina.
+
+HJK
+hmm... Lossi tänav polegi üks sõna...
+Lossi+Sg+All	Lossi_tänavale
+
+eeskujuks olnud faili naide1.lexc on omapoolselt parandatud: lisatud +Sg+Gen ja +Pl+Par vormid
+
+Jõgi tüüp2 ;   ! käänamine perekonnananimena
+
+LEXICON tüüp2
+    +Sg+Nom: # ;
+           : gen_jt ;
+    +Sg+Par: # ;   <-  vaieldav koht (intuitsioon petab?): Jõgi+Sg+Par: Jõgi või Jõgi+Sg+Par: Jõgit ???
+
+punktid: 5
+------------
+
+kätriin
+Nimel "Kana" jäi valeks lühike osastav, "Kanu". Nimega "Viljandi" mitmuse osastav "Viljandeid". Mõlema põhjus - ei tea, kuidas tüve viimast tähte eemaldada
+
+HJK
+test töötab
+
+eeskujuks olnud faili naide1.lexc on omapoolselt parandatud: lisatud +Sg+Gen ja +Pl+Par vormid
+
+teadaolevad vead:
+Kana+Pl+Par:Kanau
+Viljandi+Pl+Par:Viljandieid
+
+nende parandamine on tänase praksi teema
+
+minu leitud vead:
+LEXICON tüüp_minut
+    +Sg+Nom: # ;
+    +Sg+Gen:it #;    <- peaks olema +Sg+Gen:i #;
+    +Sg+Par:i # ;    <- peaks olema +Sg+Par:it #;
+
+
+punktid: 5
+
+

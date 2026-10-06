@@ -60,11 +60,18 @@ Vx:Vy  <=>  [.#. | Consonant] :Vowel G1:0    _   ;
 
 "kui i-le järgneb i-ga algav lõpp, siis ta madaldub e-ks "
 
-i:e  <=>  :Consonant  _ %>: :i ;
+i:e  <=>  :Consonant %>:* _ %>: :i ;
       
 ! lexical: r e d e l i > i d
 ! surface: r e d e l e > i d
 
+"kk pp tt -> k p t"
+
+Cx:0  <=> :Cx _ %>:* :Vowel* %{NA%}: ;         ! võib-olla võiks kontekst olla ka: <=> _ %{NA%}: 
+     where Cx in ( k p t ) ;
+
+! lexical: p o t t {NA}          NB! sellised kommentaarid tuleb kirjutada alati ENNE oma reegli kirjutamist; 
+! surface: p o t 0   0 
 
 
 
