@@ -72,16 +72,16 @@ LEXICON tüüp_riik
 LEXICON tüüp_mõte
     +Sg+Nom:%{NA%} gi ;
            :%> gen_jt ;
-    +Sg+Par:%>%{NA%}%>t gi ;
+    +Sg+Par:%{NA%}%>t gi ;
     +Pl+Par:%>id gi ;
-        +Pl:%>%{NA%}%>te sem_käänded ;
+        +Pl:%{NA%}%>te sem_käänded ;
         
 LEXICON tüüp_käsi
     +Sg+Nom: gi ;
            :%{NA%} gen_jt ;
-    +Sg+Par:%>%{NA%}%>tt gi ;		! si/e tuleb kaotada + 
+    +Sg+Par:%>tt gi ;		! si/e tuleb kaotada + 
     +Pl+Par: gi ;
-        +Pl:%>%{NA%}%>te sem_käänded ;
+        +Pl:%>te sem_käänded ;
 
 LEXICON gen_jt
     +Pl+Nom:%>d gi ;
