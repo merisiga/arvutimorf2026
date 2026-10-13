@@ -51,7 +51,8 @@ punktid: 1
 karoliina
 
 Ma ei saanud käe ja söe Sg+Par ja Pl+Gen vormidega hakkama, aga ülejäänud peaks toimima?
-
+Muudatus:
+Sain õiged vormid sisse neile, aga valed on vist paralleelvormidena??
 
 HJK
 Tartu tüüp_ohutu ;  <-- 
@@ -68,16 +69,15 @@ s.t. muundur on OK, aga kirjelduses on lingvistil viga...
 
 süsi+Sg+Gen:söe  <-- ok
 
-süsi+Pl+Trm:söeteni
-süsi+Sg+Par+Gi:söettki
-süsi+Sg+Par:söett
+süsi+Pl+Com+Gi:süsitegagi
+süsi+Pl+Com+Gi:sütegagi
+süsi+Sg+Par+Gi:süsittki
+süsi+Sg+Par+Gi:süttki
+süsi+Sg+Par:süsitt
+süsi+Sg+Par:sütt
 
-vaate+Pl+Com+Gi:vaatetegagi
-vaate+Pl+Com:vaatetega
-vaate+Sg+Par+Gi:vaatetki
-vaate+Sg+Par:vaatet
 
-punktid: 2
+punktid: 3
 ------------
 
 kätriin
