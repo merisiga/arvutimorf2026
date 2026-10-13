@@ -1,0 +1,186 @@
+Multichar_Symbols
+
++N  ! nimisõna          / substantive
++A  ! omadussõna        / adjective
+
++Sg  ! ainsus           / singular
++Pl  ! mitmus           / plural
++Nom  ! nimetav         / nominative
++Gen  ! omastav         / genitive
++Par  ! osastav         / partitive
++Ill  ! sisseütlev      / illative
++Ine  ! seesütlev       / inessive
++Ela  ! seestütlev      / elative
++All  ! alaleütlev      / allative
++Ade  ! alalütlev       / adessive
++Abl  ! alaltütlev      / ablative
++Tra  ! saav            / translative
++Trm  ! rajav           / terminative
++Ess  ! olev            / essive
++Abe  ! ilmaütlev       / abessive
++Com  ! kaasaütlev      / comitative
+
+%>                ! morfeemi piir
+%{NA%}            ! nõrk aste
+
+G1                ! g või null
+K1                ! k või null
+P1                ! p või null
+T1                ! t või null
+B1                ! b või null
+D1                ! d või null
+K2                ! k või g
+P2                ! p või b
+T2                ! t või d
+
+LEXICON Root
+
+! Kasutaja enda sõnad
+Ann+N:Ann tüüp_ema ;
+Salutee+N:Salutee tüüp_ema ;
+Ilmatsalu+N:Ilmatsalu tüüp_ema ;
+Tartu+N:Tartu tüüp_ema ;
+
+koli+N:koli tüüp_ema ;
+kena+A:kena tüüp_ema ;
+sugu+N:suG1u tüüp_ema ;           ! sugu - soo (u -> o)
+vidin+N:vidin tüüp_vidin ;
+redel+N:redel tüüp_redel ;
+torssis+A:torssis GI_OPTIONAL ;
+
+! Astmevaheldus 2.1: kk pp tt -> k p t
+lukk+N:luK1k tüüp_kk ;            ! lukk - luku
+kapp+N:kaP1p tüüp_pp ;            ! kapp - kapi
+latt+N:laT1t tüüp_tt ;            ! latt - lati
+
+! Astmevaheldus 2.2: k p t -> g b d
+kook+N:kooK2 tüüp_k2 ;            ! kook - koogi
+kaup+N:kauP2 tüüp_p2 ;            ! kaup - kauba
+sõit+N:sõiT2 tüüp_t2 ;            ! sõit - sõidu
+
+! gbd kaob, kõrge vokaal madaldub (kodutöö punkt 3)
+luba+N:luB1a tüüp_kpt ;           ! luba - loa    (u -> o)
+tuba+N:tuB1a tüüp_kpt ;           ! tuba - toa    (u -> o)
+rida+N:riD1a tüüp_kpt ;           ! rida - rea    (i -> e)
+tüga+N:tüG1a tüüp_kpt ;           ! tüga - töa    (ü -> ö, tehissõna), vb parem variant mõelda
+
+! i -> e liitelõpu ees
+kiri+N:kiri tüüp_i ;              ! kiri - kireid
+
+! ===================== käändetüübid =====================
+
+LEXICON tüüp_ema
+  +Sg+Nom: GI_OPTIONAL ;
+         :%{NA%} sg_gen_jt ;
+  +Sg+Par:%> GI_OPTIONAL ;
+  +Pl+Gen:%>de GI_OPTIONAL ;
+      +Pl:%>de semkäänded ;
+  +Pl+Par:%>sid GI_OPTIONAL ;
+
+LEXICON tüüp_vidin
+  +Sg+Nom: GI_OPTIONAL ;
+         :a 2C ;
+
+LEXICON tüüp_redel
+  +Sg+Nom: GI_OPTIONAL ;
+         :i 2C ;
+
+LEXICON 2C
+         : sg_gen_jt ;
+  +Sg+Par:%>t GI_OPTIONAL ;
+  +Pl+Gen:%>te GI_OPTIONAL ;
+      +Pl:%>te semkäänded ;
+  +Pl+Par:%>id GI_OPTIONAL ;
+
+! nõrga astme vormid: ainsuse omastav, ainsuse käänded, mitmuse nimetav
+LEXICON sg_gen_jt
+  +Sg+Gen: GI_OPTIONAL ;
+  +Sg: semkäänded ;
+  +Pl+Nom:%>d GI_OPTIONAL ;
+
+LEXICON semkäänded
+       +Ill:sse GI_OPTIONAL ;
+       +Ine:s GI_OPTIONAL ;
+       +Ela:st GI_OPTIONAL ;
+       +All:le GI_OPTIONAL ;
+       +Ade:l GI_OPTIONAL ;
+       +Abl:lt GI_OPTIONAL ;
+       +Tra:ks GI_OPTIONAL ;
+       +Trm:ni GI_OPTIONAL ;
+       +Ess:na GI_OPTIONAL ;
+       +Abe:ta GI_OPTIONAL ;
+       +Com:ga GI_OPTIONAL ;
+
+! Iga vorm võib lõppeda gi-liitega või jääda liiteta.
+! Twolc muudab gi -> ki helitu hääliku järel.
+LEXICON GI_OPTIONAL
+gi:gi # ;
+# ;
+
+! ----- kk pp tt (nõrgas astmes {NA} järel tüvevokaal)
+LEXICON tüüp_kk
+  +Sg+Nom: GI_OPTIONAL ;
+         :%{NA%}u sg_gen_jt ;
+  +Sg+Par:%>u GI_OPTIONAL ;
+  +Pl+Gen:u%>de GI_OPTIONAL ;
+      +Pl:u%>de semkäänded ;
+  +Pl+Par:u%>sid GI_OPTIONAL ;
+
+LEXICON tüüp_pp
+  +Sg+Nom: GI_OPTIONAL ;
+         :%{NA%}i sg_gen_jt ;
+  +Sg+Par:%>i GI_OPTIONAL ;
+  +Pl+Gen:i%>de GI_OPTIONAL ;
+      +Pl:i%>de semkäänded ;
+  +Pl+Par:i%>sid GI_OPTIONAL ;
+
+LEXICON tüüp_tt
+  +Sg+Nom: GI_OPTIONAL ;
+         :%{NA%}i sg_gen_jt ;
+  +Sg+Par:%>i GI_OPTIONAL ;
+  +Pl+Gen:i%>de GI_OPTIONAL ;
+      +Pl:i%>de semkäänded ;
+  +Pl+Par:i%>sid GI_OPTIONAL ;
+
+! ----- k p t -> g b d
+LEXICON tüüp_k2
+  +Sg+Nom: GI_OPTIONAL ;
+         :%{NA%}i sg_gen_jt ;
+  +Sg+Par:%>i GI_OPTIONAL ;
+  +Pl+Gen:i%>de GI_OPTIONAL ;
+      +Pl:i%>de semkäänded ;
+  +Pl+Par:i%>sid GI_OPTIONAL ;
+
+LEXICON tüüp_p2
+  +Sg+Nom: GI_OPTIONAL ;
+         :%{NA%}a sg_gen_jt ;
+  +Sg+Par:%>a GI_OPTIONAL ;
+  +Pl+Gen:a%>de GI_OPTIONAL ;
+      +Pl:a%>de semkäänded ;
+  +Pl+Par:a%>sid GI_OPTIONAL ;
+
+LEXICON tüüp_t2
+  +Sg+Nom: GI_OPTIONAL ;
+         :%{NA%}u sg_gen_jt ;
+  +Sg+Par:%>u GI_OPTIONAL ;
+  +Pl+Gen:u%>de GI_OPTIONAL ;
+      +Pl:u%>de semkäänded ;
+  +Pl+Par:u%>sid GI_OPTIONAL ;
+
+! ----- g b d kaob (tüvevokaal on sõna enda sees)
+LEXICON tüüp_kpt
+  +Sg+Nom: GI_OPTIONAL ;
+         :%{NA%} sg_gen_jt ;
+  +Sg+Par:%>t GI_OPTIONAL ;
+  +Pl+Gen:%>de GI_OPTIONAL ;
+      +Pl:%>de semkäänded ;
+  +Pl+Par:%>sid GI_OPTIONAL ;
+
+! ----- i-lõpuline sõna
+LEXICON tüüp_i
+  +Sg+Nom: GI_OPTIONAL ;
+         : sg_gen_jt ;
+  +Sg+Par:%>t GI_OPTIONAL ;
+  +Pl+Gen:%>de GI_OPTIONAL ;
+      +Pl:%>de semkäänded ;
+  +Pl+Par:%>id GI_OPTIONAL ;
