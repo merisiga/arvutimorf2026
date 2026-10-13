@@ -1,0 +1,123 @@
+Ann
+
+
+HJK
+
+Ann+N+Pl+Gen:Annde
+Ann+N+Pl+Gengi:Anndegi
+Ann+N+Pl+Nom:Annd
+Ann+N+Pl+Nomgi:Anndki
+Ann+N+Pl+Par:Annsid
+kiri+N+Sg+Par:kirit
+kiri+N+Sg+Tragi:kirikski
+kiri+N+Sg+Tra:kiriks
+luba+N+Sg+Par:lubat
+Salutee+N+Sg+Par:Salutee
+Tartu+N+Pl+Gen:Tartude
+
+LEXICON GI_OPTIONAL
+gi:gi # ;
+# ;
+
+gi liide on defineeritud nii, et leksikaalne kuju on sama mis pindmine kuju (gi), 
+s.t. pole grammatiline kategooria
+ma mõtlen, et võiks olla hoopis midagi nagu +GI:gi või +StressParticle:gi  (rõhupartikkel)
+
+Ann.lexc:
+Ann+N:Ann tüüp_ema ;
+Salutee+N:Salutee tüüp_ema ;
+Ilmatsalu+N:Ilmatsalu tüüp_ema ;  <-- ainult see on õiges muuttüübis
+Tartu+N:Tartu tüüp_ema ;
+
+twolc failis võiks ikkagi näited ka kirjutada (nagu eelmises praksis sai räägitud)
+
+Punktid: 2
+------------
+
+Dmitrii 
+
+Takerdusin leksikoonide kirjeldamisse (lexicon is mentioned but not defined)
+HJK 
+
+hfst-lexc dmitrii.lexc
+hfst-lexc: Warning: Defaulting to OpenFst tropical type
+Root...21 tüüp_ema...5 tüüp_taud...6 tüüp_vidin...2 tüüp_redel...2 2C...4 sg_gen_jt...2 gen_jt...Warning: Sublexicon is mentioned but not defined. (tüüp_aasta) 
+Warning: Sublexicon is mentioned but not defined. (tüüp_armas) 
+Warning: Sublexicon is mentioned but not defined. (tüüp_k2) 
+
+punktid: 1
+
+--------------
+karoliina
+
+Ma ei saanud käe ja söe Sg+Par ja Pl+Gen vormidega hakkama, aga ülejäänud peaks toimima?
+
+
+HJK
+Tartu tüüp_ohutu ;  <-- 
+vaate:vaaT1e tüüp_mõte ; ! t > d astmevaheldus <-- õige oleks vaade:vaaT1e
+
+
+LEXICON tüüp_ohutu
+    +Sg+Nom: gi ;
+           : gen_jt ;
+    +Sg+Par:%>t gi ;
+    +Sg+Ill: gi ; 	! lühike sisseütlev <-- ??? aga sobib Tartu jaoks
+
+s.t. muundur on OK, aga kirjelduses on lingvistil viga...
+
+süsi+Sg+Gen:söe  <-- ok
+
+süsi+Pl+Trm:söeteni
+süsi+Sg+Par+Gi:söettki
+süsi+Sg+Par:söett
+
+vaate+Pl+Com+Gi:vaatetegagi
+vaate+Pl+Com:vaatetega
+vaate+Sg+Par+Gi:vaatetki
+vaate+Sg+Par:vaatet
+
+punktid: 2
+------------
+
+kätriin
+Nägin hulka vaeva (6+h), toimima asju ei saanudki. Katki jäi paatide käänamine. Ei saanud hakkama vokaali madaldamise reeglite loomisega.
+
+HJK
+
+paat+N:paaT1 tüüp_vaat;
+laup+N:lauP1 tüüp_kaup;
+kopp+N:kopp tüüp_sopp;
+süsi+N:süS1 tüüp_ema;     <-- vale muuttüüp
+
+LEXICON gi_ki
+        :G2i # ;  <- ilma gi-liiteta sõnu polegi...
+...sest rida "# ;" on puudu (vrd Anni kodutööga)
+
+paat+N+Sg+Gen:paatigi
+süsi+N+Sg:sügi
+süsi+N+Pl+Nom:südki
+
+kui uurida muundurit, mis tehakse lexc põhjal, siis näeme, et
+hfst-fst2strings kodut2.hfst | grep 'paa'
+
+paat+N+Sg:paaT1>{NA}i>G2i
+paat+N+Sg+Gen:paaT1>{NA}i>G2i
+
+twol-reegel on:
+"k p t -> g b d"
+Cx:Cy  <=> Vowel* _ %{NA%}: ;
+     where Cx in ( K1 P1 T1 )
+           Cy in (  g  b  d )
+           matched ;
+
+! lexical: v a a t i
+! surface: v a a d i
+
+paistab, et twolc reegli konteksti tingimused ei vasta lexc faili muundurile
+
+küs: miks üldse on siin kasutusel K1 P1 T1, mitte k p t pluss kontekstitingimusena pikk vokaal?
+
+punktid: 2
+
+
