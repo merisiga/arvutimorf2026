@@ -87,21 +87,29 @@ g:k  <=>  :Voiceless %>: _ :i .#.;
 ! lexical: s u G1 u {NA}
 ! surface: s o  0 o  0 
 
-Vx:Vy  <=>  [.#. | Consonant] :Vowel S1:0    _   ;
-            [.#. | Consonant]    _   S1:0 :Vowel ;
+Vx:Vy  <=>  [.#. | Consonant] :Vowel S1:0    _  %>:* %{NA%}: ;
+            [.#. | Consonant]    _   S1:0 :Vowel %>:* %{NA%}: ;
        where Vx in ( u i ü )
              Vy in ( o e ö )
        matched;
 
 
-" Enne t-d e > 0 " ! tahtsin teha S1 i > 0 0, aga ei osanud ega saand sellega ka hakkama
-! S1 i > 0 0 oleks parem ka süsi:sütt jaoks
-! lexical: k ä S1 i {NA} t e
-! surface: k ä  0 0  0 te
+" Enne t-d (S1)i > 0 " ! tahaksin teha S1 i > 0 0
+! lexical: k ä S1 i > t e
+! surface: k ä  0 0 > t e
 
-Vx:Vy  <=> [.#. | Consonant] :Vowel S1:0 _ %>:* %{NA%}:* %>:* :t* ;       
-     where Vx in ( e ) 
+Vx:Vy  <=> [.#. | Consonant] :Vowel S1:0 _ %>:* :t ;       
+     where Vx in ( i ) 
  	   Vy in ( 0 ) 
+     matched;
+
+" Enne t-d S1(i) > 0 " ! tahaksin teha S1 i > 0 0
+! lexical: k ä S1 i > t e
+! surface: k ä  0 0 > t e
+
+Cx:Cy  <=> [.#. | Consonant] :Vowel _ i:0 %>:* :t ;       
+     where Cx in ( S1 ) 
+ 	   Cy in ( 0 ) 
      matched;
 
 
