@@ -1,4 +1,6 @@
-+Multichar_Symbols
+Multichar_Symbols
+
++N ! Nimisõna
 +Sg ! Ainsus
 +Pl ! Mitmus
 +Nom ! Nimetav
@@ -14,15 +16,16 @@
 +Ter ! Rajav
 +Ess ! Olev
 +Abe ! Ilmaütlev
-+Com !Kaasütlev
++Com ! Kaasütlev
 
 LEXICON Root
-Dmitrii Dmitrii_Sg ;
-Filkin Filkin_Sg ;
-Valga Valga_Sg ;
-Vahtra Vaher_Sg ;
 
-LEXICON Dmitrii_Sg
+Dmitrii+N:Dmitrii tüüp_aasta ;
+Filkin+N:Filkin tüüp_redel ;
+Valga+N:Valga tüüp_valga;
+Vaher+N:Vaher tüüp_vaher ;
+
+LEXICON tüüp_aasta
 +Sg+Nom: # ;
 +Sg+Gen: # ;
 +Sg+Par:t # ;
@@ -38,24 +41,22 @@ LEXICON Dmitrii_Sg
 +Sg+Abe:ta # ;
 +Sg+Com:ga # ;
 
+	+Pl+Nom:d # ;
+	+Pl+Gen:te # ;
+	+Pl+Par:sid # ;
+	+Pl+Ill:tesse # ;
+	+Pl+Ine:tes # ;
+	+Pl+Ela:test # ;
+	+Pl+All:tele # ;
+	+Pl+Ade:tel # ;
+	+Pl+Abl:telt # ;
+	+Pl+Tra:teks # ;
+	+Pl+Ter:teni # ;
+	+Pl+Ess:tena # ;
+	+Pl+Abe:teta # ;
+	+Pl+Com:tega # ;
 
-LEXICON Dmitrii_Pl
-+Pl+Nom:d # ;
-+Pl+Gen:te # ;
-+Pl+Par:sid # ;
-+Pl+Ill:tesse # ;
-+Pl+Ine:tes # ;
-+Pl+Ela:test # ;
-+Pl+All:tele # ;
-+Pl+Ade:tel # ;
-+Pl+Abl:telt # ;
-+Pl+Tra:teks # ;
-+Pl+Ter:teni # ;
-+Pl+Ess:tena # ;
-+Pl+Abe:teta # ;
-+Pl+Com:tega # ;
-
-LEXICON Filkin_Sg
+LEXICON tüüp_redel
 +Sg+Nom: # ;
 +Sg+Gen:i # ;
 +Sg+Par:it # ;
@@ -71,24 +72,22 @@ LEXICON Filkin_Sg
 +Sg+Abe:ita # ;
 +Sg+Com:iga # ;
 
+	+Pl+Nom:id # ;
+	+Pl+Gen:ite # ;
+	+Pl+Par:isid # ; 
+	+Pl+Ill:itesse # ;
+	+Pl+Ine:ites # ;
+	+Pl+Ela:itest # ;
+	+Pl+All:itele # ;
+	+Pl+Ade:itel # ;
+	+Pl+Abl:itelt # ;
+	+Pl+Tra:iteks # ;
+	+Pl+Ter:iteni # ;
+	+Pl+Ess:itena # ;
+	+Pl+Abe:iteta # ;
+	+Pl+Com:itega # ;
 
-LEXICON Filkin_Pl
-+Pl+Nom:id # ;
-+Pl+Gen:ite # ;
-+Pl+Par:isid # ; !pole kindel, kas see oleks õige
-+Pl+Ill:itesse # ;
-+Pl+Ine:ites # ;
-+Pl+Ela:itest # ;
-+Pl+All:itele # ;
-+Pl+Ade:itel # ;
-+Pl+Abl:itelt # ;
-+Pl+Tra:iteks # ;
-+Pl+Ter:iteni # ;
-+Pl+Ess:itena # ;
-+Pl+Abe:iteta # ;
-+Pl+Com:itega # ;
-
-LEXICON Valga_Sg
+LEXICON tüüp_valga
 +Sg+Nom: # ;
 +Sg+Gen: # ;
 +Sg+Par:t # ;
@@ -104,51 +103,49 @@ LEXICON Valga_Sg
 +Sg+Abe:ta # ;
 +Sg+Com:ga # ;
 
+	+Pl+Nom:d # ;
+	+Pl+Gen:de # ;
+	+Pl+Par:sid # ;
+	+Pl+Ill:desse # ;
+	+Pl+Ine:des # ;
+	+Pl+Ela:dest # ;
+	+Pl+All:dele # ;
+	+Pl+Ade:del # ;
+	+Pl+Abl:delt # ;
+	+Pl+Tra:deks # ;
+	+Pl+Ter:deni # ;
+	+Pl+Ess:dena # ;
+	+Pl+Abe:deta # ;
+	+Pl+Com:dega # ;
 
-LEXICON Valga_Pl
-+Pl+Nom:d # ;
-+Pl+Gen:de # ;
-+Pl+Par:sid # ;
-+Pl+Ill:desse # ;
-+Pl+Ine:des # ;
-+Pl+Ela:dest # ;
-+Pl+All:dele # ;
-+Pl+Ade:del # ;
-+Pl+Abl:delt # ;
-+Pl+Tra:deks # ;
-+Pl+Ter:deni # ;
-+Pl+Ess:dena # ;
-+Pl+Abe:deta # ;
-+Pl+Com:dega # ;
+LEXICON tüüp_vaher
++Sg+Nom:0  #;
++Sg+Gen:vahtra # ;
++Sg+Par:vahtrat # ;
++Sg+Ill:vahtrasse # ;
++Sg+Ine:vahtras # ;
++Sg+Ela:vahtrast # ;
++Sg+All:vahtrale # ;
++Sg+Ade:vahtral # ;
++Sg+Abl:vahtralt # ;
++Sg+Tra:vahtraks # ;
++Sg+Ter:vahtrani # ;
++Sg+Ess:vahtrana # ;
++Sg+Abe:vahtrata # ;
++Sg+Com:vahtraga # ;
 
-LEXICON Vaher_Sg
-+Sg+Nom: # ;
-+Sg+Gen:vahtra # ; !pole kindel kuidas sellsit muuttüüpi kirjeldada
-+Sg+Par:t # ;
-+Sg+Ill:sse # ;
-+Sg+Ine:s # ;
-+Sg+Ela:st # ;
-+Sg+All:le # ;
-+Sg+Ade:l # ;
-+Sg+Abl:lt # ;
-+Sg+Tra:ks # ;
-+Sg+Ter:ni # ;
-+Sg+Ess:na # ;
-+Sg+Abe:ta # ;
-+Sg+Com:ga # ;
 
-LEXICON Vaher_Pl
-+Pl+Nom:vahtrad # ; !pole kindel kuidas sellsit muuttüüpi kirjeldada
-+Pl+Gen:te # ;
-+Pl+Par:id # ;
-+Pl+Ill:tesse # ;
-+Pl+Ine:tes # ;
-+Pl+Ela:test # ;
-+Pl+All:tele # ;
-+Pl+Ade:tel # ;
-+Pl+Abl:telt # ;
-+Pl+Tra:teks # ;
-+Pl+Ter:teni # ;
-+Pl+Ess:tena # ;
-+Pl+Abe:teta # ;
-+Pl+Com:tega # ;
+	+Pl+Nom:vahtrad # ; 
+	+Pl+Gen:vahtrate # ;
+	+Pl+Par:vahtraid # ;
+	+Pl+Ill:vahtratesse # ;
+	+Pl+Ine:vahtrates # ;
+	+Pl+Ela:vahtratest # ;
+	+Pl+All:vahtratele # ;
+	+Pl+Ade:vahtratel # ;
+	+Pl+Abl:vahtratelt # ;
+	+Pl+Tra:vahtrateks # ;
+	+Pl+Ter:vahtrateni # ;
+	+Pl+Ess:vahtratena # ;
+	+Pl+Abe:vahtrateta # ;
+	+Pl+Com:vahtratega # ;
