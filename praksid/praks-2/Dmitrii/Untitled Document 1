@@ -1,0 +1,25 @@
+|| .#.  _ ; -> kui täht on sõna alguses
+ühe muunduri väljund on teise muunduri sisendiks
+mm -> m
+
+käsufail
+
+tingivasendamine käsi -- kasi, väike leksikon (4-5 sõna)
+
+reeglid, mis kirjeldavad õigeid sõnavorme
+
+ülemine - alumine ehk leksikaalne ja pindmine
+
+|| ü_ü
+
+define üks (a-b);
+define kaks (b-c);
+define kõik üks .0. kaks
+regex muudab kirjelduse muunduriks
+
+regex (a-b, b-c) 
+
+
+
+
+

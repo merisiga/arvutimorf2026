@@ -1,0 +1,212 @@
+Multichar_Symbols
+
++N  ! nimisõna				/ substantive		
++A  ! omadussõna			/ adjective		
+
++Sg  ! ainsus				/ singular
++Pl  ! mitmus				/ plural
++Nom  ! nimetav				/ nominative	
++Gen  ! omastav 			/ genitive	
++Par  ! osastav				/ partitive	
++Ill  ! sisseütlev			/ illative	
++Ine  ! seesütlev			/ inessive	
++Ela  ! seestütlev			/ elative	
++All  ! alaleütlev			/ allative	
++Ade  ! alalütlev			/ adessive	
++Abl  ! alaltütlev			/ ablative	
++Tra  ! saav				/ translative	
++Trm  ! rajav				/ terminative	
++Ess  ! olev				/ essive	
++Abe  ! ilmaütlev			/ abessive	
++Com  ! kaasaütlev			/ comitative	
+
+
+%>                ! morfeemi piir
+
+%{T%}		! T tekib tüvemuutusel	
+
+%{NA%}		! Nõrk aste	
+
+G1		! g või null
+B1		! b või null
+D1		! d või null
+P1		! p või null
+T1		! t või null
+K1		! k või null
+K2		! k või g
+P2		! p või b
+T2		! t või d
+D2		! ü või ö
+
+
+
+LEXICON Root
+
+! omad sõnad
+Dmitrii+N:Dmitrii tüüp_aasta ;
+Filkin+N:Filkin tüüp_redel ;
+Vaher+N:Vahe%{T%}r tüüp_vaher ; 
+Valga+N:Valga tüüp_valga  ;
+
+! Astmevaheldus kk pp tt -> k p t 
+pukk+N:puK1k tüüp_kk ;	!pukk-puki
+papp+N:paP1p tüüp_pp ; !papp-papi
+matt+N:maT1t tüüp_tt ; !matt-mati
+
+! Astmevaheldus k p t -> g b d 
+paak+N:paaK2 tüüp_k ; !kook-koogi
+laup+N:lauP2 tüüp_p ; !kaup-kauba
+sõit+N:sõiT2 tüüp_t ; !sõit-sõidu
+
+! madaldumised 
+
+tuba+N:tuB1a tüüp_mdl ;		!tuba-toa
+rida+N:riD1a tüüp_mdl ; 	!rida-rea
+süsi+N:süD2i tüüp_mdl2 ;	!süsi-söe
+
+
+LEXICON tüüp_aasta
++Sg+Nom:0 gi_ki ;
++Sg+Gen:%> gi_ki ; 
++Sg+Par:t gi_ki ;              
++Pl:d gi_ki ;
++Pl+Gen:%>te gi_ki ;
+ +Pl+Par:%>sid gi_ki ;
+    
+LEXICON tüüp_redel
++Sg+Nom:d gi_ki ;
++Sg+Gen:%>i gen_jt ;
++Sg+Par:%>it gi_ki ;   
++Pl:%>ite gi_ki ;
++Pl+Par:%>eid gi_ki ;
+
+LEXICON tüüp_vaher
++Sg+Nom:%> gi_ki ;
++Sg+Gen:%>a gen_jt ;
++Sg+Par:t gi_ki ;
++Pl:d gi_ki ;
++Pl+Gen:%>te gi_ki ;
++Pl+Par:%>aid gi_ki ;	
+   
+
+LEXICON tüüp_valga
++Sg+Nom:0 gi_ki ;
++Sg+Nom:%> gen_jt ; 
++Sg+Par:t gi_ki ;              
++Pl:%>d gi_ki ;
++Pl+Gen:%>te gi_ki ;
++Pl+Par:%>sid gi_ki ;
+
+
+LEXICON tüüp_kk
++Sg+Nom:0 gi_ki ;
++Sg+Gen:%{NA%}i gen_jt ;
++Sg+Par:%>i gi_ki ;
++Pl:%>id gi_ki ;
++Pl+Gen:%>ide gi_ki ;
++Pl+Par:%>e gi_ki ;
+
+
+LEXICON tüüp_k
++Sg+Nom:0 gi_ki ;
++Sg+Gen:%{NA%}i gen_jt ;
++Sg+Par:%>i gi_ki ;
++Pl:%>id gi_ki ;
++Pl+Gen:%>ide gi_ki ;
++Pl+Par:%>e gi_ki ;
+
+
+LEXICON tüüp_p
++Sg+Nom:0 gi_ki ;
++Sg+Gen:%{NA%}a gen_jt ;
++Pl:%{NA%}d gi_ki ;
++Sg+Par:%>a gi_ki ;
++Pl+Gen:%>de gi_ki ;
++Pl+Par:%>sid gi_ki ;
+
+LEXICON tüüp_pp
++Sg+Nom: gi_ki ;
++Sg+Gen:%{NA%}i gen_jt ;
++Pl:%>id gi_ki ;
++Pl+Gen:%>ide gi_ki ;
++Pl+Par:%>e gi_ki ;
+
+LEXICON tüüp_t
++Sg+Nom: gi_ki ;
++Sg+Gen:%{NA%}u gen_jt ;
++Pl:%>id gi_ki ;
++Pl+Gen:%>ude gi_ki ;
++Pl+Par:%>e gi_ki ;
+
+LEXICON tüüp_tt
++Sg+Nom: gi_ki ;
++Sg+Gen:%{NA%}i gen_jt ;
++Pl:%{NA%}d gi_ki ;
++Pl+Gen:%>ide gi_ki ;
++Pl+Par:%>e gi_ki ;
+
+LEXICON tüüp_mdl2
++Sg+Nom:0 gi_ki ;
++Sg+Gen:%{NA%}e gen_jt ;
++Sg+Part:t gi_ki ; 
++Pl:%{NA%}d gi_ki ;
++Pl+Gen:%>te gi_ki ;
++Pl+Par: gi_ki ; 
+
+LEXICON tüüp_mdl
++Sg+Nom:0 gi_ki ;
++Sg+Gen:%{NA%}a gen_jt ;
++Pl:%{NA%}d gi_ki ;
++Pl+Gen:%>te gi_ki ;
++Pl+Par:%>sid gi_ki ; 
+
+LEXICON gi_ki
+
+       +Gen: giki ;
+       +Ill:sse giki ;	
+       +Ine:s giki ;	
+       +Ela:st giki ;	
+       +All:le giki ;	
+       +Ade:l giki ;	
+       +Abl:lt giki ;	
+       +Tra:ks giki ;	
+       +Trm:ni giki ;	
+       +Ess:na giki ;	
+       +Abe:ta giki ;	
+       +Com:ga giki ;	
+
+
+LEXICON giki
+
+	:gi # ;
+	: # ;
+
+  
+LEXICON gen_jt
+
+       +Gen: # ;
+       +Ill:sse # ;	
+       +Ine:s # ;	
+       +Ela:st # ;	
+       +All:le # ;	
+       +Ade:l # ;	
+       +Abl:lt # ;	
+       +Tra:ks # ;	
+       +Trm:ni # ;	
+       +Ess:na # ;	
+       +Abe:ta # ;	
+       +Com:ga # ;	
+
+
+
+
+
+
+
+
+
+
+
+
+
+		   

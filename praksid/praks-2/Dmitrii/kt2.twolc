@@ -5,12 +5,14 @@ Alphabet
 a b c d e f g h i j k l m n o p q r s š z ž t u v w õ ä ö ü x y 
 A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y 
 
- %{NA%}:0 ! Nõrga astme tähis ei tule pindesituses kunagi esile
+%{NA%}:0 ! Nõrga astme tähis ei tule pindesituses kunagi esile
 
- %>:0   ! Morfeemipiir ei tule pindesituses kunagi esile
+%>:0   ! Morfeemipiir ei tule pindesituses kunagi esile
 
-! 
+%{T%}:t
 
+ 
+ 
  G1:g G1:0 ! lagi-lae
  B1:b B1:0 ! tuba-toa
  D1:d D1:0 ! rida-rea
@@ -20,7 +22,9 @@ A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y
  K2:k K2:g ! k -> g
  P2:p P2:b ! p -> b
  T2:t T2:d ! t -> d
+ D2:ü D2:ö ! ü -> ö
  g:k       ! gi -> ki
+
  ;
  
  Sets
@@ -36,9 +40,11 @@ Definitions
 
 Rules 
 
-"G B D kaovad nõrgas astmes"
-Cx:Cy <=> _ :Vowel* %{NA%}: ;
-	where Cx in (G1 B1 D1) ;
+"vaher tüübi tüvemuutuses tekib t, e kaob, e muutub nulliks"
+
+%{T%}:t <=> _ r a ;
+!e:0 <=> h _ %{T%} r ; sellega tahtsin teha asenduse vaher - vahe - vah(+t), aga kompilaator annab vea. 
+ 
 
 "kk pp tt -> k p t nõrgas astmes"
 Cx:0 <=> _ Cy %{NA%}: ;
@@ -60,12 +66,16 @@ i:e <=> consonant %>:*_%>: :i ;
 	[.#. | Consonant] :Vowel [G1:0 | B1:0 | D1:0] _;
 	[.#. | Consonant] _ [G1:0 | B1:0 | D1:0] :Vowel ;
 	
-"u ja ü madalduvad o-ks ja ö-ks"
-Vx:Vy <=> [.#. | Consonant] :Vowel [G1:0 | B1:0 | D1:0]_;
+	
+"u madaldub o-ks"
+u:o <=> [.#. | Consonant] :Vowel [G1:0 | B1:0 | D1:0] _;
+	[.#. | Consonant] _ [G1:0 | B1:0 |D1:0] :Vowel ;
+	
+"ü madaldu ö-ks" 
+D2:ö <=> [.#. | Consonant] :Vowel [G1:0 | B1:0 |D1:0] _;
 	[.#. | Consonant] _ [G1:0 | B1:0 | D1:0] :Vowel ;
-	where Vx in (u ü)
-		Vy in (o ö)
-	matched ;
+	
+	
 	
 
 	
