@@ -10,6 +10,13 @@ A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y
 %>:0   ! Morfeemipiir ei tule pindesituses kunagi esile
 
 %{T%}:t
+%{T%}:0
+%{S%}:0
+%{S%}:s
+%{E%}:e
+%{E%}:0
+
+
 
  
  
@@ -34,6 +41,8 @@ Vowel = A E I O U Õ Ä Ö Ü Y
 
 Consonant = b c d f g h j k l m n p q r s š z ž t v w x 
             B C D F G H J K L M N P Q R S Š Z Ž T V W X ;
+            
+voiceless = p t k s š f h p t k ; 
 
 
 Definitions
@@ -43,8 +52,17 @@ Rules
 "vaher tüübi tüvemuutuses tekib t, e kaob, e muutub nulliks"
 
 %{T%}:t <=> _ r a ;
-!e:0 <=> h _ %{T%} r ; sellega tahtsin teha asenduse vaher - vahe - vah(+t), aga kompilaator annab vea. 
- 
+
+"e kadu h ja r vahel"
+e:0 <=> h _ r ;
+
+"ü madaldub ö-ks ees"
+D2:ö <=>  _ %{S%}:0 e:e ;
+
+"S kadu"
+%{S%}:0 <=> _ e:e ;
+
+
 
 "kk pp tt -> k p t nõrgas astmes"
 Cx:0 <=> _ Cy %{NA%}: ;
@@ -71,9 +89,9 @@ i:e <=> consonant %>:*_%>: :i ;
 u:o <=> [.#. | Consonant] :Vowel [G1:0 | B1:0 | D1:0] _;
 	[.#. | Consonant] _ [G1:0 | B1:0 |D1:0] :Vowel ;
 	
-"ü madaldu ö-ks" 
-D2:ö <=> [.#. | Consonant] :Vowel [G1:0 | B1:0 |D1:0] _;
-	[.#. | Consonant] _ [G1:0 | B1:0 | D1:0] :Vowel ;
+!"ü madaldub ö-ks" 
+!D2:ö <=> [.#. | Consonant] :Vowel [G1:0 | B1:0 |D1:0] _;
+!	[.#. | Consonant] _ [G1:0 | B1:0 | D1:0] :Vowel ;
 	
 	
 	

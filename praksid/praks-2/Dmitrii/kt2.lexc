@@ -45,7 +45,7 @@ LEXICON Root
 ! omad sõnad
 Dmitrii+N:Dmitrii tüüp_aasta ;
 Filkin+N:Filkin tüüp_redel ;
-Vaher+N:Vahe%{T%}r tüüp_vaher ; 
+Vaher+N:Vahe%{%{T%}%}r tüüp_vaher ; 
 Valga+N:Valga tüüp_valga  ;
 
 ! Astmevaheldus kk pp tt -> k p t 
@@ -62,7 +62,7 @@ sõit+N:sõiT2 tüüp_t ; !sõit-sõidu
 
 tuba+N:tuB1a tüüp_mdl ;		!tuba-toa
 rida+N:riD1a tüüp_mdl ; 	!rida-rea
-süsi+N:süD2i tüüp_mdl2 ;	!süsi-söe
+süsi+N:sD2si tüüp_mdl2 ;	!süsi-söe
 
 
 LEXICON tüüp_aasta
@@ -83,9 +83,9 @@ LEXICON tüüp_redel
 LEXICON tüüp_vaher
 +Sg+Nom:%> gi_ki ;
 +Sg+Gen:%>a gen_jt ;
-+Sg+Par:t gi_ki ;
++Sg+Par:at gi_ki ;
 +Pl:d gi_ki ;
-+Pl+Gen:%>te gi_ki ;
++Pl+Gen:%>ate gi_ki ;
 +Pl+Par:%>aid gi_ki ;	
    
 
@@ -148,7 +148,7 @@ LEXICON tüüp_tt
 LEXICON tüüp_mdl2
 +Sg+Nom:0 gi_ki ;
 +Sg+Gen:%{NA%}e gen_jt ;
-+Sg+Part:t gi_ki ; 
++Sg+Par:t gi_ki ; 
 +Pl:%{NA%}d gi_ki ;
 +Pl+Gen:%>te gi_ki ;
 +Pl+Par: gi_ki ; 
