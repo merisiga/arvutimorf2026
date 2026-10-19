@@ -69,23 +69,25 @@ LEXICON tüüp_aasta
 +Sg+Nom:0 gi_ki ;
 +Sg+Gen:%> gi_ki ; 
 +Sg+Par:t gi_ki ;              
-+Pl:d gi_ki ;
-+Pl+Gen:%>te gi_ki ;
- +Pl+Par:%>sid gi_ki ;
++Pl+Nom:d gi_ki ;
++Pl+Gen:%>te gen_jt ;
++Pl+Par:%>sid gi_ki ;
++Pl:d gen_jt ;
+
     
 LEXICON tüüp_redel
-+Sg+Nom:d gi_ki ;
++Sg+Nom:0 gi_ki ;
 +Sg+Gen:%>i gen_jt ;
 +Sg+Par:%>it gi_ki ;   
 +Pl:%>ite gi_ki ;
 +Pl+Par:%>eid gi_ki ;
 
 LEXICON tüüp_vaher
-+Sg+Nom:%> gi_ki ;
++Sg+Nom:0 gi_ki ;
 +Sg+Gen:%>a gen_jt ;
 +Sg+Par:at gi_ki ;
 +Pl:d gi_ki ;
-+Pl+Gen:%>ate gi_ki ;
++Pl+Gen:%>ate gen_jt ;
 +Pl+Par:%>aid gi_ki ;	
    
 
@@ -119,27 +121,27 @@ LEXICON tüüp_k
 LEXICON tüüp_p
 +Sg+Nom:0 gi_ki ;
 +Sg+Gen:%{NA%}a gen_jt ;
-+Pl:%{NA%}d gi_ki ;
++Pl+Nom:%{NA%}d gi_ki ;
 +Sg+Par:%>a gi_ki ;
 +Pl+Gen:%>de gi_ki ;
 +Pl+Par:%>sid gi_ki ;
 
 LEXICON tüüp_pp
-+Sg+Nom: gi_ki ;
++Sg+Nom:0 gi_ki ;
 +Sg+Gen:%{NA%}i gen_jt ;
 +Pl:%>id gi_ki ;
 +Pl+Gen:%>ide gi_ki ;
 +Pl+Par:%>e gi_ki ;
 
 LEXICON tüüp_t
-+Sg+Nom: gi_ki ;
++Sg+Nom:0 gi_ki ;
 +Sg+Gen:%{NA%}u gen_jt ;
 +Pl:%>id gi_ki ;
 +Pl+Gen:%>ude gi_ki ;
 +Pl+Par:%>e gi_ki ;
 
 LEXICON tüüp_tt
-+Sg+Nom: gi_ki ;
++Sg+Nom:0 gi_ki ;
 +Sg+Gen:%{NA%}i gen_jt ;
 +Pl:%{NA%}d gi_ki ;
 +Pl+Gen:%>ide gi_ki ;
@@ -149,14 +151,15 @@ LEXICON tüüp_mdl2
 +Sg+Nom:0 gi_ki ;
 +Sg+Gen:%{NA%}e gen_jt ;
 +Sg+Par:t gi_ki ; 
-+Pl:%{NA%}d gi_ki ;
-+Pl+Gen:%>te gi_ki ;
++Pl+Nom:d gi_ki ;
++Pl+Gen:%>te gen_jt ;
 +Pl+Par: gi_ki ; 
 
 LEXICON tüüp_mdl
 +Sg+Nom:0 gi_ki ;
 +Sg+Gen:%{NA%}a gen_jt ;
-+Pl:%{NA%}d gi_ki ;
++Sg+Par:%>a gi_ki ; 
++Pl+Nom:%{NA%}d gi_ki ;
 +Pl+Gen:%>te gi_ki ;
 +Pl+Par:%>sid gi_ki ; 
 
