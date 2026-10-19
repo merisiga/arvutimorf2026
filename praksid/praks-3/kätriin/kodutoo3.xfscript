@@ -1,0 +1,5 @@
+# vigase sõna õigeks
+
+define oigeks   [[ k (->) g || .#. _ o ] .o. [ d (->) t || r e _ ] .o. [ s (->) s s ||  a s _  ] .o. [ a u (->) u a || .#. k _ ]] ;
+
+regex oigeks ;

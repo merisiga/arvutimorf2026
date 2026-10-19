@@ -1,0 +1,11 @@
+Proovisin parandada süsi käänamist teises praktikumis, sütt vorm jäi praegu puudu, ühtlasi läks katki koli käänamine. Üks näpukas jäi sisse lexc faili, kus tass sõna leksikaalses pooles trükivea tõttu kass.
+
+Kasutasin käske:
+printf "source kodutoo3.xfscript\n\
+        define fst\n\
+        read regex @\"kodut2_naide.hfst\" .o. fst\n\
+        save naide_fono_kodutoo3.hfst\n\
+        quit\n" | hfst-xfst
+hfst-invert < naide_fono_kodutoo3.hfst > inverted.ifst   # uurisin AI-lt kuidas vaadata saaks
+cat test.test | hfst-lookup inverted.ifst
+
