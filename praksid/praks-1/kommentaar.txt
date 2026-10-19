@@ -31,7 +31,21 @@ hfst-lexc: Error: The file <stdin> did not compile cleanly.
 kommentaar: lexc fail on vormiliselt vigane, sellest muundurit ei saagi teha
 lexc fail on väga sarnane Anni tehtuga, s.t. peaaegu koopia, aga seejuures omapoolsete vigadega
 
-punktid: 1
+kommentaar uue, 15. okt. esitatud kodutöö versiooni kohta:
+
+lexc of formaalselt korrektne, s.t. sellest saab muunduri teha
+sisuliselt on seal siiski veel sõna muutmisviisi kirjeldamise vigu, nt. 
+
+Dmitrii+N+Pl+Com:Dmitriitega
+Dmitrii+N+Pl+Nom:Dmitriid
+
+Vaher+N+Pl+Com:Vahervahtratega
+Vaher+N+Pl+Nom:Vahervahtrad
+Vaher+N+Pl+Par:Vahervahtraid
+Vaher+N+Sg+Gen:Vahervahtra
+Vaher+N+Sg+Ill:Vahervahtrasse
+
+punktid: 2
 
 --------------
 karoliina

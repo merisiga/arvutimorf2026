@@ -45,6 +45,11 @@ Root...21 tüüp_ema...5 tüüp_taud...6 tüüp_vidin...2 tüüp_redel...2 2C...
 Warning: Sublexicon is mentioned but not defined. (tüüp_armas) 
 Warning: Sublexicon is mentioned but not defined. (tüüp_k2) 
 
+kommentaar uue, 15. okt. esitatud kodutöö versiooni kohta:
+
+muundurite tegemine õnnestub, aga sisu poolest on lõpptulemuses peaaegu kõik vormid valed;
+nii leksikaalsed pooled kui pindmised pooled... 
+
 punktid: 1
 
 --------------
