@@ -1,0 +1,27 @@
+! Asendused olemasolevate reeglitega: Dmitrii, Filkin, Vaher, Valga
+
+
+
+define asendused  [[i (->) 0 || D _ m] .o.
+[i (->) i i || i _].o.
+[T (->) D || _ T ] .o.
+[d (->) t || i _ r] .o.
+[e (->) r || t _ i] .o.
+[G (->) F || _ G] .o.
+[o (->) i || F _ l] .o.
+[b (->) n || i _] .o.
+[k (->) l || i _ k] .o.
+[e (->) i || k _ n] .o.
+[F (->) V || _ F] .o.
+[s (->) a || V _ h] .o.
+[hh (->) h || a _ e] .o.
+[w (->) e || h _ r] .o.
+[t (->) r || e _] .o.
+[B (->) V || _ a] .o.
+[s (->) a || V _ l] .o.
+[k (->) l || a _ g] .o.
+[h (->) g || l _ a] .o.
+[s (->) a || g _]] ; 
+
+
+regex asendused ;
