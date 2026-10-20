@@ -1,0 +1,18 @@
+# blokeeri mõned rajad
+
+# defineeri pahad rajad
+
+define PahaTuletus [~[?* "+A"] "+Der/m" ?*] | [~[?* "+A"] "+Der/lt" ?*];
+
+# sama tuletust mitu korda ei luba
+
+define PahaKordus [["+Der/m"] ?* ["+Der/m"]] ;
+
+# head rajad on need, mis pole ei need ega teised pahad rajad
+
+define HeadRajad [~[PahaTuletus] & ~[?* PahaKordus ?*]] ;
+
+regex HeadRajad ;
+
+
+

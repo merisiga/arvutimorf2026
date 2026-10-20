@@ -1,0 +1,76 @@
+Üldine kommentaar: on tore näha, et parandate eelmistes kodutöödes ilmnenud vigu, nii et uue kodutöö muundur saab parem.
+Palun järgmiste kodutööde puhul lisada ka skript või käskude jada, mida kasutasite muundurite tegemiseks ja ka
+kommentaar, et mida tahtsite teha. Eeskujuks võiks olla Kätriini esitatu. Mul on muidu raske tagasisidet anda, sest
+palju aega läheb mõistatamiseks, et mida te tegite. 
+
+Ann
+
+
+HJK
+Oleks hea, kui edaspidi lisaksite ka shelli skripti, mida kasutasite oma muundurite tegemiseks.
+Ja lisaksite ka kommentaari selle kohta, et mida tegite. Praegu näen, et olete parandanud eelmisest kodutööst pärit 
+lexc ja twolc faili, aga mida ja miks, pean ise mõistatama.
+
+xfst skript vigade parandamiseks on korras.
+
+Punktid: 3
+------------
+
+Dmitrii 
+
+HJK
+Ma ei saa hästi aru, mida te tegite. Esitasite kaks muundurit, mis on tõepoolest erinevad, ja nende nimede järgi aiman, mida
+nad peaksid tegema.  
+Mõned asendused (näiteks [i (->) i i || i _] ja [t (->) r || e _])  ka töötavad, 
+aga teiste asenduste puhul ei saa ma aru, kas nad peaksid töötama just teie katseleksikoni (mida defineerib lexc) raames või mitte.
+
+Ja kuna katseleksikoni muundur defineerib väga vigased vormid (nii leksikaalses kui pindmises pooles), siis on raske aru saada,
+mida mõeldi. lexc faili pole selles kodutöö kaustas ka esitatusd, on ainult kaks temast lähtuvat muundurit...
+
+punktid: 1
+
+--------------
+karoliina
+
+Ei jõudnud söe ja käega tegeleda. Parandamises toimisid y > ü ja kk > k nii nagu tahtsin. 
+Tahtsin teha aaa > a, aga see ei toiminud millegipärast, kuigi aa > a toimis. Lisaks ei suutnud ma panna toimima vigadeparandust käändelõppudega kohtades, nt x > ks ja vale ki-liite parandus.
+
+HJK
+
+xfst-skriptis on süntaksi vead:
+
+define kirjakeelde [[ ü -> y || _ ] .o. [ ks -> x || _ ]] ;   <-- ks kokkukirjutatuna on üks sümbol, mõtlesite vist [{ks} -> x] või [k s -> x]
+
+# liiga palju tähti
+
+define lühemaks [[ a -> aa || _ ] .o. [ k -> kk || .#. _ ]] ; <-- aa ja kk paistavad väljatrükis õigetena, aga kumbki on 1 sümbol
+! aa -> aaa ei toiminud?
+
+# vales kohas gi-liide
+
+define gi  [ g -> k || [g b d k p t s š h f x] _ i .#. ] ;   <-- mõtlesite ilmselt  [g | b | d | k | p | t | s | š | h | f | x]
+
+define kõik [kirjakeelde .o. lühemaks .o. gi] ; 
+
+
+punktid: 2
+------------
+
+kätriin
+Proovisin parandada süsi käänamist teises praktikumis, sütt vorm jäi praegu puudu, ühtlasi läks katki koli käänamine. Üks näpukas jäi sisse lexc faili, kus tass sõna leksikaalses pooles trükivea tõttu kass.
+
+Kasutasin käske:
+printf "source kodutoo3.xfscript\n\
+        define fst\n\
+        read regex @\"kodut2_naide.hfst\" .o. fst\n\
+        save naide_fono_kodutoo3.hfst\n\
+        quit\n" | hfst-xfst
+hfst-invert < naide_fono_kodutoo3.hfst > inverted.ifst   # uurisin AI-lt kuidas vaadata saaks
+cat test.test | hfst-lookup inverted.ifst
+
+HJK
+Andsin ühe lisapunkti AI kasutamise eest, sest kasutasite AI-d kui eraõpetajat.
+
+punktid: 5
+
+
