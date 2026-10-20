@@ -1,0 +1,99 @@
+Multichar_Symbols
+
++Sg   ! ainsus
++Pl   ! mitmus
+
++Nom  ! nimetav			
++Gen  ! omastav 		
++Par  ! osastav			
++Ill  ! sisseütlev		
++Ine  ! seesütlev				
++Ela  ! seestütlev				
++All  ! alaleütlev		
++Ade  ! alalütlev		
++Abl  ! alaltütlev			
++Tra  ! saav				
++Trm  ! rajav			
++Ess  ! olev				
++Abe  ! ilmaütlev			
++Com  ! kaasaütlev	
+
++Gi   ! gi/ki liide	
+
+%>    ! morfeemi piir
+%{NA%}  ! nõrk aste
+
+K1    ! k või g
+P1    ! p või b
+T1    ! t või d
+
+S1    ! s või null
+
+LEXICON Root
+
+Ellen tüüp_minut ;
+Jõgi tüüp_ema ;          ! käänamine perekonnananimena
+Tartu tüüp_tartu ;
+kapp tüüp_riik ;         ! kk > k astmevaheldus
+vaat:vaaT1 tüüp_riik ;   ! t > d astmevaheldus
+käsi:käS1i tüüp_käsi ;   ! ä > e
+süsi:süS1i tüüp_käsi ;   ! ü > ö 
+
+LEXICON tüüp_minut
+    +Sg+Nom: gi ;
+           :%>i gen_jt ;
+    +Sg+Par:%>it gi ;
+    +Pl+Par:%>eid gi ;
+        +Pl:%>ite sem_käänded ;
+        
+LEXICON tüüp_ema
+    +Sg+Nom: gi ;
+           :%> gen_jt ;
+    +Sg+Par: gi ;
+    +Pl+Par:%>sid gi ;
+        +Pl:%>de sem_käänded ;
+        
+LEXICON tüüp_tartu
+    +Sg+Nom: gi ;
+           : gen_jt ;
+    +Sg+Par:%>t gi ;
+    +Sg+Ill: gi ; 	! lühike sisseütlev
+    +Pl+Par:%>id gi ;
+        +Pl:%>te sem_käänded ;
+        
+LEXICON tüüp_riik
+    +Sg+Nom: gi ;
+           :%>%{NA%}%>i gen_jt ;
+    +Sg+Par:%>i gi ;
+    +Pl+Par:%>isid gi ;
+    +Pl+Par:%>e gi ;
+        +Pl:%>ide sem_käänded ;
+        
+LEXICON tüüp_käsi
+    +Sg+Nom: gi ;
+           :%{NA%} gen_jt ;
+    +Sg+Par:%>tt gi ;		! si/e tuleb kaotada -> ei jõudnud veel parandamisega tegeleda
+    +Pl+Par: gi ;
+        +Pl:%>te sem_käänded ;
+
+LEXICON gen_jt
+    +Pl+Nom:%>d gi ;
+    +Sg+Gen: gi ;
+    	+Sg:%> sem_käänded ;
+
+LEXICON sem_käänded
+       +Ill:sse gi ;	
+       +Ine:s gi ;	
+       +Ela:st gi ;	
+       +All:le gi ;	
+       +Ade:l gi ;	
+       +Abl:lt gi ;	
+       +Tra:ks gi ;	
+       +Trm:ni gi ;	
+       +Ess:na gi ;	
+       +Abe:ta gi ;	
+       +Com:ga gi ;
+       
+LEXICON gi
+        +Gi:%>gi # ;
+           :%> # ;

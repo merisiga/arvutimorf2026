@@ -1,0 +1,2 @@
+Ei jõudnud söe ja käega tegeleda. Parandamises toimisid y > ü ja kk > k nii nagu tahtsin. 
+Tahtsin teha aaa > a, aga see ei toiminud millegipärast, kuigi aa > a toimis. Lisaks ei suutnud ma panna toimima vigadeparandust käändelõppudega kohtades, nt x > ks ja vale ki-liite parandus.

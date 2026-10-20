@@ -1,0 +1,16 @@
+# slängitähistest kirjakeelde
+
+define kirjakeelde [[ ü -> y || _ ] .o. [ ks -> x || _ ]] ;
+
+# liiga palju tähti
+
+define lühemaks [[ a -> aa || _ ] .o. [ k -> kk || .#. _ ]] ;
+! aa -> aaa ei toiminud?
+
+# vales kohas gi-liide
+
+define gi  [ g -> k || [g b d k p t s š h f x] _ i .#. ] ;
+
+define kõik [kirjakeelde .o. lühemaks .o. gi] ; 
+
+regex kõik ; 
