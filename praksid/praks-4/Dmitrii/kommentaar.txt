@@ -1,0 +1,2 @@
+Kontrollisin ridu käsuga  hfst-fst2strings kt4_derivatsioon_skript4.hfst -l 100. 
+Parandasin nii palju kui jaksasin.

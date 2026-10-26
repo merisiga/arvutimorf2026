@@ -1,0 +1,119 @@
+! Eesti morfofonoloogia
+
+Alphabet
+
+a b c d e f g h i j k l m n o p q r s š z ž t u v w õ ä ö ü x y 
+A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y 
+
+%{NA%}:0 ! Nõrga astme tähis ei tule pindesituses kunagi esile
+
+%>:0   ! Morfeemipiir ei tule pindesituses kunagi esile
+
+%{T%}:t
+%{T%}:0
+%{S%}:0
+%{S%}:s
+%{E%}:e
+%{E%}:0
+
+
+
+ 
+ 
+ G1:g G1:0 ! lagi-lae
+ B1:b B1:0 ! tuba-toa
+ D1:d D1:0 ! rida-rea
+ K1:k K1:0 ! pukk - puk
+ P1:p P1:0 ! papp - pap
+ T1:t T1:0 ! matt - mat
+ K2:k K2:g ! k -> g
+ P2:p P2:b ! p -> b
+ T2:t T2:d ! t -> d
+ D2:ü D2:ö ! ü -> ö
+ g:k       ! gi -> ki
+
+ ;
+ 
+ Sets
+
+Vowel = A E I O U Õ Ä Ö Ü Y
+        a e i o u õ ä ö ü y ;
+
+Consonant = b c d f g h j k l m n p q r s š z ž t v w x 
+            B C D F G H J K L M N P Q R S Š Z Ž T V W X ;
+            
+voiceless = p t k s š f h p t k ; 
+
+
+Definitions
+
+Rules 
+
+"vaher tüübi tüvemuutuses tekib t, e kaob, e muutub nulliks"
+
+%{T%}:t <=> _ r a ;
+
+"e kadu h ja r vahel"
+e:0 <=> h _ r ;
+
+"ü madaldub ö-ks ees"
+D2:ö <=>  _ %{S%}:0 e:e ;
+
+"S kadu"
+%{S%}:0 <=> _ e:e ;
+
+
+
+"kk pp tt -> k p t nõrgas astmes"
+Cx:0 <=> _ Cy %{NA%}: ;
+	where Cx in (K1 P1 T1)
+		Cy in (k p t)
+	matched ;
+	
+"k p t -> g b d nõrgas astmes"
+Cx:Cy <=> _ %{NA%}: ;
+	where Cx in (K2 P2 T2)
+		Cy in (g b d)
+	matched ;
+	
+"gi -> ki helitu järel"
+g:k <=> voiceless [ %>: | %{NA%}: ]* _i ;
+
+"i madaldub e-ks"
+i:e <=> consonant %>:*_%>: :i ;
+	[.#. | Consonant] :Vowel [G1:0 | B1:0 | D1:0] _;
+	[.#. | Consonant] _ [G1:0 | B1:0 | D1:0] :Vowel ;
+	
+	
+"u madaldub o-ks"
+u:o <=> [.#. | Consonant] :Vowel [G1:0 | B1:0 | D1:0] _;
+	[.#. | Consonant] _ [G1:0 | B1:0 |D1:0] :Vowel ;
+	
+!"ü madaldub ö-ks" 
+!D2:ö <=> [.#. | Consonant] :Vowel [G1:0 | B1:0 |D1:0] _;
+!	[.#. | Consonant] _ [G1:0 | B1:0 | D1:0] :Vowel ;
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			
+ 

@@ -1,0 +1,274 @@
+Multichar_Symbols
+
++N  ! nimisõna				/ substantive		
++A  ! omadussõna			/ adjective		
+
++Sg  ! ainsus				/ singular
++Pl  ! mitmus				/ plural
++Nom  ! nimetav				/ nominative	
++Gen  ! omastav 			/ genitive	
++Par  ! osastav				/ partitive	
++Ill  ! sisseütlev			/ illative	
++Ine  ! seesütlev			/ inessive	
++Ela  ! seestütlev			/ elative	
++All  ! alaleütlev			/ allative	
++Ade  ! alalütlev			/ adessive	
++Abl  ! alaltütlev			/ ablative	
++Tra  ! saav				/ translative	
++Trm  ! rajav				/ terminative	
++Ess  ! olev				/ essive	
++Abe  ! ilmaütlev			/ abessive	
++Com  ! kaasaütlev			/ comitative	
+
++Der/m ! keskvõrre
++Der/im ! ülivõrre
++Der/lt ! määrsõna
+Der/lik ! omadussõna tuletus
++Comp ! komparatiiv
++Super ! superlatiiv
+
+
+%>                ! morfeemi piir
+
+%{T%}		! T tekib tüvemuutusel	
+
+%{NA%}		! Nõrk aste	
+
+G1		! g või null
+B1		! b või null
+D1		! d või null
+P1		! p või null
+T1		! t või null
+K1		! k või null
+K2		! k või g
+P2		! p või b
+T2		! t või d
+D2		! ü või ö
+
+
+
+LEXICON Root
+
+! omad sõnad
+Dmitrii+N:Dmitrii tüüp_aasta ;
+Filkin+N:Filkin tüüp_redel ;
+Vaher+N:Vahe%{T%}r tüüp_vaher ; 
+Valga+N:Valga tüüp_valga  ;
+vidin+N:vidin tüüp_vidin ;
+
+! Astmevaheldus kk pp tt -> k p t 
+pukk+N:puK1k tüüp_kk ;	!pukk-puki
+papp+N:paP1p tüüp_pp ; !papp-papi
+matt+N:maT1t tüüp_tt ; !matt-mati
+
+! Astmevaheldus k p t -> g b d 
+paak+N:paaK2 tüüp_k ; !kook-koogi
+laup+N:lauP2 tüüp_p ; !kaup-kauba
+sõit+N:sõiT2 tüüp_t ; !sõit-sõidu
+
+! madaldumised 
+
+tuba+N:tuB1a tüüp_mdl ;		!tuba-toa
+rida+N:riD1a tüüp_mdl ; 	!rida-rea
+süsi+N:sD2si tüüp_mdl2 ;	!süsi-söe
+
+! sõnad derivatsiooni jaoks
+kena+A:kena tüüp_ema ;
+pikk+A:piK1k tüüp_kk ;
+pott+N:pott tüüp_lik ;
+
+
+LEXICON tüüp_aasta
++Sg+Nom:0 gi_ki ;
++Sg+Gen:0 gen_jt ; 
++Sg+Par:t gi_ki ;              
++Pl+Nom:d gi_ki ;
++Pl+Gen:%>te gen_jt ;
++Pl+Par:%>sid gi_ki ;
++Pl:d gen_jt ;
+
+    
+LEXICON tüüp_redel
++Sg+Nom:0 gi_ki ;
++Sg+Gen:%>i gen_jt ;
++Sg+Par:%>it gi_ki ;   
++Pl:%>ite gi_ki ;
++Pl+Par:%>eid gi_ki ;
+
+LEXICON tüüp_vaher
++Sg+Nom:0 gi_ki ;
++Sg+Gen:%>a gen_jt ;
++Sg+Par:at gi_ki ;
++Pl:d gi_ki ;
++Pl+Gen:%>ate gen_jt ;
++Pl+Par:%>aid gi_ki ;	
+   
+
+LEXICON tüüp_valga
++Sg+Nom:0 gi_ki ;
++Sg+Nom:%> gen_jt ; 
++Sg+Par:t # ;              
++Pl:%>d gi_ki ;
++Pl+Gen:%>te gi_ki ;
++Pl+Par:%>sid gi_ki ;
+
+
+LEXICON tüüp_kk
+  +Sg+Nom:0 gi_ki ;
+  +Sg+Gen:%{NA%}i gen_jt ;
+  +Sg+Par:%>i gi_ki ;
+  +Pl+Gen:%>ide gen_jt ;
+  +Pl+Par:%>e gi_ki ;
+  +Pl:%>id gen_jt ; 
+
+
+LEXICON tüüp_k
++Sg+Nom:0 gi_ki ;
++Sg+Gen:%{NA%}i gen_jt ;
++Sg+Par:%>i gi_ki ;
++Pl:%>id gi_ki ;
++Pl+Gen:%>ide gi_ki ;
++Pl+Par:%>e gi_ki ;
+
+
+LEXICON tüüp_p
++Sg+Nom:0 gi_ki ;
++Sg+Gen:%{NA%}a gen_jt ;
++Pl+Nom:%{NA%}d gi_ki ;
++Sg+Par:%>a gi_ki ;
++Pl+Gen:%>de gi_ki ;
++Pl+Par:%>sid gi_ki ;
+
+LEXICON tüüp_pp
++Sg+Nom:0 gi_ki ;
++Sg+Gen:%{NA%}i gen_jt ;
++Pl+Gen:%>ide gen_jt ;
++Pl+Par:%>e gi_ki ;
++Pl:%>id gen_jt ; 
+
+LEXICON tüüp_t
++Sg+Nom:0 gi_ki ;
++Sg+Gen:%{NA%}u gen_jt ;
++Pl:%>id gi_ki ;
++Pl+Gen:%>ude gi_ki ;
++Pl+Par:%>e gi_ki ;
+
+LEXICON tüüp_tt
++Sg+Nom:0 gi_ki ;
++Sg+Gen:%{NA%}i gen_jt ;
++Pl:%{NA%}id gi_ki ;
++Pl+Gen:%>ide gi_ki ;
++Pl+Par:%>e gi_ki ;
+
+LEXICON tüüp_mdl2
++Sg+Nom:0 gi_ki ;
++Sg+Gen:%{NA%}e gen_jt ;
++Sg+Par:t gi_ki ; 
++Pl+Nom:d gi_ki ;
++Pl+Gen:%>te gen_jt ;
++Pl+Par: gi_ki ; 
+
+LEXICON tüüp_mdl
++Sg+Nom:0 gi_ki ;
++Sg+Gen:%{NA%}a gen_jt ;
++Sg+Par:%>a gi_ki ; 
++Pl+Nom:%{NA%}d gi_ki ;
++Pl+Gen:%>te gi_ki ;
++Pl+Par:%>sid gi_ki ; 
+
+LEXICON tüüp_vidin
+
+  +Sg+Nom: # ;
+         :a 2C; 
+
+LEXICON tüüp_ema
+  +Sg+Nom:0 gi_ki ;
+         :%{NA%} derivatsioon ;  
+  +Sg+Par:%> # ;          
+      +Pl:%>de gen_jt ;
+  +Pl+Par:%>sid gi_ki ;
+
+
+LEXICON derivatsioon
+
+	+Sg:%> gen_jt ;
+	+Pl+Nom:%>d gi_ki ; ! võimaldame gi/ki 
+	+Der/m+A+Comp:%>m tüüp_vidin ; ! keskvõrre
+	+Der/im+A+Super:%>im tüüp_vidin ; ! ülivõrre
+	+Der/lt+Adv:%>lt # ; ! määrsõna
+	+Der/lik+A:%>lik tüüp_lik ; ! omadussõna	
+
+
+LEXICON gi_ki
+
+       +Gen:gi #;
+
+       +Ill:ssegi # ;
+
+       +Ine:ski # ;
+
+       +Ela:stki # ;
+
+       +All:legi # ;
+
+       +Ade:lgi # ;
+
+       +Abl:ltki # ;
+
+       +Tra:kski # ;
+
+       +Trm:nigi # ;
+
+       +Ess:nagi # ;
+
+       +Abe:tagi # ;
+
+       +Com:gagi # ;
+       :gi # ;
+       : # ;
+
+  
+LEXICON gen_jt
+
+       +Gen: # ;
+       +Ill:sse # ;	
+       +Ine:s # ;	
+       +Ela:st # ;	
+       +All:le # ;	
+       +Ade:l # ;	
+       +Abl:lt # ;	
+       +Tra:ks # ;	
+       +Trm:ni # ;	
+       +Ess:na # ;	
+       +Abe:ta # ;	
+       +Com:ga # ;	
+       
+	
+
+LEXICON tüüp_lik
+
+	+Sg+Nom:0 gi_ki ;
+	+Sg+Gen:%{NA%}u gen_jt ;
+	+Sg+Par:%>u gi_ki ;
+	+Pl:%>id gi_ki ;
+	+Pl+Gen:%>ude gen_jt ;
+	+Pl+Par:%>e gi_ki ; 
+	
+LEXICON 2C
+         : derivatsioon ; 
+  +Sg+Par:%>t # ;
+      +Pl:%>te gen_jt ;
+  +Pl+Par:%>id # ;
+
+
+
+
+
+
+
+
+
+
+
+
+		   

@@ -1,0 +1,15 @@
+
+! defineeri pahad rajad 
+define PahaTuletus [~[?* "+A"] "+Der/m" ?*] | [~[?* "+A"] "+Der/im" ?*] | [~[?* "+A"] "+Der/lt" ?*] ;
+
+! halvad sõnad (pikk -> pikam)
+define PahaSõna [?* {pika} "+Der/m" ?*] ;
+
+! head rajad on need, mis pole ei need ega teised pahad rajad
+define HeadRajad [~[PahaTuletus] & ~[PahaSõna]] ;
+
+! rakendame filtrit olemasolevale failile ja salvestame
+read regex [ @"kt4_derivatsioon.hfst" .o. HeadRajad ] ;
+
+save kt4_derivatsioon_skript4.hfst
+quit
