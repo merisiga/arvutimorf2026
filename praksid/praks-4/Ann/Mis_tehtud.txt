@@ -1,0 +1,18 @@
+Lisasin muundurisse tuletuse: +Der/m (keskvõrre), +Der/im (ülivõrre),
++Der/lt (määrsõna) ja +Der/lik (nimisõnast omadussõna).
+Lexc lubab tuletusi vabalt, sobimatud filtreerin välja xfst skriptiga.
+
+Ann.lexc failis:
+- Tuletus lisatud lexiconisse sg_gen_jt. Tuletus liitub nõrga tüvega.
+- +Der/m ja +Der/im jätkavad tüüp_vidin-iga, seega kenamalt tuleb kenam-ist.
+- +Der/lik jätkab uue tüübiga tüüp_lik: lik, liku, likku, likud, likkude
+  (nagu lukk, aga nimetavas üks k).
+
+Mida filtrid blokeerivad:
+1. -m, -im, -lt nimisõnal (kolim, kolilt)
+2. -lik omadussõnal, kesk- või ülivõrdel (kenalik)
+3. kesk- või ülivõrde kordamine (kenamam)
+4. -lik pärisnimel (Annlik)
+5. pikk, kõva + -m (pikam, õige on pikem); neid sõnu minu lexc-is veel pole
+
+Asi käivitus vähemalt. 
