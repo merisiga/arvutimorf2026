@@ -49,49 +49,49 @@ Definitions
 
 Rules 
 
-"vaher tüübi tüvemuutuses tekib t, e kaob, e muutub nulliks"
+!"vaher tüübi tüvemuutuses tekib t, e kaob, e muutub nulliks"
 
 %{T%}:t <=> _ r a ;
 
-"e kadu h ja r vahel"
+!"e kadu h ja r vahel"
 e:0 <=> h _ r ;
 
-"ü madaldub ö-ks ees"
+!"ü madaldub ö-ks ees"
 D2:ö <=>  _ %{S%}:0 e:e ;
 
-"S kadu"
+!"S kadu"
 %{S%}:0 <=> _ e:e ;
 
 
 
-"kk pp tt -> k p t nõrgas astmes"
+!"kk pp tt -> k p t nõrgas astmes"
 Cx:0 <=> _ Cy %{NA%}: ;
 	where Cx in (K1 P1 T1)
 		Cy in (k p t)
 	matched ;
 	
-"k p t -> g b d nõrgas astmes"
+!"k p t -> g b d nõrgas astmes"
 Cx:Cy <=> _ %{NA%}: ;
 	where Cx in (K2 P2 T2)
 		Cy in (g b d)
 	matched ;
 	
-"gi -> ki helitu järel"
+!"gi -> ki helitu järel"
 g:k <=> voiceless [ %>: | %{NA%}: ]* _i ;
 
-"i madaldub e-ks"
+!"i madaldub e-ks"
 i:e <=> consonant %>:*_%>: :i ;
 	[.#. | Consonant] :Vowel [G1:0 | B1:0 | D1:0] _;
 	[.#. | Consonant] _ [G1:0 | B1:0 | D1:0] :Vowel ;
 	
 	
-"u madaldub o-ks"
+!"u madaldub o-ks"
 u:o <=> [.#. | Consonant] :Vowel [G1:0 | B1:0 | D1:0] _;
 	[.#. | Consonant] _ [G1:0 | B1:0 |D1:0] :Vowel ;
 	
 !"ü madaldub ö-ks" 
-!D2:ö <=> [.#. | Consonant] :Vowel [G1:0 | B1:0 |D1:0] _;
-!	[.#. | Consonant] _ [G1:0 | B1:0 | D1:0] :Vowel ;
+D2:ö <=> [.#. | Consonant] :Vowel [G1:0 | B1:0 |D1:0] _;
+	[.#. | Consonant] _ [G1:0 | B1:0 | D1:0] :Vowel ;
 	
 	
 	
