@@ -1,0 +1,119 @@
+! Eesti morfofonoloogia
+
+Alphabet
+
+a b c d e f g h i j k l m n o p q r s š z ž t u v w õ ä ö ü x y 
+A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y 
+
+ %{NA%}:0 ! Nõrga astme tähis ei tule pindesituses kunagi esile
+
+ %>:0   ! Morfeemipiir ei tule pindesituses kunagi esile
+
+! 
+
+ G1:g ! lagi
+ G1:0 ! lae
+ B1:b ! tuba
+ B1:0 ! toa
+ D1:d ! rida
+ D1:0 ! rea
+ G2:g ! gi/ki vahelduseks
+ S1:0 !süsi>söe
+;
+
+Sets
+
+ Vowel = A E I O U Õ Ä Ö Ü Y
+         a e i o u õ ä ö ü y ;
+
+Consonant = b c d f g h j k l m n p q r s š z ž t v w x 
+            B C D F G H J K L M N P Q R S Š Z Ž T V W X ;
+
+Voiceless = g b d k p t s š h f
+            G B D K P T S Š H F ;
+
+Definitions
+
+Rules 
+ 
+
+! ----- kaashäälikute astmevaheldus
+
+"Nõrgas astmes vahel gbd kaob ja s kaob"
+
+Cx:Cy  <=> _ :Vowel* %{NA%}: ;         ! võib-olla võiks kontekst olla ka: <=> _ %>:* :Vowel* %>:* %{NA%}: :Vowel*
+     where Cx in ( G1 B1 D1 S1) 
+           Cy in (  0  0  0  0)
+     matched ;
+
+! lexical: s u G1 u {NA}          NB! sellised kommentaarid tuleb kirjutada alati ENNE oma reegli kirjutamist; 
+! surface: s o  0 o  0  
+
+! lexical: s ü S1 i {NA}
+! surface: s ö  0 e  0 
+
+"Üksik kõrge vokaal madaldub, kui pärast nõrga sulghääliku kadumist jääb tema kõrvale vokaal"
+
+Vx:Vy  <=>  [.#. | Consonant] :Vowel G1:0    _   ;
+            [.#. | Consonant]    _   G1:0 :Vowel ;
+       where Vx in ( u )
+             Vy in ( o )
+       matched;
+
+! lexical: s u G1 u {NA}
+! surface: s o  0 o  0  
+
+"kui i-le järgneb i-ga algav lõpp, siis ta madaldub e-ks "
+
+i:e  <=>  :Consonant %>:* _ %>: :i ;
+      
+! lexical: r e d e l i > i d
+! surface: r e d e l e > i d
+
+"kk pp tt -> k p t"
+
+Cx:0  <=> :Cx _ %>:* :Vowel* %{NA%}: ;         ! võib-olla võiks kontekst olla ka: <=> _ %{NA%}: 
+     where Cx in ( k p t ) ;
+
+! lexical: p o t t {NA}          NB! sellised kommentaarid tuleb kirjutada alati ENNE oma reegli kirjutamist; 
+! surface: p o t 0   0 
+
+! ----- helitu hääliku puhul gi muudetakse ki-ks
+"Helitu hääliku (g b d k p t s š h f) puhul ki"
+
+G2:k <=> Voiceless _ :i ;
+
+! lexical: t a s s g i
+! surface: t a s s k i
+
+"k p t -> g b d"
+
+Cx:Cy <=> Vowel+ _ %>:0 %{NA%}:0 ;
+     where Cx in ( k p t )
+           Cy in ( g b d )
+           matched ;
+
+! lexical: v a a t i
+! surface: v a a d i
+
+"p-ga lõppevate sõnade pehmenemine käänamisel b-ks "
+p:b <=> a u _ %{NA%}:0 ;
+
+! lexical: k a u p a
+! surface: k a u b a
+
+
+ !----- kaashäälikute astmevaheldus
+
+"süsi i muutub e-ks"
+i:e <=> _ %{NA%}:0 ; ! rikub ära koli käänamise, aga praegu ei saanud paremini
+
+"Üksik kõrge vokaal madaldub ü->ö"
+
+Vx:Vy <=> _ S1:0 ;
+     where Vx in ( ü )
+           Vy in ( ö )
+     matched ;
+
+! lexical: s ü S1 i {NA}
+! surface: s ö  0 e  0  

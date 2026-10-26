@@ -1,0 +1,154 @@
+Multichar_Symbols
+
++N  ! nimisõna		/ substantive		
++A  ! omadussõna		/ adjective		
+
++Sg  ! ainsus	/ singular
++Pl  ! mitmus	/ plural
++Nom  ! nimetav			/ nominative	
++Gen  ! omastav 			/ genitive	
++Par  ! osastav			/ partitive	
++Ill  ! sisseütlev			/ illative	
++Ine  ! seesütlev			/ inessive	
++Ela  ! seestütlev			/ elative	
++All  ! alaleütlev			/ allative	
++Ade  ! alalütlev			/ adessive	
++Abl  ! alaltütlev			/ ablative	
++Tra  ! saav				/ translative	
++Trm  ! rajav				/ terminative	
++Ess  ! olev				/ essive	
++Abe  ! ilmaütlev			/ abessive	
++Com  ! kaasaütlev			/ comitative	
+
+! tuletus
++Der/m            ! <-- tuletus +A --> +A+comp     
++Der/lt           ! <-- tuletus +A --> +Adv
++Comp             ! komparatiiv
+
+%>                ! morfeemi piir
+%{NA%}            ! nõrk aste
+
+G1                ! g või null
+B1                ! b või null
+D1                ! d või null
+G2                ! gi/ki
+S1                ! null
+
+! kuhugi jätkuleksikonile tuleb lisada
+!  +Der/m+A+Comp:%>m tüüp_vidin ;  ! <-- tuletus
+!    +Der/lt+Adv:%>lt # ;          ! <-- tuletus ! see praegu kehtiks sõnaga kena ! katsetuseks teha uus fail vähemate sõnade ja jätkuleksikonidega
+
+LEXICON Root
+
+koli+N:koli tüüp_ema ;    ! leksikaalne pool : pindesitus !uus i->e reegel süsi jaoks rikub koli käänamise
+kena+A:kena tüüp_ema ;    ! pl par keni on puudu
+siil+N:siil tüüp_taud ;    
+pott+N:pott tüüp_taud ;    
+sugu+N:suG1u tüüp_ema ;
+vidin+N:vidin tüüp_vidin ;
+redel+N:redel tüüp_redel ;
+torssis+A:torssis # ;
+paat+N:paat tüüp_vaat;
+laup+N:laup tüüp_kaup;
+kopp+N:kopp tüüp_sopp;
+süsi+N:süS1i tüüp_käsi; ! uus praegu puudu vorm sütt
+kaup+N:kaup tüüp_kaup;
+tass+N:tass tüüp_taud;
+ilus+A:ilus tüüp_vidin;
+hämar+A:hämar tüüp_vidin;
+sädelev+A:sädelev tüüp_vidin;
+mask+N:mask tüüp_taud;
+pikk+A:pikk tüüp_sopp;
+
+LEXICON tüüp_ema
+  +Sg+Nom: gi_ki ;
+         :%{NA%} sg_gen_jt ; 
+  +Sg+Par:%> gi_ki ;              ! kas %> peaks siin üldse olema ?
+      +Pl:%>de gen_jt ;
+  +Pl+Par:%>sid gi_ki ;
+    
+LEXICON tüüp_taud
+    +Sg+Nom: gi_ki ;
+           :%{NA%}%>i sg_gen_jt ;
+    +Sg+Par:%>i gi_ki ;
+    +Sg+Ill:%>i gi_ki ;      ! lühike sisseütlev
+        +Pl:%>i%>de gen_jt ;
+    +Pl+Par:%>e gi_ki ;
+
+LEXICON tüüp_sopp
+    +Sg+Nom: gi_ki ;
+           :%{NA%}%>a sg_gen_jt ;
+    +Sg+Par:%>a gi_ki ;
+    +Sg+Ill:%>a gi_ki ;      ! lühike sisseütlev
+        +Pl:%>a%>de gen_jt ;
+    +Pl+Par:%>ade gi_ki ;  
+
+LEXICON tüüp_kaup
+    +Sg+Nom: gi_ki ;
+            :%{NA%}%>a sg_gen_jt ; 
+    +Sg+Par:%>a gi_ki ;              
+      +Pl:%>ade gen_jt ;
+    +Pl+Par:%>sid gi_ki ;
+
+ LEXICON tüüp_vaat
+    +Sg+Nom: gi_ki ;
+            :%>%{NA%}i sg_gen_jt ; 
+     +Sg+Par:%>i gi_ki ;              
+      +Pl:%>ide gen_jt ;
+  +Pl+Par:%>isid gi_ki ; 
+
+LEXICON tüüp_käsi
+    +Sg+Nom: gi_ki ;
+           :%{NA%} gen_jt ;
+    +Sg+Par:%>tt gi_ki ;	! selle vormi reegel hetkel kirjeldamata
+    +Pl+Par: gi_ki ;
+        +Pl:%>te gen_jt ;
+
+LEXICON tüüp_vidin
+  +Sg+Nom: gi_ki ;
+         :a 2C;
+
+LEXICON tüüp_redel
+  +Sg+Nom: gi_ki ;
+         :%>i 2C;
+
+LEXICON 2C
+         : sg_gen_jt ; 
+  +Sg+Par:%>t gi_ki ;
+      +Pl:%>te gen_jt ;
+  +Pl+Par:%>id gi_ki ;
+
+LEXICON sg_gen_jt
+      +Sg:%> gen_jt ;
+        +Sg:%> gi_ki ;
+  +Pl+Nom:%>d gi_ki ;
+  +Sg:%> gen_jt ;
+    +Sg:%> gi_ki ;
+    +Der/m+A+Comp:%>m #;         ! <-- tuletus ! omadussõnadele
+    +Der/im+A+Superl:%>im #;     ! ülivõrre omadussõnast 
+    +Der/lt+A+:%>lt # ;         ! omadussõnade määrsõnatuletis
+    +Der/lik+N+:%>lik # ;       ! ning omadussõna moodustamine nimisõnast
+
+  
+LEXICON gen_jt
+       +Gen: gi_ki ;
+       +Ill:sse gi_ki ;	
+       +Ine:s gi_ki ;	
+       +Ela:st gi_ki ;	
+       +All:le gi_ki ;	
+       +Ade:l gi_ki ;	
+       +Abl:lt gi_ki ;	
+       +Tra:ks gi_ki ;	
+       +Trm:ni gi_ki ;	
+       +Ess:na gi_ki ;	
+       +Abe:ta gi_ki ;	
+       +Com:ga gi_ki ;	
+
+LEXICON gi_ki
+        :G2i # ;
+        # ;
+
+
+
+
+
