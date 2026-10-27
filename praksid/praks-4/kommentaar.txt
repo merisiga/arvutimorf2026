@@ -59,15 +59,27 @@ hfst-fst2strings: Error: Transducer is cyclic. Use one or more of these options:
 0
 
 Näen, et olete varasematest praksidest pärit lexc ja twolc faile parandanud, aga pole lõpuni jõudnud.
+Peaks vist üle vaatama selle, kuidas lexc alamleksikonid on esitatud. Võib-olla saab midagi lihtsustada või süstematiseerida.
+Praegune fail kipub kuidagi keeruliseks ja segaseks muutuma ja sellist ongi raske parandada. 
 
 punktid: 2
 
 --------------
 karoliina
+Kas õnnelik-tüübis peaks tegema astmevahetuse või sobib nii nagu praegu on?
 
 HJK
 
-punktid: 0
+Formaalselt sobib ka nii nagu praegu on.
+Tegelikult õnnelik on samas käändtüübis kui nukk, ainult kirjakeele traditsioon ütleb, et ains. nim on ühe sulghäälikuga-ga.
+(nagu ka piiskop, internet)
+See tähendab, et võiks kasutada mingit lisamärki +Sg+Nom pindmises esituses, nt. K6, mida twolc reegel realiseerib kui k või 0.
+
+vead eelmisest praksist:
+käsi+N+Pl+Com:käsitega
+käsi+N+Pl+Com:kätega
+
+punktid: 3
 ------------
 
 kätriin
@@ -76,7 +88,7 @@ Mulle tundus, et asi justkui peaks toimima, aga ikkagi ei toimi. Kõik liited tu
 
 HJK
 
-vead eelmisest praksist:
+vead varasemast praksist:
 koli+N+Sg+Gen:kole
 koli+N+Sg+Par:koli
 koli+N+Sg:kole
