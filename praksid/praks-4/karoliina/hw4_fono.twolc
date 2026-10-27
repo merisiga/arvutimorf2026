@@ -1,0 +1,119 @@
+! Eesti morfofonoloogia
+
+Alphabet
+
+a b c d e f g h i j k l m n o p q r s š z ž t u v w õ ä ö ü x y 
+A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y 
+
+ %{NA%}:0 ! Nõrga astme tähis ei tule pindesituses kunagi esile
+
+ %>:0   ! Morfeemipiir ei tule pindesituses kunagi esile
+
+! 
+
+ K1:k 
+ K1:g 
+ P1:p 
+ P1:b 
+ T1:t ! vaat
+ T1:d ! vaadi
+
+ K2:k
+ K2:kk 
+ P2:p  ! kapi
+ P2:pp ! kapp
+ T2:t 
+ T2:tt 
+ 
+ S1:s  ! käsi
+ S1:0  ! käe
+
+;
+
+Sets
+
+Vowel = A E I O U Õ Ä Ö Ü Y
+        a e i o u õ ä ö ü y ;
+
+Consonant = b c d f g h j k l m n p q r s š z ž t v w x
+            B C D F G H J K L M N P Q R S Š Z Ž T V W X ;
+            
+Voiceless = g b d k p t s š h f
+	    G B D K P T S Š H F ;
+
+
+Definitions
+
+Rules 
+
+! ----- kaashäälikud
+
+"Nõrgas astmes vahel s kaob"
+! lexical: k ä S1 i {NA}         
+! surface: k ä  0 e  0 
+
+Cx:Cy  <=> _ :Vowel* %>:* %{NA%}: ;        
+     where Cx in ( S1 ) 
+           Cy in (  0 )
+     matched ;
+
+
+"Nõrgas astmes k p t -> g b d"
+! lexical: v a a T1 i {NA}         
+! surface: v a a  d i  0 
+
+Cx:Cy  <=> _ :Vowel* %>:* %{NA%}: ;         
+     where Cx in ( K1 P1 T1 ) 
+           Cy in (  g  b  d )
+     matched ;
+
+"Nõrgas astmes kk pp tt -> k p t"
+! lexical: k a p p {NA}          
+! surface: k a p 0   0 
+
+Cx:0  <=> :Cx _ %>:* :Vowel* %>:* %{NA%}: ;         
+     where Cx in ( k p t ) ;
+
+
+"Helitu hääliku järel gi > ki"
+! lexical: kapp>gi
+! surface: kapp>ki
+
+g:k  <=>  :Voiceless %>: _ :i .#.;
+
+
+! ----- täishäälikud
+
+
+"Üksik kõrge vokaal madaldub, kui pärast nõrga sulghääliku kadumist jääb tema kõrvale vokaal"
+! lexical: s u G1 u {NA}
+! surface: s o  0 o  0 
+
+Vx:Vy  <=>  [.#. | Consonant] :Vowel S1:0    _  %>:* %{NA%}: ;
+            [.#. | Consonant]    _   S1:0 :Vowel %>:* %{NA%}: ;
+       where Vx in ( u i ü )
+             Vy in ( o e ö )
+       matched;
+       
+! ----- ti > si muutuse tagajärjed
+
+
+"Enne t-d (S1)i > 0 " ! tahaksin teha S1 i > 0 0
+! lexical: k ä S1 i > t e
+! surface: k ä  0 0 > t e
+
+Vx:Vy  <=> [.#. | Consonant] :Vowel S1:0 _ %>:* :t ;       
+     where Vx in ( i ) 
+ 	   Vy in ( 0 ) 
+     matched;
+
+"Enne t-d S1(i) > 0 " ! tahaksin teha S1 i > 0 0
+! lexical: k ä S1 i > t e
+! surface: k ä  0 0 > t e
+
+Cx:Cy  <=> [.#. | Consonant] :Vowel _ i:0 %>:* :t ;       
+     where Cx in ( S1 ) 
+ 	   Cy in ( 0 ) 
+     matched;
+
+

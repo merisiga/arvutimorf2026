@@ -1,0 +1,21 @@
+# blokeeri mõned rajad
+
+# defineeri pahad rajad
+
+# mis sõnaliigile järgnema peab
+
+define PahaTuletus [~[?* "+A"] "+Der/m" ?*] | [~[?* "+A"] "+Der/im" ?*] | [~[?* "+A"] "+Der/lt" ?*] | [~[?* "+N" | ?* "+PropN"] "+Der/lik" ?*] ;
+
+# sama tuletust mitu korda ei luba
+
+define PahaKordus [["+Der/m"] ?* ["+Der/m"]] |  [["+Der/im"] ?* ["+Der/im"]] | [["+Der/lt"] ?* ["+Der/lt"]] | [["+Der/lik"] ?* ["+Der/lik"]];
+
+# tuletusel vale vokaal -> jätab välja
+
+define PahaVokTuletus [ [{pikk}] "+A" ["+Der/m" | "+Der/im"] ?*] | [[{kena}] "+A" "+Der/im" ?*] ;
+
+# head rajad on need, mis pole ei need ega teised pahad rajad
+
+define HeadRajad [~[PahaTuletus] & ~[?* PahaKordus ?*] & ~[PahaVokTuletus]] ;
+
+regex HeadRajad ;
