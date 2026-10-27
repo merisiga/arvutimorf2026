@@ -1,0 +1,9 @@
+
+LEXICON Root
+
+! NB! sõnaliiki ei märgi!
+
+kihin:kihin tüüp_vidin ;       ! kihin-kahin
+kilin:kilin tüüp_vidin ;       ! kilin-kolin
+
+

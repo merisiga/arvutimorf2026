@@ -1,0 +1,70 @@
+
+
+Multichar_Symbols
+
++Sg
++Pl
++Nom    ! nimetav
++Gen    ! omastav
++Par    ! osastav
++Ill    ! sisseütlev
++Ine    ! seesütlev
++Ela    ! seestütlev
++All    ! alaleütlev
++Ade    ! alalütlev
++Abl    ! alaltütlev
++Tra    ! saav
++Ter    ! rajav
++Ess    ! olev
++Abe    ! ilmaütlev
++Kom    ! kaasaütlev
+
+
+%>                ! morfeemi piir
+
+
+! paarissõna tagumine osa
+
+
+LEXICON Root
+
+kahin+N:kahin tüüp_vidin ;
+kohin+N:kohin tüüp_vidin ;
+kolin+N:kolin tüüp_vidin ;
+kõlin+N:kõlin tüüp_vidin ;
+
+
+
+
+LEXICON tüüp_vidin
+  +Sg+Nom: # ;
+         :%>a 2C; 
+
+LEXICON 2C
+         : sg_gen_jt ; 
+  +Sg+Par:%>t # ;
+      +Pl:%>te gen_jt ;
+  +Pl+Par:%>id # ;
+
+
+LEXICON sg_gen_jt
+
+            +Sg:%> gen_jt ;
+        +Pl+Nom:%>d # ;
+! +Der/m+A+Comp:%>m tüüp_vidin ;  ! <-- tuletus
+!   +Der/lt+Adv:%>lt # ;          ! <-- tuletus
+  
+LEXICON gen_jt
+       +Gen: # ;
+       +Ill:sse # ;	
+       +Ine:s # ;	
+       +Ela:st # ;	
+       +All:le # ;	
+       +Ade:l # ;	
+       +Abl:lt # ;	
+       +Tra:ks # ;	
+       +Trm:ni # ;	
+       +Ess:na # ;	
+       +Abe:ta # ;	
+       +Com:ga # ;	
+

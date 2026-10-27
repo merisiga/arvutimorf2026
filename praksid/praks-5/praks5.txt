@@ -1,0 +1,37 @@
+teema filtrid:
+
+
+
+--------
+probleem:
+
+sõna mõlemad osad käänduvad
+emb-kumb, emma-kumma , ...
+üksainus, üheainsa, ühtainust/ühtainsat/ühteainust/ühteainsat
+viiskümmend, viiekümne, ...
+paarissõnad nagu
+kihin-kahin, kihina-kahina , ...
+
+kuidas neid muundurina kajastada?
+
+1. tee igale sõnale muundur, mis kajastab käänamist (kihin, kihina, kihinat, ... kahin, kahina, kahinat, ...)
+2. pane paarissõnade muundurid üksteise järele, s.t. konkateneeri (mis oleks hea eestikeelne sõna?), 
+   s.t. esimese muunduri lõppolekust minnakse teise algolekusse 
+   tulemuseks on muundur, kus esimese sõna mistahes vormile võib järgneda teise sõna mistahes vorm (nt kihinasse-kahinast)
+3. jäta alles ainult need rajad, kus on õiged sõnad teineteise paarilistena ja seejuures veel õiges käändes
+   (kihin-kahin, kihina-kahina, ...)
+ 
+
+kodutöö
+
+teha muundur, milles on vähemalt kaks sellist arvsõna, milles mõlemad pooled käänduvad
+nt. kakssada, paarkümmend 
+
+ideid saab skriptist numeral-filter.est.xfscript ja wordpair-filter.est.xfscript
+
+
+
+ 
+
+
+

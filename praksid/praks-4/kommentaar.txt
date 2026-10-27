@@ -1,0 +1,106 @@
+
+
+Ann
+Lisasin muundurisse tuletuse: +Der/m (keskvõrre), +Der/im (ülivõrre),
++Der/lt (määrsõna) ja +Der/lik (nimisõnast omadussõna).
+Lexc lubab tuletusi vabalt, sobimatud filtreerin välja xfst skriptiga.
+
+Ann.lexc failis:
+- Tuletus lisatud lexiconisse sg_gen_jt. Tuletus liitub nõrga tüvega.
+- +Der/m ja +Der/im jätkavad tüüp_vidin-iga, seega kenamalt tuleb kenam-ist.
+- +Der/lik jätkab uue tüübiga tüüp_lik: lik, liku, likku, likud, likkude
+  (nagu lukk, aga nimetavas üks k).
+
+Mida filtrid blokeerivad:
+1. -m, -im, -lt nimisõnal (kolim, kolilt)
+2. -lik omadussõnal, kesk- või ülivõrdel (kenalik)
+3. kesk- või ülivõrde kordamine (kenamam)
+4. -lik pärisnimel (Annlik)
+5. pikk, kõva + -m (pikam, õige on pikem); neid sõnu minu lexc-is veel pole
+
+Asi käivitus vähemalt. 
+
+
+HJK
+Oleks hea, kui edaspidi lisaksite ka shelli skripti, mida kasutasite oma muundurite tegemiseks.
+Praegu pidin ise failinimed asendama oma algses build4.sh skriptis, et täpselt näha, mida olete teinud. 
+Kommentaari selle kohta, et mida tegite, oli väga hea. 
+
+xfst skript tuletuse blokeerimiseks on elegantne. Olete kasutatud deMorgani seadusi loogilise ja, või, eituse kombineerimisel.
+
+Punktid: 5
+------------
+
+Dmitrii 
+Kontrollisin ridu käsuga  hfst-fst2strings kt4_derivatsioon_skript4.hfst -l 100. 
+Parandasin nii palju kui jaksasin.
+
+HJK
+Pidin kõvasti pingutama, et saada aru, mida te tegite. 
+Ma suutsin tuvastada, et tegite:
+ 
+hfst-lexc kt4.lexc > kt4.hfst
+hfst-twolc kt2.twolc > kt4_twolc.hfst
+
+hfst-compose-intersect kt4.hfst kt4_twolc.hfst > kt4_derivatsioon.hfst
+
+# vist tegite siis nii:
+printf "source blokeeri.xfscript" | hfst-xfst
+# või
+echo "source blokeeri.xfscript" | hfst-xfst
+# või
+cat "blokeeri.xfscript" | hfst-xfst
+
+ja nii tekkis kt4_derivatsioon_skript4.hfst
+
+See muundur on tsükliline (nagu te isegi nägite), s.t. midagi on seal väga viltu:
+hfst-fst2strings kt4_derivatsioon_skript4.hfst | wc -l
+hfst-fst2strings: Error: Transducer is cyclic. Use one or more of these options: -n, -N, -r, -l, -L, -c
+0
+
+Näen, et olete varasematest praksidest pärit lexc ja twolc faile parandanud, aga pole lõpuni jõudnud.
+
+punktid: 2
+
+--------------
+karoliina
+
+HJK
+
+punktid: 0
+------------
+
+kätriin
+
+Mulle tundus, et asi justkui peaks toimima, aga ikkagi ei toimi. Kõik liited tulevad ikka kõigile sõnadele
+
+HJK
+
+vead eelmisest praksist:
+koli+N+Sg+Gen:kole
+koli+N+Sg+Par:koli
+koli+N+Sg:kole
+
+viga twolc faili reeglites:
+täishääliku madaldumine nõrgas astmes toimub tegelikkuses ainult juhul, kui kaashäälik kaob ja selle tõttu osutub täishääliku naabriks täishäälik; ei piisa ainult sellest, et on nõrk aste
+
+
+pikk+A+Der/im+A+Superl:pikaim
+pikk+A+Der/lik+N+:pikalik
+
+ilus+A+Der/lik+N+:ilusalik
+ilus+A+Der/lt+A+:ilusalt
+
+vea põhjused:
+1. lexc failis on vajalikud mitmetähelised sümbolid puudu
+2. read
+    +Der/m+A+Comp:%>m #;         ! <-- tuletus ! omadussõnadele      <-- justkui ei käändukski
+    +Der/im+A+Superl:%>im #;     ! ülivõrre omadussõnast             <-- justkui ei käändukski
+    +Der/lt+A+:%>lt # ;         ! omadussõnade määrsõnatuletis       <-- A+   ????
+    +Der/lik+N+:%>lik # ;       ! ning omadussõna moodustamine nimisõnast  <-- juskui ei käändukski; N+   ????
+
+on ühel või teisel moel vigased
+
+punktid: 2
+
+
