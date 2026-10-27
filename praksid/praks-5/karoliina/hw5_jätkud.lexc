@@ -1,0 +1,26 @@
+
+
+LEXICON tüüp_kümmend
+    +Sg+Nom: # ;
+           :%>%{NA%} gen_jt ;
+    +Sg+Par:%>t # ;			! ma ütleks pigem kümmet kui kümmend + seitset ainuvõimalik
+        +Pl:%>%{NA%}te sem_käänded ;
+    +Pl+Par:%>%{NA%}id # ;
+
+LEXICON gen_jt
+        +Pl+Nom:%>d # ;
+        +Sg+Gen: # ;
+    	    +Sg:%> sem_käänded ;    
+
+LEXICON sem_käänded
+       +Ill:sse # ;	
+       +Ine:s # ;	
+       +Ela:st # ;	
+       +All:le # ;	
+       +Ade:l # ;	
+       +Abl:lt # ;	
+       +Tra:ks # ;	
+       +Trm:ni # ;	
+       +Ess:na # ;	
+       +Abe:ta # ;	
+       +Com:ga # ;

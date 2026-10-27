@@ -1,0 +1,72 @@
+Multichar_Symbols
+
++Sg   ! ainsus
++Pl   ! mitmus
+
++Nom  ! nimetav			
++Gen  ! omastav 		
++Par  ! osastav			
++Ill  ! sisseütlev		
++Ine  ! seesütlev				
++Ela  ! seestütlev				
++All  ! alaleütlev		
++Ade  ! alalütlev		
++Abl  ! alaltütlev			
++Tra  ! saav				
++Trm  ! rajav			
++Ess  ! olev				
++Abe  ! ilmaütlev			
++Com  ! kaasaütlev		
+
+%>    ! morfeemi piir
+%{NA%}  ! nõrk aste
+
+D1    ! d või 0
+
+S1    ! s või 0
+K3    ! k või h (nt kaks-kaht)
+J1    ! 0 või j (nt sada-saja)
+N1    ! n või 0 (nt kümmend-kümne)
+M1    ! 0 või m (nt seitse-seitsme)
+I1    ! i või j (nt neli-nelja)
+
+! paarissõna tagumine osa
+
+LEXICON Root
+
+kümmend:kümmeN1D1 tüüp_kümmend ;
+sada:saD1J1a tüüp_sada ; 
+
+
+LEXICON tüüp_sada
+    +Sg+Nom: # ;
+           :%{NA%} gen_jt ;
+    +Sg+Par:%>t # ; 			! ma ütleks pigem sadat kui sada
+        +Pl:%>de sem_käänded ;
+    +Pl+Par:%>sid # ; 
+
+
+LEXICON tüüp_kümmend
+    +Sg+Nom: # ;
+           :%>%{NA%} gen_jt ;
+    +Sg+Par:%>t # ;			! ma ütleks pigem kümmet kui kümmend + seitset ainuvõimalik
+        +Pl:%>%{NA%}te sem_käänded ;
+    +Pl+Par:%>%{NA%}id # ;
+
+LEXICON gen_jt
+        +Pl+Nom:%>d # ;
+        +Sg+Gen: # ;
+    	    +Sg:%> sem_käänded ;    
+
+LEXICON sem_käänded
+       +Ill:sse # ;	
+       +Ine:s # ;	
+       +Ela:st # ;	
+       +All:le # ;	
+       +Ade:l # ;	
+       +Abl:lt # ;	
+       +Tra:ks # ;	
+       +Trm:ni # ;	
+       +Ess:na # ;	
+       +Abe:ta # ;	
+       +Com:ga # ;

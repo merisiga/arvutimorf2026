@@ -1,0 +1,14 @@
+! paarissõna tagumine osa
+
+LEXICON Root
+
+kümmend:kümmeN1D1 tüüp_kümmend ;
+sada:saD1J1a tüüp_sada ; 
+
+
+LEXICON tüüp_sada
+    +Sg+Nom: # ;
+           :%{NA%} gen_jt ;
+    +Sg+Par:%>t # ; 			! ma ütleks pigem sadat kui sada
+        +Pl:%>de sem_käänded ;
+    +Pl+Par:%>sid # ; 
