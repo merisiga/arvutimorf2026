@@ -1,0 +1,149 @@
+Multichar_Symbols
+
++N  ! nimisõna		/ substantive		
++A  ! omadussõna	/ adjective	
++Adv ! määrsõna		/ adverb
++PropN ! pärisnimi	/ proper name
+
++Sg   ! ainsus
++Pl   ! mitmus
+
++Nom  ! nimetav			
++Gen  ! omastav 		
++Par  ! osastav			
++Ill  ! sisseütlev		
++Ine  ! seesütlev				
++Ela  ! seestütlev				
++All  ! alaleütlev		
++Ade  ! alalütlev		
++Abl  ! alaltütlev			
++Tra  ! saav				
++Trm  ! rajav			
++Ess  ! olev				
++Abe  ! ilmaütlev			
++Com  ! kaasaütlev	
+
++Gi   ! gi/ki liide	
+
+! tuletus
++Der/m            ! <-- tuletus +A --> +A+Comp     
++Der/im 	  ! <-- tuletus +A --> +A+Sup
++Der/lt           ! <-- tuletus +A --> +Adv
++Der/lik 	  ! <-- tuletus +N --> +N
++Comp             ! komparatiiv e keskvõrre
++Sup 		  ! superlatiiv e ülivõrre
+
+%>    ! morfeemi piir
+%{NA%}  ! nõrk aste
+
+K1    ! k või g
+P1    ! p või b
+T1    ! t või d
+
+S1    ! s või null
+
+LEXICON Root
+
+Ellen+PropN:Ellen tüüp_minut ;
+Jõgi+PropN:Jõgi tüüp_ema ;          ! käänamine perekonnananimena
+Tartu+PropN:Tartu tüüp_tartu ;
+kapp+N:kapp tüüp_riik ;         ! kk > k astmevaheldus
+vaat+N:vaaT1 tüüp_riik ;   ! t > d astmevaheldus
+käsi+N:käS1i tüüp_käsi ;   ! ä > e
+süsi+N:süS1i tüüp_käsi ;   ! ü > ö 
+pikk+A:pikk tüüp_külm ; 
+kena+A:kena tüüp_pesa ;
+
+
+LEXICON tüüp_minut
+    +Sg+Nom: gi ;
+           :%>i gen_jt ;
+    +Sg+Par:%>it gi ;
+    +Pl+Par:%>eid gi ;
+        +Pl:%>ite sem_käänded ;
+        
+LEXICON tüüp_ema
+    +Sg+Nom: gi ;
+           :%> gen_jt ;
+    +Sg+Par: gi ;
+    +Pl+Par:%>sid gi ;
+        +Pl:%>de sem_käänded ;
+        
+LEXICON tüüp_tartu
+    +Sg+Nom: gi ;
+           : gen_jt ;
+    +Sg+Par:%>t gi ;
+    +Sg+Ill: gi ; 	! lühike sisseütlev
+    +Pl+Par:%>id gi ;
+        +Pl:%>te sem_käänded ;
+        
+LEXICON tüüp_riik
+    +Sg+Nom: gi ;
+           :%>%{NA%}%>i gen_jt ;
+    +Sg+Par:%>i gi ;
+    +Pl+Par:%>isid gi ;
+    +Pl+Par:%>e gi ;
+        +Pl:%>ide sem_käänded ;
+        
+LEXICON tüüp_külm
+    +Sg+Nom: gi ;
+           :%>%{NA%}%>a gen_jt ;
+    +Sg+Par:%>a gi ;
+    +Pl+Par:%>asid gi ;
+    +Pl+Par:%>i gi ;
+        +Pl:%>ade sem_käänded ;
+        
+LEXICON tüüp_käsi
+    +Sg+Nom: gi ;
+           :%{NA%} gen_jt ;
+    +Sg+Par:%>tt gi ;		! si/e tuleb kaotada -> ei jõudnud veel parandamisega tegeleda
+    +Pl+Par: gi ;
+        +Pl:%>te sem_käänded ;
+        
+LEXICON tüüp_pesa
+    +Sg+Nom: gi ;
+           : gen_jt ;
+    +Sg+Par: gi ;
+    +Pl+Par:%>sid gi ;
+        +Pl:%>de sem_käänded ;
+        
+LEXICON tüüp_vidin
+    +Sg+Nom: gi ;
+           :a gen_jt ;
+    +Sg+Par:at gi ;
+    +Pl+Par:%>aid gi ;
+        +Pl:%>ate sem_käänded ;
+        
+LEXICON tüüp_õnnelik
+    +Sg+Nom: gi ;
+           :%>u gen_jt ;
+    +Sg+Par:%>ku gi ;          ! siia peaks ilmselt lisama tugeva astme hoopis
+    +Pl+Par:%>ke gi ;
+        +Pl:%>e sem_käänded ;
+
+LEXICON gen_jt
+        +Pl+Nom:%>d gi ;
+        +Sg+Gen: gi ;
+    	    +Sg:%> sem_käänded ;
+  +Der/m+A+Comp:%>m tüüp_vidin ;     ! <-- tuletus
+  +Der/im+A+Sup:%>im tüüp_vidin ;    ! <-- tuletus
+    +Der/lt+Adv:%>lt # ;             ! <-- tuletus
+     +Der/lik+N:%>lik tüüp_õnnelik ; ! <-- tuletus
+    
+
+LEXICON sem_käänded
+       +Ill:sse gi ;	
+       +Ine:s gi ;	
+       +Ela:st gi ;	
+       +All:le gi ;	
+       +Ade:l gi ;	
+       +Abl:lt gi ;	
+       +Tra:ks gi ;	
+       +Trm:ni gi ;	
+       +Ess:na gi ;	
+       +Abe:ta gi ;	
+       +Com:ga gi ;
+       
+LEXICON gi
+        +Gi:%>gi # ;
+           :%> # ;
