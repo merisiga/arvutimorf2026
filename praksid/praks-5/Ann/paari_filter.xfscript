@@ -1,0 +1,48 @@
+! Paarissõnad (nibin-nabin, pilla-palla): mõlemad pooled käänduvad.
+! Filter jätab alles ainult õiged sõnapaarid ja õiged käändekombinatsioonid.
+
+define Hyphen [ %- ] ;
+define Number ["+Sg" | "+Pl" ];
+define Case10 ["+Nom" | "+Gen" | "+Par" | "+Ill" | "+Ine" | "+Ela" | "+All" | "+Ade" | "+Abl" | "+Tra" ];
+define CaseNinaTaga ["+Trm" | "+Ess" | "+Abe" | "+Com"] ;
+define Case [ Case10 | CaseNinaTaga ] ;
+
+! mõlemal poolel sama arv
+define SameNumber $[["+Sg" \Number* "+Sg"] | ["+Pl" \Number* "+Pl"]] ;
+
+! kümnes käändes on mõlemad pooled samas käändes (nibinasse-nabinasse)
+define SameCase10 [["+Nom" \Case* "+Nom"] |
+                 ["+Gen" \Case* "+Gen"] |
+                 ["+Par" \Case* "+Par"] |
+                 ["+Ill" \Case* "+Ill"] |
+                 ["+Ine" \Case* "+Ine"] |
+                 ["+Ela" \Case* "+Ela"] |
+                 ["+All" \Case* "+All"] |
+                 ["+Ade" \Case* "+Ade"] |
+                 ["+Abl" \Case* "+Abl"] |
+                 ["+Tra" \Case* "+Tra"]] ;
+
+! ni-, na-, ta- ja ga-käändes on esimene pool omastavas (nibina-nabinaga)
+define GenNinaTaga ["+Gen" \Case* CaseNinaTaga] ;
+
+define PairedCase [ \Case* [SameCase10 | GenNinaTaga] \Case* ];
+
+! sõnade vahel on esimese poole arv ja kääne ning sidekriips
+define NumCas [Number Case (\Hyphen)] ;
+define Middle [NumCas Hyphen] ;
+
+! ainult õiged paarid
+define Pairs [ [{nibin} Middle {nabin}]
+| [{pilla} Middle {palla}]
+] ;
+
+define WordPairs [?* Pairs ?*] ;
+
+! esimese poole arv ja kääne jäetakse analüüsist välja (nibin-nabin+Sg+Gen)
+define CleanUp [[..] <- Case || Number _ (?) (Hyphen) \[Number | Case]* Number Case ,,
+                [..] <- Number || _ Case (?) (Hyphen) \[Number | Case]* Number Case ] ;
+
+! Ann.lexc lubab tuletust (+Der/...), millest tekiks tsükkel. Paarissõnadel tuletust ei ole.
+define NoDer ~[?* ["+Der/m" | "+Der/im" | "+Der/lt" | "+Der/lik"] ?*] ;
+
+read regex [ CleanUp .o. [WordPairs & SameNumber & PairedCase & NoDer] ] ;

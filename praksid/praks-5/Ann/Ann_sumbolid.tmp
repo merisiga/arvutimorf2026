@@ -1,0 +1,46 @@
+Multichar_Symbols
+
++N  ! nimisõna          / substantive
++A  ! omadussõna        / adjective
+
++Sg  ! ainsus           / singular
++Pl  ! mitmus           / plural
++Nom  ! nimetav         / nominative
++Gen  ! omastav         / genitive
++Par  ! osastav         / partitive
++Ill  ! sisseütlev      / illative
++Ine  ! seesütlev       / inessive
++Ela  ! seestütlev      / elative
++All  ! alaleütlev      / allative
++Ade  ! alalütlev       / adessive
++Abl  ! alaltütlev      / ablative
++Tra  ! saav            / translative
++Trm  ! rajav           / terminative
++Ess  ! olev            / essive
++Abe  ! ilmaütlev       / abessive
++Com  ! kaasaütlev      / comitative
+
++Gi  ! rõhupartikkel gi/ki / focus clitic
+
+! tuletus
++Der/m    ! A -> A+Comp   (kena - kenam)
++Der/im   ! A -> A+Super  (kena - kenaim)
++Der/lt   ! A -> Adv      (kena - kenalt, kenam - kenamalt)
++Der/lik  ! N -> A        (koli - kolilik)
++Comp     ! keskvõrre / comparative
++Super    ! ülivõrre / superlative
++Adv      ! määrsõna / adverb
+
+%>                ! morfeemi piir
+%{NA%}            ! nõrk aste
+
+G1                ! g või null
+K1                ! k või null
+P1                ! p või null
+T1                ! t või null
+B1                ! b või null
+D1                ! d või null
+K2                ! k või g
+P2                ! p või b
+T2                ! t või d
+

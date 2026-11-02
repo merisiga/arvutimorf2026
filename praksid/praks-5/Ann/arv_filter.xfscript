@@ -1,0 +1,26 @@
+! Arvsõnapaarid, mille mõlemad pooled käänduvad (kakssada, paarkümmend).
+! Analüüs enne filtrit on esimene pool + teine pool, nt kaks+Sg+Gensada+Sg+Ill.
+! Filter jätab alles ainult õiged käändekombinatsioonid.
+
+define Number ["+Sg" | "+Pl"] ;
+define CaseGram ["+Nom" | "+Gen" | "+Par"] ;
+define CaseOblique ["+Ill" | "+Ine" | "+Ela" | "+All" | "+Ade" | "+Abl" | "+Tra" | "+Trm" | "+Ess" | "+Abe" | "+Com"] ;
+define Case [CaseGram | CaseOblique] ;
+
+! Nom-Nom (kakssada), Gen-Gen (kahesaja), Par-Par (kahtsadat)
+! ja esimene pool omastavas, teine pool kohakäändes (kahesajasse)
+define PairedCase [ ["+Sg" "+Nom" \[Number | Case]* "+Sg" "+Nom"] |
+                    ["+Sg" "+Gen" \[Number | Case]* "+Sg" "+Gen"] |
+                    ["+Sg" "+Par" \[Number | Case]* "+Sg" "+Par"] |
+                    ["+Sg" "+Gen" \[Number | Case]* "+Sg" CaseOblique] ] ;
+define GoodCase [ \[Number | Case]* PairedCase \[Number | Case]* ] ;
+
+! sõnade vahel on esimese poole number ja kääne
+define Middle [Number Case] ;
+
+define Esi [{kaks} | {paar}] ;
+define Tagu [{sada} | {kümmend}] ;
+define Pairs [Esi Middle Tagu] ;
+define WordPairs [?* Pairs ?*] ;
+
+read regex [WordPairs & GoodCase] ;

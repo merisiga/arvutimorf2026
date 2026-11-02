@@ -1,0 +1,16 @@
+nibin-nabin+Sg+Nom
+nibin-nabin+Sg+Gen
+nibin-nabin+Sg+Par
+nibin-nabin+Sg+Ill
+nibin-nabin+Sg+Com
+nibin-nabin+Pl+Par
+nibin-nabin+Pl+Ill
+nibin-nabin+Pl+Ess
+pilla-palla+Sg+Nom
+pilla-palla+Sg+Gen
+pilla-palla+Sg+Ill
+pilla-palla+Sg+Trm
+pilla-palla+Pl+Nom
+pilla-palla+Pl+Ill
+nibin-palla+Sg+Nom
+pilla-nabin+Sg+Nom

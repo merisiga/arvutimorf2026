@@ -1,0 +1,8 @@
+! paarissõna tagumine osa
+! NB! sõnaliiki ei märgi
+! Käändetüübid (tüüp_vidin, tüüp_ema) ja sümbolid tulevad Ann.lexc failist.
+
+LEXICON Root
+
+nabin:nabin tüüp_vidin ;       ! nibin-nabin
+palla:palla tüüp_ema ;         ! pilla-palla

@@ -1,0 +1,91 @@
+! Eesti morfofonoloogia
+
+Alphabet
+
+a b c d e f g h i j k l m n o p q r s š z ž t u v w õ ä ö ü x y 
+A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y 
+
+ %{NA%}:0   ! nõrga astme tähis ei tule pinnal esile
+ %>:0       ! morfeemipiir ei tule pinnal esile
+
+ G1:g G1:0  ! lagi - lae
+ B1:b B1:0  ! tuba - toa
+ D1:d D1:0  ! rida - rea
+ K1:k K1:0  ! lukk - luku
+ P1:p P1:0  ! kapp - kapi
+ T1:t T1:0  ! latt - lati
+ K2:k K2:g  ! kook - koogi
+ P2:p P2:b  ! kaup - kauba
+ T2:t T2:d  ! sõit - sõidu
+ g:k        ! gi -> ki
+ i:e        ! i madaldub e-ks
+ u:o        ! u madaldub o-ks
+ ü:ö        ! ü madaldub ö-ks
+;
+
+Sets
+
+Vowel = A E I O U Õ Ä Ö Ü Y
+        a e i o u õ ä ö ü y ;
+
+Consonant = b c d f g h j k l m n p q r s š z ž t v w x 
+            B C D F G H J K L M N P Q R S Š Z Ž T V W X ;
+
+Voiceless = g b d k p t s š h f ;
+
+Rules
+
+! ----- g b d kaob nõrgas astmes
+! lexical: t u B1 a {NA}
+! surface: t o 0  a  0
+"Nõrgas astmes g b d kaob"
+Cx:0 <=> _ :Vowel* %{NA%}: ;
+     where Cx in ( G1 B1 D1 ) ;
+
+! ----- kk pp tt -> k p t nõrgas astmes
+! lexical: l u K1 k {NA} u
+! surface: l u 0  k  0   u
+"kk pp tt -> k p t nõrgas astmes"
+Cx:0 <=> _ Cy %{NA%}: ;
+     where Cx in ( K1 P1 T1 )
+           Cy in ( k  p  t )
+     matched ;
+
+! ----- k p t -> g b d nõrgas astmes
+! lexical: k o o K2 {NA} i
+! surface: k o o g   0   i
+"k p t -> g b d nõrgas astmes"
+Cx:Cy <=> _ %{NA%}: ;
+     where Cx in ( K2 P2 T2 )
+           Cy in ( g  b  d )
+     matched ;
+
+! ----- gi -> ki helitu hääliku järel
+! lexical: t o r s s i s g i
+! surface: t o r s s i s k i
+"gi -> ki helitu hääliku järel"
+g:k <=> :Voiceless [ %>: | %{NA%}: ]* _ i ;
+
+! ----- i madaldub e-ks
+! lexical: r e d e l i > i d
+! surface: r e d e l e 0 i d
+!
+! lexical: r i D1 a {NA}
+! surface: r e 0  a  0
+"i madaldub e-ks"
+i:e <=> :Consonant %>:* _ %>: :i ;
+        [.#. | Consonant] :Vowel [G1:0 | B1:0 | D1:0] _ ;
+        [.#. | Consonant] _ [G1:0 | B1:0 | D1:0] :Vowel ;
+
+! ----- u ja ü madalduvad o-ks ja ö-ks
+! lexical: t u B1 a {NA}
+! surface: t o 0  a  0
+!
+! lexical: t ü G1 a {NA}
+! surface: t ö 0  a  0
+"u ja ü madalduvad o-ks ja ö-ks"
+Vx:Vy <=> [.#. | Consonant] :Vowel [G1:0 | B1:0 | D1:0] _ ;
+          [.#. | Consonant] _ [G1:0 | B1:0 | D1:0] :Vowel ;
+     where Vx in ( u ü )
+           Vy in ( o ö )
+     matched ;

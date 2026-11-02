@@ -1,0 +1,21 @@
+! arvsõnapaari esimene pool (kaks-sada, paar-kümmend)
+! NB! sõnaliiki ei märgi
+! Sümbolid, semkäänded (-sse, -s, -st ...) ja gi-liide tulevad Ann.lexc failist.
+! Siia on kirjutatud ainult ebaregulaarsed tüved (nimetav, omastav, osastav).
+
+LEXICON Root
+
+kaks: kaks_vorm ;
+paar: paar_vorm ;
+
+LEXICON kaks_vorm
+  +Sg+Nom:kaks # ;
+  +Sg+Gen:kahe # ;
+  +Sg+Par:kaht # ;
+      +Sg:kahe semkäänded ;
+
+LEXICON paar_vorm
+  +Sg+Nom:paar # ;
+  +Sg+Gen:paari # ;
+  +Sg+Par:paari # ;
+      +Sg:paari semkäänded ;

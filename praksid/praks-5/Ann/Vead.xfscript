@@ -1,0 +1,13 @@
+define V [a|e|i|o|u|õ|ä|ö|ü] ;
+
+read regex
+    [ c k (->) k k ]                      ! lucku -> lukku
+.o. [ g (->) k || .#. _ o ]               ! goli -> koli
+.o. [ d (->) t || r _ u ]                 ! Tardu -> Tartu
+.o. [ p (->) b || V _ V ]                 ! tupa -> tuba
+.o. [ k (->) g || V _ V ]                 ! suku -> sugu
+.o. [ ä (->) e || r _ d ]                 ! rädel -> redel
+.o. [ w (->) v ]                          ! widin -> vidin
+.o. [ a b (->) b a || u _ .#. ]           ! tuab -> tuba
+.o. [ n n (->) n || V _ V ]               ! kenna -> kena
+.o. [ n (->) n n || .#. A _ .#. ] ;       ! An -> Ann

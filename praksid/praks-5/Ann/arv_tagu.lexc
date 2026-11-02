@@ -1,0 +1,21 @@
+! arvsõnapaari teine pool (sada, kümmend)
+! NB! sõnaliiki ei märgi
+! Sümbolid, semkäänded (-sse, -s, -st ...) ja gi-liide tulevad Ann.lexc failist.
+! Siia on kirjutatud ainult ebaregulaarsed tüved (nimetav, omastav, osastav).
+
+LEXICON Root
+
+sada: sada_vorm ;
+kümmend: kymmend_vorm ;
+
+LEXICON sada_vorm
+  +Sg+Nom:sada GI_OPTIONAL ;
+  +Sg+Gen:saja GI_OPTIONAL ;
+  +Sg+Par:sadat GI_OPTIONAL ;
+      +Sg:saja semkäänded ;
+
+LEXICON kymmend_vorm
+  +Sg+Nom:kümmend GI_OPTIONAL ;
+  +Sg+Gen:kümne GI_OPTIONAL ;
+  +Sg+Par:kümmend GI_OPTIONAL ;
+      +Sg:kümne semkäänded ;
