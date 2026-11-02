@@ -1,0 +1,106 @@
+Multichar_Symbols
+
++Sg   ! ainsus
++Pl   ! mitmus
+
++Nom  ! nimetav			
++Gen  ! omastav 		
++Par  ! osastav			
++Ill  ! sisseütlev		
++Ine  ! seesütlev				
++Ela  ! seestütlev				
++All  ! alaleütlev		
++Ade  ! alalütlev		
++Abl  ! alaltütlev			
++Tra  ! saav				
++Trm  ! rajav			
++Ess  ! olev				
++Abe  ! ilmaütlev			
++Com  ! kaasaütlev		
+
+%>    ! morfeemi piir
+%{NA%}  ! nõrk aste
+
+D1    ! d või 0
+
+S1    ! s või 0
+K3    ! k või h (nt kaks-kaht)
+J1    ! 0 või j (nt sada-saja)
+N1    ! n või 0 (nt kümmend-kümne)
+M1    ! 0 või m (nt seitse-seitsme)
+I1    ! i või j (nt neli-nelja)
+
+
+LEXICON Root
+
+üks:üK3S1 tüüp_põu ;
+kaks:kaK3S1 tüüp_põu ;
+kolm:kolm tüüp_kolm ;
+neli:nelI1 tüüp_padi ;
+viis:viiS1 tüüp_uus ;
+kuus:kuuS1 tüüp_uus ;
+seitse:seitsM1e tüüp_kümmend ;
+kaheksa:kaheksa tüüp_ohutu ;
+üheksa:üheksa tüüp_ohutu ;
+
+LEXICON tüüp_põu
+    +Sg+Nom: # ;
+           :%{NA%}e gen_jt ;   ! k a k s +Gen-> k a h 0 +e
+    +Sg+Par:%{NA%}te # ;			! ma ütleks pigem kahte kui kaht
+        +Pl:%{NA%}te sem_käänded ;
+    +Pl+Par:%{NA%}t # ;
+    
+LEXICON tüüp_padi
+    +Sg+Nom: # ;
+           :%{NA%}a gen_jt ;            ! tegelt TA, mugavuse mõttes hetkel NA
+    +Sg+Par:%{NA%}a # ;		
+        +Pl:%{NA%}ade sem_käänded ;
+    +Pl+Par:%>u # ;
+    
+LEXICON tüüp_kolm
+    +Sg+Nom: # ;
+           :e gen_jt ;
+    +Sg+Par:%>e # ;
+        +Pl:%>de sem_käänded ;
+    +Pl+Par:%>i # ;
+
+LEXICON tüüp_uus
+    +Sg+Nom: # ;
+           :%{NA%}e gen_jt ;
+    +Sg+Par:%{NA%}te # ;		! ma ütleks pigem viite kui viit
+        +Pl:%{NA%}te sem_käänded ;
+    +Pl+Par:%>i # ;
+    
+LEXICON tüüp_ohutu
+    +Sg+Nom: # ;
+           : gen_jt ;
+    +Sg+Par:%>t # ;
+        +Pl:%>te sem_käänded ;
+    +Pl+Par:%>id # ;
+    
+
+
+LEXICON tüüp_kümmend
+    +Sg+Nom: # ;
+           :%>%{NA%} gen_jt ;
+    +Sg+Par:%>t # ;			! ma ütleks pigem kümmet kui kümmend + seitset ainuvõimalik
+        +Pl:%>%{NA%}te sem_käänded ;
+    +Pl+Par:%>%{NA%}id # ;
+
+LEXICON gen_jt
+        +Pl+Nom:%>d # ;
+        +Sg+Gen: # ;
+    	    +Sg:%> sem_käänded ;    
+
+LEXICON sem_käänded
+       +Ill:sse # ;	
+       +Ine:s # ;	
+       +Ela:st # ;	
+       +All:le # ;	
+       +Ade:l # ;	
+       +Abl:lt # ;	
+       +Tra:ks # ;	
+       +Trm:ni # ;	
+       +Ess:na # ;	
+       +Abe:ta # ;	
+       +Com:ga # ;

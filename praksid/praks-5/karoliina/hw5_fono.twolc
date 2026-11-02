@@ -1,0 +1,175 @@
+! Eesti morfofonoloogia
+
+Alphabet
+
+a b c d e f g h i j k l m n o p q r s š z ž t u v w õ ä ö ü x y 
+A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y 
+
+ %{NA%}:0 ! Nõrga astme tähis ei tule pindesituses kunagi esile
+
+ %>:0   ! Morfeemipiir ei tule pindesituses kunagi esile
+
+! 
+
+ K1:k 
+ K1:g 
+ P1:p 
+ P1:b 
+ T1:t ! vaat
+ T1:d ! vaadi
+ 
+ D1:d  ! sada
+ D1:0  ! saja
+ 
+ K2:k
+ K2:kk 
+ P2:p  ! kapi
+ P2:pp ! kapp
+ T2:t 
+ T2:tt 
+ 
+ S1:s  ! käsi
+ S1:0  ! käe
+
+ K3:k  ! kaks
+ K3:h  ! kahe
+ 
+ J1:0  ! sada
+ J1:j  ! saja
+ 
+ N1:n  ! kümmend
+ N1:0  ! kümne
+ 
+ M1:0  ! seitse
+ M1:m  ! seitsme
+ 
+ I1:i  ! neli
+ I1:j  ! nelja
+ 
+;
+
+Sets
+
+Vowel = A E I O U Õ Ä Ö Ü Y
+        a e i o u õ ä ö ü y ;
+
+Consonant = b c d f g h j k l m n p q r s š z ž t v w x
+            B C D F G H J K L M N P Q R S Š Z Ž T V W X ;
+            
+Voiceless = g b d k p t s š h f
+	    G B D K P T S Š H F ;
+
+
+Definitions
+
+Rules 
+
+! ----- kaashäälikud
+
+"Nõrgas astmes kk pp tt -> k p t"
+! lexical: k a p p {NA}          
+! surface: k a p 0   0 
+
+Cx:0  <=> :Cx _ %>:* :Vowel* %>:* %{NA%}: ;         
+     where Cx in ( k p t ) ;
+     
+
+"Nõrgas astmes k p t -> g b d"
+! lexical: v a a T1 i {NA}   | n e l I1 {NA} a
+! surface: v a a  d i  0     | n e l  j  0   a
+
+Cx:Cy  <=> _ :Vowel* %>:* %{NA%}: ;         
+     where Cx in ( K1 P1 T1 I1 ) 
+           Cy in (  g  b  d  j )
+     matched ;
+     
+
+"Nõrgas astmes vahel s kaob vokaalide vahel või silbi lõpus"
+! lexical: k ä S1 i {NA}   | v i i S1 {NA}  | k a K3 S1 {NA} e  
+! surface: k ä  0 e  0     | v i i 0   0    | k a h  0   0   e
+
+Cx:Cy  <=>  _ :Vowel* %>:* %{NA%}: ;
+       :Vowel* :h* _ %>:* %{NA%}: ;        
+     where Cx in ( S1 ) 
+           Cy in (  0 )
+     matched ;
+     
+     
+"Enne käänet/J1 N1 D1 > 0 0"
+! lexical: k ü m m e N1 D1 > t | s a D1 J1 a {NA}
+! surface: k ü m m e  0  0 0 t | s a  0  j a  0 
+
+Cx:Cy  <=> :Vowel _ D1: %>: ;
+           :Vowel N1: _ %>: ;
+          _ J1: :Vowel* %>:* %{NA%}: ; 
+     where Cx in ( N1 D1 ) 
+           Cy in (  0  0 )
+     matched ;
+
+"Nõrgas astmes k > h enne s-i"
+! lexical: k a K3 s > t e
+! surface: k a  h 0 > t e
+
+Cx:Cy  <=> [.#. | Consonant] :Vowel _ :0 %>:* %{NA%}: ;       
+     where Cx in ( K3 ) 
+ 	   Cy in (  h ) 
+     matched;
+     
+     
+"Nõrgas astmes j või m tulek"
+! lexical: s a D1 J1 a {NA}  ! s e i t s M1 e {NA}
+! surface: s a  0  j a  0    ! s e i t s  m e 0
+
+Cx:Cy  <=> :Vowel :0 _ :Vowel %>:* %{NA%}: ;   
+	  :Consonant _ :Vowel %>:* %{NA%}: ;    
+     where Cx in ( J1 M1 ) 
+ 	   Cy in (  j m ) 
+     matched;
+ 
+     
+"Nõrgas astmes mm > nn"
+! lexical: k ü m m e N1 D1 {NA} 
+! surface: k ü m n e 0   0  0
+
+m:n  <=> :m _ :e N1: D1: %>:* %{NA%}: ; 
+
+
+"Helitu hääliku järel gi > ki"
+! lexical: kapp>gi
+! surface: kapp>ki
+
+g:k  <=>  :Voiceless %>: _ :i .#.;
+
+
+! ----- täishäälikud
+
+
+"Üksik kõrge vokaal madaldub, kui pärast nõrga sulghääliku kadumist jääb tema kõrvale vokaal"
+! lexical: s u G1 u {NA}
+! surface: s o  0 o  0 
+
+Vx:Vy  <=>  [.#. | Consonant] :Vowel S1:0    _  %>:* %{NA%}: ;
+            [.#. | Consonant]    _   S1:0 :Vowel %>:* %{NA%}: ;
+       where Vx in ( u i ü )
+             Vy in ( o e ö )
+       matched;
+       
+! ----- ti > si muutuse tagajärjed
+
+
+"Enne t-d (S1)i > 0 " ! i muutmine
+! lexical: k ä S1 i > t e
+! surface: k ä  0 0 > t e
+
+i:0  <=> [.#. | Consonant] :Vowel :0 _ %>:* :t ;
+
+"Enne t-d S1(i) > 0 " ! S1 muutmine
+! lexical: k ä S1 i > t e
+! surface: k ä  0 0 > t e
+
+Cx:Cy  <=> [.#. | Consonant] :Vowel _ i: %>:* :t ;       
+     where Cx in ( S1 ) 
+ 	   Cy in ( 0 ) 
+     matched;
+
+

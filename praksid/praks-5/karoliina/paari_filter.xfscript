@@ -1,0 +1,34 @@
+#
+
+define Number ["+Sg" | "+Pl" ];
+define CaseGram ["+Nom" | "+Gen" | "+Par" ]; 
+define CaseOblique ["+Ill" | "+Ine" | "+Ela" | "+All" | "+Ade" | "+Abl" | "+Tra" | "+Trm" | "+Ess" | "+Abe" | "+Com"] ;
+define Case [ CaseGram | CaseOblique ] ;
+
+define PairedCase [ ["+Sg" "+Nom" \[Number | Case]* "+Sg" "+Nom"] |
+                    ["+Sg" "+Gen" \[Number | Case]* "+Sg" "+Gen"] |
+                    ["+Sg" "+Par" \[Number | Case]* "+Sg" "+Par"] |
+                    ["+Sg" "+Gen" \[Number | Case]* "+Sg" CaseOblique] |
+                    ["+Sg" "+Gen" \[Number | Case]* "+Pl" Case]
+                  ];                     
+define GoodCase [ \[Number | Case]* PairedCase \[Number | Case]* ];                    
+
+# between words may be (including a flag diacritic and a usage tag as '?'):
+define Middle [Number Case (?)] ;
+
+define Unit [{kaks} | {kolm} | {neli} | {viis} | {kuus} | {seitse} | {kaheksa} | {üheksa}];
+
+define Pairs [ [Unit   Middle {teist}] |
+               [{üks}  Middle {teist}] |
+               [Unit   Middle {kümmend}] |
+               [Unit   Middle {sada}] |
+               [{üks}  Middle {sada}] 
+             ] ;
+
+define WordPairs [?* Pairs ?*] ;
+
+define CleanUp [[..] <- Case || Number _ (?) \[Number | Case]* Number Case ,, 
+                [..] <- Number || _ Case (?) \[Number | Case]* Number Case ] ;
+                
+regex [ CleanUp .o. [WordPairs & GoodCase] ] ;
+
