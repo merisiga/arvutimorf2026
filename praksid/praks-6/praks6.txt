@@ -1,0 +1,57 @@
+praks6
+
+liitsõnamoodustus
+
+----------
+Võimalus 1
+
+1. Tee lihtsõnade muundur, mis võiks sisaldada ka produktiivseid tuletisi, nagu neid ühes eelnevas praksis tehti
+2. Tee sellest veidi piiratum muundur, s.t. selline, mis võiks esindada liitsõna mitte-viimaseid osi,
+   nt. ei ole selles muunduris gi-liidet
+3. Tee liiane liitsõnamuundur: 
+   define koik_sonad [[piiratum_muundur]* lihtsonamuundur] ;
+   see tähendab null kuni lõpmatu arv liitsõna esiosasid suvalises käändes, millele järgneb mingi lihtsõna.
+4. Defineeri filtrid, millega ebasobivaid liitsõnu välja filtreerida, nt. et piiratum_muundur tohib olla ainult mõnes käändes
+   (nt. ainsuse omastavas, nimetavas; ehk ka mitmuse omastavas? ainsuse osastavas?) ja mõnes sõnaliigis (nt. nimisõna, omadussõna) 
+   ning tema tüvel võib olla teatud lõpp (kui selline õnnestub välja mõelda).
+   Võib-olla on see (või selle sarnane) filter hea rakendada juba piiratuma_muunduri tegemiseks.
+   
+----------
+
+----------
+Võimalus 2
+
+1. määratle lexc failis sõnad mingitesse rühmadesse, nt.
+LEXICON Root
+
+     Nimisonad ;
+     Omadussonad ;
+     
+LEXICON Nimisonad
+jne
+
+2. Sobiva käändevormi juurde lisa viit jätkuleksikonile, milleks nüüd on mingi sõnarühm, s.t. 
+   sõnad, mis võivad talle liitsõnas järgneda; pane (igaks juhuks) ka liitsõna piir (nt. %#), nt.
+   
+LEXICON gen_jt
+
+      +Sg+Gen:%>i GI # ;
+      +Sg+Gen:%#  Nimisonad ;
+      
+NB! KÕIK uued defineeritud märgid tuleb deklareerida alajaotises Multichar symbols !!!
+    Ka twolc failis peab uued pindesituse poolel defineeritud märgid üles loetlema, nt. %#:0
+    ja twolc reeglites nendega arvestama, nt. et astmevahelduse reegel töötaks ikka ka liitsõna puhul.
+----------
+
+Koduülesanne
+
+Proovida mõlemat võimalust oma varasemast olemas oleva u. 10-sõnalise lihtsõnade leksikoniga.
+1. Saavutada olukord, kus mõlemal viisil on tulemuseks liitsõnu ja lihtsõnu ära tundev ning genereerida võimaldav muundur.
+2. Oleks hea, kui need muundurid oleksid ühesugused. Seda on raske ammendavalt kontrollida, sest nende poolt defineeritavad
+   märgijadade paaride hulgad on lõpmatud. Üks võimalus kontrollida oleks teha nii, et hfst-fst2strings väljundis piirduda tsükliga 2.
+3. Kirjutada omapoolne emotsionaalne võrdlus: kumb meetod on parem ja meeldivam ning miks.
+
+
+     
+    
+

@@ -61,6 +61,8 @@ Püüdsin teha, kuid kuna eelmised tööd on ka vigased olnud, siis ei õnnestun
 
 HJK
 
+Kas varasemate tööde vigu proovisite parandada? 
+
 LEXICON tüüp_sada
     +Sg+Nom: # ;
             :%{NA%}%> gen_jt ; 
