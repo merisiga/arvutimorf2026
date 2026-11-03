@@ -1,0 +1,34 @@
+
+
+LEXICON tüüp_vidin
+  +Sg+Nom: # ;
+         :%>a 2C; 
+
+LEXICON 2C
+         : sg_gen_jt ; 
+  +Sg+Par:%>t # ;
+      +Pl:%>te gen_jt ;
+  +Pl+Par:%>id # ;
+
+
+LEXICON sg_gen_jt
+
+            +Sg:%> gen_jt ;
+        +Pl+Nom:%>d # ;
+! +Der/m+A+Comp:%>m tüüp_vidin ;  ! <-- tuletus
+!   +Der/lt+Adv:%>lt # ;          ! <-- tuletus
+  
+LEXICON gen_jt
+       +Gen: # ;
+       +Ill:sse # ;	
+       +Ine:s # ;	
+       +Ela:st # ;	
+       +All:le # ;	
+       +Ade:l # ;	
+       +Abl:lt # ;	
+       +Tra:ks # ;	
+       +Trm:ni # ;	
+       +Ess:na # ;	
+       +Abe:ta # ;	
+       +Com:ga # ;	
+

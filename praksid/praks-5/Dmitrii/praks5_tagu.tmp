@@ -1,0 +1,125 @@
+
+
+Multichar_Symbols
+
++Sg
++Pl
++Nom    ! nimetav
++Gen    ! omastav
++Par    ! osastav
++Ill    ! sisseütlev
++Ine    ! seesütlev
++Ela    ! seestütlev
++All    ! alaleütlev
++Ade    ! alalütlev
++Abl    ! alaltütlev
++Tra    ! saav
++Ter    ! rajav
++Ess    ! olev
++Abe    ! ilmaütlev
++Kom    ! kaasaütlev
+
+
+%>                ! morfeemi piir
+
+
+Multichar_Symbols
+
++N
++Sg
++Pl
++Nom
++Gen
++Par
++Ill
++Ine
++Ela
++All
++Ade
++Abl
++Tra
++Trm
++Ess
++Abe
++Com
+
+%{NA%}		! Nõrk aste
+%>		! Morfeemipiir
+
+D1 		! d või 0
+N1 		! n või 0
+J1		! 0 või j
+
+LEXICON Root
+
+kümmend+N:kümmend tüüp_kümmend ;        ! kümmend -> kümne 
+sada+N:sadsa tüüp_sõna ;                ! sada -> saja
+
+
+LEXICON tüüp_sõna
+	+Sg+Nom:a # ;                       ! sad + a = sada
+	+Sg+Gen:J1a gen_jt ;                ! sad + J1 + a + e -> saja 
+	+Sg+Par:at # ;                      ! sad + at = sadat 
+	+Pl+Nom:ad # ;
+	+Pl+Gen:te sem_k ;
+	+Pl+Par:asid # ;
+	
+	
+LEXICON tüüp_kümmend
+	+Sg+Nom:0 # ;                 ! kümmend
+		:%{NA%}e gen_jt ;         ! kümmend + %{NA%} + e -> kümne
+	+Sg+Par:et # ;                ! kümmend -> kümmet 
+	+Pl+Gen:te sem_k ;        
+	+Pl+Par:id # ;		
+
+LEXICON gen_jt
+	+Sg:0 sem_k ;
+	+Pl+Nom:d # ;
+	:0 # ;
+
+LEXICON sem_k
+	+Ill:%>sse # ;	
+	+Ine:%>s # ;	
+	+Ela:%>st # ;	
+	+All:%>le # ;	
+	+Ade:%>l # ;	
+	+Abl:%>lt # ;	
+	+Tra:%>ks # ;	
+	+Trm:%>ni # ;	
+	+Ess:%>na # ;	
+	+Abe:%>ta # ;	
+	+Com:%>ga # ;
+
+
+LEXICON tüüp_vidin
+  +Sg+Nom: # ;
+         :%>a 2C; 
+
+LEXICON 2C
+         : sg_gen_jt ; 
+  +Sg+Par:%>t # ;
+      +Pl:%>te gen_jt ;
+  +Pl+Par:%>id # ;
+
+
+LEXICON sg_gen_jt
+
+            +Sg:%> gen_jt ;
+        +Pl+Nom:%>d # ;
+! +Der/m+A+Comp:%>m tüüp_vidin ;  ! <-- tuletus
+!   +Der/lt+Adv:%>lt # ;          ! <-- tuletus
+  
+LEXICON gen_jt
+       +Gen: # ;
+       +Ill:sse # ;	
+       +Ine:s # ;	
+       +Ela:st # ;	
+       +All:le # ;	
+       +Ade:l # ;	
+       +Abl:lt # ;	
+       +Tra:ks # ;	
+       +Trm:ni # ;	
+       +Ess:na # ;	
+       +Abe:ta # ;	
+       +Com:ga # ;	
+
