@@ -1,0 +1,94 @@
+
+
+Ann
+
+HJK
+build.sh kaudu sain aru, mida olete teinud
+Kahjuks pole ühtegi kommentaari selle kohta, et mida tahtsite teha ja mis ebaõnnestus.
+
+Oleksin oodanud järgmisi leksikaalse ja pindesituse paare:
+kakskümmend+Sg+Com+Gi:kahekümnegagi
+kakskümmend+Sg+Com:kahekümnega
+kakssada+Sg+Nom:kakssada
+kakskümmend+Sg+Par:kahtkümmend
+
+aga teie tegite:
+kaks+Sg+Genkümmend+Sg+Com+Gi:kahekümnegagi
+kaks+Sg+Genkümmend+Sg+Com:kahekümnega
+kaks+Sg+Nomsada+Sg+Nom:kakssada
+kaks+Sg+Parkümmend+Sg+Par:kahtkümmend
+
+s.t. leksikaalses pooles on esitatud liitsõna algusosa arv ja kääne.
+Ilmselt on viga failis arv_filter.xfscript, milles puudub vastav eemaldamis-muundur (näidises define CleanUp)
+
+Paarissõnadele ja ka arvsõnadele jätsite miskipärast sõnaliigi andmata, kuigi näites oli see olemas.
+
+paari_filter.xfscriptis olete ära parandanud paar näides olnud viga (+Ter, +Kom)
+
+Punktid: 2
+------------
+
+Dmitrii 
+1. Muundur ei tööta, aga ma andsin endast parima
+2. ma ei saa aru miks paarisõnade failis on sõnad näidetest ja mitte minu omad
+3. vigu on palju, pidin faile mitut korda ümber tegema, isegi TI ei aidanud
+4. enam ei jaksanud parandada kell 3 öösel
+
+
+HJK
+Ma ei saanudki aru, mida te täpselt tegite. 
+
+punktid: 1
+
+--------------
+karoliina
+Hakkasin tegema ja mõtlesin, et teen siis juba kõigi numbritega. Kirjutasin oma kasutustavad lexc-faili.
+
+HJK
+
+Oleks huvi pärast võinud proovida ka seda, et lubada ains. osast. paralleelvorme, nt kaht/kahte, sada/sadat.
+
+lexc ja twolc kohta:
+Kasutate {NA} kui lihtsalt märki, et tähistada hääliku muutust, nt. s kadu või m -> n (kümme -> kümne)
+Formaalselt tuleb kõik välja, ainult et {NA} ei tähista enam nõrka astet paljudes muuttüüpides... 
+
+punktid: 3
+------------
+
+kätriin
+
+Püüdsin teha, kuid kuna eelmised tööd on ka vigased olnud, siis ei õnnestunud ka seda tööle saada. Filtritest sain tööle NumberRule, kus esimene pool alati ainsuses. Eemaldatud said ka kahe sõna vahele tekkivad käände ja arvu märgised. Kuidas saada teisi käändeid väljundisse lisaks nominatiivile?
+
+HJK
+
+Kas varasemate tööde vigu proovisite parandada? 
+
+LEXICON tüüp_sada
+    +Sg+Nom: # ;
+            :%{NA%}%> gen_jt ; 
+    +Sg+Par:%> # ;         
+      +Pl+Nom:%>d # ;     <-- siin peaks olema :%{NA%}%>d 
+      +Pl+Gen:%>de gen_jt ;
+    +Pl+Par:%>sid # ;
+
+Kasutate {NA} kui lihtsalt märki, et tähistada hääliku muutust m -> n (kümme -> kümne).
+Formaalselt OK, aga tähistus ajab segadusse.
+
+  LEXICON tüüp_kümmend
+    +Sg+Nom: # ;
+            :%{NA%}%>e gen_jt ; ! kümne   <-- see on tegelikult hoopis tugev aste
+     +Sg+Par:%> # ;              
+      +Pl:%{NA%}%>ed gen_jt ;     <-- see on tegelikult hoopis tugev aste
+  +Pl+Par:%{NA%}%>id # ;          <-- see on tegelikult hoopis tugev aste
+
+Miks muid sõnavorme kui ainuses nim. lubav filter ei tööta? Sest lexc fail on tehtud nii, et filtri poolt oodatavat arvu kategooriat ei olegi:
+
+cat praks5_esi.hfst | hfst-fst2strings 
+kaks+Sg+Nom:kaks
+kaks+Gen:kaks{NA}>e
+kaks+Tra:kaks{NA}>eks
+
+
+punktid: 2
+
+

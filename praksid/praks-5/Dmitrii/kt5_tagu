@@ -1,0 +1,66 @@
+Multichar_Symbols
+
++N
++Sg
++Pl
++Nom
++Gen
++Par
++Ill
++Ine
++Ela
++All
++Ade
++Abl
++Tra
++Trm
++Ess
++Abe
++Com
+
+%{NA%}		! Nõrk aste
+
+D1 		! d või 0
+N1 		! n või 0
+J1		! 0 või j
+
+LEXICON Root
+
+kümmend:kümmeN1D1 tüüp_kümmend ;        ! kümmend - kümne
+sada:saJ1a tüüp_sõda ;			! sada - saja 
+ 
+
+
+LEXICON tüüp_sõda
+	+Sg+Nom: # ;
+		:%{NA%} 
+	+Sg+Par: # ;
+	+Pl:%>de sem_k ;
+	+Pl+Par:%>sid # ;
+	
+	
+LEXICON tüüp_kümmend
+	+Sg+Nom: # ;
+		:%>%{NA%} gen_jt ;        
+	+Sg+Par:%>%{NA%}t # ;                 
+	+Pl:%>%{NA%}te sem_k ;       
+	+Pl+Par:%>%{NA%}id # ;			
+
+LEXICON gen_jt
+	+Pl+Nom:%>d # ;
+	+Sg+Gen: # ;
+		+Sg:%> sem_k ;
+		
+LEXICON sem_k
+       +Ill:sse # ;	
+       +Ine:s # ;	
+       +Ela:st # ;	
+       +All:le # ;	
+       +Ade:l # ;	
+       +Abl:lt # ;	
+       +Tra:ks # ;	
+       +Trm:ni # ;	
+       +Ess:na # ;	
+       +Abe:ta # ;	
+       +Com:ga # ;
+

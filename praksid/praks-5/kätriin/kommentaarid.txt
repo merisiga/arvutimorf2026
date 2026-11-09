@@ -1,0 +1,1 @@
+Püüdsin teha, kuid kuna eelmised tööd on ka vigased olnud, siis ei õnnestunud ka seda tööle saada. Filtritest sain tööle NumberRule, kus esimene pool alati ainsuses. Eemaldatud said ka kahe sõna vahele tekkivad käände ja arvu märgised. Kuidas saada teisi käändeid väljundisse lisaks nominatiivile?

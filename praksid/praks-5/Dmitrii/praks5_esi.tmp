@@ -1,0 +1,86 @@
+
+
+Multichar_Symbols
+
++Sg
++Pl
++Nom    ! nimetav
++Gen    ! omastav
++Par    ! osastav
++Ill    ! sisseütlev
++Ine    ! seesütlev
++Ela    ! seestütlev
++All    ! alaleütlev
++Ade    ! alalütlev
++Abl    ! alaltütlev
++Tra    ! saav
++Ter    ! rajav
++Ess    ! olev
++Abe    ! ilmaütlev
++Kom    ! kaasaütlev
+
+
+%>                ! morfeemi piir
+
+
+
+
+%{NA%}		! Nõrk aste
+K1          ! k või h
+
+LEXICON Root
+
+kaks:kaK1s tüüp_põu ;        ! kaks -> kahe / kahte
+paar:paar tüüp_riik ;		! paar -> paari
+ 
+
+
+LEXICON tüüp_põu
+	+Sg+Nom: # ;
+		:%{NA%}e gen_jt ;        ! kaks -> kahe 
+	+Sg+Par:%{NA%}te # ;            ! kaks -> kahte         
+	+Pl:%{NA%}te sem_k ;       
+	+Pl+Par:%{NA%}t # ;
+	
+	
+LEXICON tüüp_riik
+	+Sg+Nom: # ;
+		:i gen_jt ;        ! paari 
+	+Sg+Par:i # ;                 
+	+Pl:ide sem_k ;       
+	+Pl+Par:e # ;			!paarekümne?
+
+
+
+LEXICON tüüp_vidin
+  +Sg+Nom: # ;
+         :%>a 2C; 
+
+LEXICON 2C
+         : sg_gen_jt ; 
+  +Sg+Par:%>t # ;
+      +Pl:%>te gen_jt ;
+  +Pl+Par:%>id # ;
+
+
+LEXICON sg_gen_jt
+
+            +Sg:%> gen_jt ;
+        +Pl+Nom:%>d # ;
+! +Der/m+A+Comp:%>m tüüp_vidin ;  ! <-- tuletus
+!   +Der/lt+Adv:%>lt # ;          ! <-- tuletus
+  
+LEXICON gen_jt
+       +Gen: # ;
+       +Ill:sse # ;	
+       +Ine:s # ;	
+       +Ela:st # ;	
+       +All:le # ;	
+       +Ade:l # ;	
+       +Abl:lt # ;	
+       +Tra:ks # ;	
+       +Trm:ni # ;	
+       +Ess:na # ;	
+       +Abe:ta # ;	
+       +Com:ga # ;	
+

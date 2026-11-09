@@ -92,7 +92,9 @@ u:o <=> [.#. | Consonant] :Vowel [G1:0 | B1:0 | D1:0] _;
 !"ü madaldub ö-ks" 
 !D2:ö <=> [.#. | Consonant] :Vowel [G1:0 | B1:0 |D1:0] _;
 !	[.#. | Consonant] _ [G1:0 | B1:0 | D1:0] :Vowel ;
-	
+
+!"kaks-kahe"	
+k:h <=> _ %{NA%}: Vow ;
 	
 	
 

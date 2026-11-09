@@ -1,0 +1,11 @@
+! paarissõna tagumine osa
+
+
+LEXICON Root
+
+kahin+N:kahin tüüp_vidin ;
+kohin+N:kohin tüüp_vidin ;
+kolin+N:kolin tüüp_vidin ;
+kõlin+N:kõlin tüüp_vidin ;
+
+
