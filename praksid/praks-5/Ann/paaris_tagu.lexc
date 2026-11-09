@@ -1,8 +1,8 @@
 ! paarissõna tagumine osa
-! NB! sõnaliiki ei märgi
+! Sõnaliik (+N) on ainult tagumisel poolel, esimesel poolel sõnaliiki ei märgita.
 ! Käändetüübid (tüüp_vidin, tüüp_ema) ja sümbolid tulevad Ann.lexc failist.
 
 LEXICON Root
 
-nabin:nabin tüüp_vidin ;       ! nibin-nabin
-palla:palla tüüp_ema ;         ! pilla-palla
+nabin+N:nabin tüüp_vidin ;       ! nibin-nabin
+palla+N:palla tüüp_ema ;         ! pilla-palla

@@ -30,6 +30,7 @@ Multichar_Symbols
 +Comp     ! keskvõrre / comparative
 +Super    ! ülivõrre / superlative
 +Adv      ! määrsõna / adverb
++Num      ! arvsõna / numeral
 
 %>                ! morfeemi piir
 %{NA%}            ! nõrk aste
@@ -45,13 +46,13 @@ P2                ! p või b
 T2                ! t või d
 
 ! paarissõna tagumine osa
-! NB! sõnaliiki ei märgi
+! Sõnaliik (+N) on ainult tagumisel poolel, esimesel poolel sõnaliiki ei märgita.
 ! Käändetüübid (tüüp_vidin, tüüp_ema) ja sümbolid tulevad Ann.lexc failist.
 
 LEXICON Root
 
-nabin:nabin tüüp_vidin ;       ! nibin-nabin
-palla:palla tüüp_ema ;         ! pilla-palla
+nabin+N:nabin tüüp_vidin ;       ! nibin-nabin
+palla+N:palla tüüp_ema ;         ! pilla-palla
 LEXICON tüüp_ema
   +Sg+Nom: GI_OPTIONAL ;
          :%{NA%} sg_gen_jt ;

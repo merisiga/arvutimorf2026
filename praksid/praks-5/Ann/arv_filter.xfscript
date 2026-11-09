@@ -1,6 +1,7 @@
-! Arvsõnapaarid, mille mõlemad pooled käänduvad (kakssada, paarkümmend).
-! Analüüs enne filtrit on esimene pool + teine pool, nt kaks+Sg+Gensada+Sg+Ill.
-! Filter jätab alles ainult õiged käändekombinatsioonid.
+! Arvsõnapaarid, mille mõlemad pooled käänduvad (kakssada, kakskümmend, paarsada, paarkümmend).
+! Analüüs enne filtrit: esimene pool + teine pool, nt kaks+Sg+Genkümmend+Num+Sg+Com.
+! Filter jätab alles ainult õiged käändekombinatsioonid ja CleanUp eemaldab
+! esimese poole arvu ja käände, nii et lõpuks on analüüs kakskümmend+Num+Sg+Com.
 
 define Number ["+Sg" | "+Pl"] ;
 define CaseGram ["+Nom" | "+Gen" | "+Par"] ;
@@ -15,7 +16,7 @@ define PairedCase [ ["+Sg" "+Nom" \[Number | Case]* "+Sg" "+Nom"] |
                     ["+Sg" "+Gen" \[Number | Case]* "+Sg" CaseOblique] ] ;
 define GoodCase [ \[Number | Case]* PairedCase \[Number | Case]* ] ;
 
-! sõnade vahel on esimese poole number ja kääne
+! sõnade vahel on esimese poole arv ja kääne
 define Middle [Number Case] ;
 
 define Esi [{kaks} | {paar}] ;
@@ -23,4 +24,8 @@ define Tagu [{sada} | {kümmend}] ;
 define Pairs [Esi Middle Tagu] ;
 define WordPairs [?* Pairs ?*] ;
 
-read regex [WordPairs & GoodCase] ;
+! esimese poole arv ja kääne jäetakse analüüsist välja
+define CleanUp [[..] <- Case || Number _ (?) \[Number | Case]* Number Case ,,
+                [..] <- Number || _ Case (?) \[Number | Case]* Number Case ] ;
+
+read regex [ CleanUp .o. [WordPairs & GoodCase] ] ;

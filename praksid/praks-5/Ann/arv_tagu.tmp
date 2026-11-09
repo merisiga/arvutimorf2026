@@ -30,6 +30,7 @@ Multichar_Symbols
 +Comp     ! keskvõrre / comparative
 +Super    ! ülivõrre / superlative
 +Adv      ! määrsõna / adverb
++Num      ! arvsõna / numeral
 
 %>                ! morfeemi piir
 %{NA%}            ! nõrk aste
@@ -45,14 +46,14 @@ P2                ! p või b
 T2                ! t või d
 
 ! arvsõnapaari teine pool (sada, kümmend)
-! NB! sõnaliiki ei märgi
+! Sõnaliik (+Num) on ainult tagumisel poolel, esimesel poolel sõnaliiki ei märgita.
 ! Sümbolid, semkäänded (-sse, -s, -st ...) ja gi-liide tulevad Ann.lexc failist.
 ! Siia on kirjutatud ainult ebaregulaarsed tüved (nimetav, omastav, osastav).
 
 LEXICON Root
 
-sada: sada_vorm ;
-kümmend: kymmend_vorm ;
+sada+Num: sada_vorm ;
+kümmend+Num: kymmend_vorm ;
 
 LEXICON sada_vorm
   +Sg+Nom:sada GI_OPTIONAL ;
