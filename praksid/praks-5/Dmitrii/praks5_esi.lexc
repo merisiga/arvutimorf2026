@@ -1,46 +1,8 @@
 
-
-%{NA%}		! Nõrk aste
-K1          ! k või h
-
 LEXICON Root
 
-kaks:kaK1s tüüp_põu ;        ! kaks -> kahe / kahte
+kaks:kaks kaks_tugev ;        ! kaks -> kahe / kahte
+kaks:kah kaks_nõrk ; 	
 paar:paar tüüp_riik ;		! paar -> paari
  
 
-
-LEXICON tüüp_põu
-	+Sg+Nom: # ;
-		:%{NA%}e gen_jt ;        ! kaks -> kahe 
-	+Sg+Par:%{NA%}te # ;            ! kaks -> kahte         
-	+Pl:%{NA%}te sem_k ;       
-	+Pl+Par:%{NA%}t # ;
-	
-	
-LEXICON tüüp_riik
-	+Sg+Nom: # ;
-		:i gen_jt ;        ! paari 
-	+Sg+Par:i # ;                 
-	+Pl:ide sem_k ;       
-	+Pl+Par:e # ;			!paarekümne?
-
-
-
-LEXICON gen_jt
-	+Pl+Nom:%>d # ;
-	+Sg+Gen: # ;
-		+Sg:%> sem_k ;
-		
-LEXICON sem_k
-       +Ill:sse # ;	
-       +Ine:s # ;	
-       +Ela:st # ;	
-       +All:le # ;	
-       +Ade:l # ;	
-       +Abl:lt # ;	
-       +Tra:ks # ;	
-       +Trm:ni # ;	
-       +Ess:na # ;	
-       +Abe:ta # ;	
-       +Com:ga # ;

@@ -17,7 +17,7 @@ hfst-compose-intersect praks5_tagu.hfst kt5.compose.hfst > kt5_tagu_fono.hfst
 
 printf "source paari_filter.xfscript\n\
         define fst\n\
-        read regex fst .o. [@\"kt5_esi_fono2.hfst\" \"-\" @\"kt5_tagu_fono2.hfst\"]\n\
+        read regex fst .o. [@\"kt5_esi_fono.hfst\" \"-\" @\"kt5_tagu_fono2.hfst\"]\n\
         save praks5_paarissõnad.hfst\n\
         quit\n" | hfst-xfst
 
