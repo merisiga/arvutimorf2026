@@ -2,43 +2,91 @@
 
 Ann
 
+Ann - arvutimorfoloogia kodutööd
+
+Failid:
+Ann.lexc, Ann.twolc          põhimuundur (sõnad, käänded, tuletus, häälikureeglid)
+blokeeri_tuletus.xfscript    tuletuse filter
+Vead.xfscript                vigade parandamine
+paaris_esi.lexc, paaris_tagu.lexc, paari_filter.xfscript    paarissõnad
+arv_esi.lexc, arv_tagu.lexc, arv_filter.xfscript            arvsõnad
+build.sh                     käsud, millega kõik muundurid valmis tehakse
+Ann.strings, paarissonad.strings, arvsonad.strings           kõik analüüsid ja vormid
+paar_test.txt, arv_test.txt  testsisendid
+
+Käivitamine: bash build.sh
+
+
+1. PAARISSÕNAD (nibin-nabin, pilla-palla)
+
+Mida tahtsin: muunduri paarissõnadele, kus mõlemad pooled käänduvad
+(nibinasse-nabinasse, nibina-nabinaga).
+
+Kuidas:
+  Sõnaliik (+N) on tagumisel poolel, esimesel poolel sõnaliiki ei märgita.
+- Häälikureeglid on samad, mis põhimuundurile (Ann.twolc -> Ann_fono.hfst).
+- xfst paneb esimese ja tagumise osa sidekriipsuga kokku. Tulemuses on kõik
+  kombinatsioonid, ka valed (nibin-palla, nibina-nabinasse).
+- paari_filter.xfscript jätab alles ainult:
+  - õiged paarid (nibin-nabin, pilla-palla)
+  - mõlemal poolel sama arv
+  - kümnes käändes mõlemad pooled samas käändes (nibinasse-nabinasse)
+  - ni-, na-, ta- ja ga-käändes esimene pool omastavas (nibina-nabinaga)
+  CleanUp jätab analüüsist esimese poole arvu ja käände välja (nibin-nabin+N+Sg+Gen).
+
+Mis ebaõnnestus ja kuidas parandasin:
+- Paarissõnadel tuletust ei ole, nii et lisasin filtrisse NoDer.
+- Root peab lexc failis olema esimene; build.sh paneb selle nüüd esimeseks.
+
+
+2. ARVSÕNAD (kakssada, kakskümmend, paarsada, paarkümmend)
+
+Mida tahtsin: muunduri arvsõnadele, kus nii esimene kui teine pool käänduvad
+(kahesaja, kahtsadat, paarikümnesse).
+
+Kuidas:
+- Esimene pool (kaks, paar) ja teine pool (sada, kümmend) on eraldi lexc failides
+  (arv_esi.lexc, arv_tagu.lexc). Sümbolid, semkäänded (-sse, -s, -st ...) ja gi-liide
+  tulevad Ann.lexc failist. Sõnaliik (+Num) on tagumisel poolel.
+  Tüved on ebaregulaarsed (kaks - kahe - kaht), seepärast on nimetav, omastav ja
+  osastav kirjutatud lexc-i otse. Kohakäänded tulevad omastava tüvest + semkäänded.
+- arv_filter.xfscript jätab alles ainult õiged käändekombinatsioonid
+- CleanUp eemaldab analüüsist esimese poole arvu ja käände,
+  nii et analüüs on kakskümmend+Num+Sg+Com+Gi : kahekümnegagi.
+
+Mis ebaõnnestus ja kuidas parandasin:
+- Esimene filter jättis esimese poole arvu ja käände analüüsi
+  (kaks+Sg+Genkümmend+Sg+Com), sest CleanUp puudus. Lisasin selle.
+- Esimeses versioonis olid mõlemad pooled samas käändes ja see andis kohakäänetes
+  vale vormi (kahessesajasse). Parandasin nii, et esimene pool on omastavas.
+- Mitmuse vorme ei tee, sest need arvsõnad ei mitmustu.
+
+
 HJK
-build.sh kaudu sain aru, mida olete teinud
-Kahjuks pole ühtegi kommentaari selle kohta, et mida tahtsite teha ja mis ebaõnnestus.
 
-Oleksin oodanud järgmisi leksikaalse ja pindesituse paare:
-kakskümmend+Sg+Com+Gi:kahekümnegagi
-kakskümmend+Sg+Com:kahekümnega
-kakssada+Sg+Nom:kakssada
-kakskümmend+Sg+Par:kahtkümmend
+paarissõnadel on jäänud välja filtreerimata esimese osa potentsiaalne gi-liide:
 
-aga teie tegite:
-kaks+Sg+Genkümmend+Sg+Com+Gi:kahekümnegagi
-kaks+Sg+Genkümmend+Sg+Com:kahekümnega
-kaks+Sg+Nomsada+Sg+Nom:kakssada
-kaks+Sg+Parkümmend+Sg+Par:kahtkümmend
+nibin+Gi-nabin+N+Pl+Com+Gi:nibinategi-nabinategagi
+nibin+Gi-nabin+N+Pl+Com:nibinategi-nabinatega
+nibin-nabin+N+Pl+Com+Gi:nibinate-nabinategagi  <- see on OK
+nibin-nabin+N+Pl+Com:nibinate-nabinatega       <- see on OK
 
-s.t. leksikaalses pooles on esitatud liitsõna algusosa arv ja kääne.
-Ilmselt on viga failis arv_filter.xfscript, milles puudub vastav eemaldamis-muundur (näidises define CleanUp)
-
-Paarissõnadele ja ka arvsõnadele jätsite miskipärast sõnaliigi andmata, kuigi näites oli see olemas.
 
 paari_filter.xfscriptis olete ära parandanud paar näides olnud viga (+Ter, +Kom)
 
-Punktid: 2
+Punktid: 3
 ------------
 
 Dmitrii 
-1. Muundur ei tööta, aga ma andsin endast parima
-2. ma ei saa aru miks paarisõnade failis on sõnad näidetest ja mitte minu omad
-3. vigu on palju, pidin faile mitut korda ümber tegema, isegi TI ei aidanud
-4. enam ei jaksanud parandada kell 3 öösel
 
+Nüüd töötab, aga nõrga astme märgistus on jäänud pindesitusse ning sada ei käändu. 
 
 HJK
-Ma ei saanudki aru, mida te täpselt tegite. 
+Ma ei saa aru, kuidas see arvsõnade muundur on tehtud: millised failid ja kuidas on muunduri tegemises osalenud.
+Sada tegelikult kuidagi käändub küll, aga tüvi ei muutu õigesti. Ma ei oska öelda, milles viga on, sest ma ei tea, milliseid faile ja kuidas on kasutatud...
 
-punktid: 1
+
+punktid: 2
 
 --------------
 karoliina
