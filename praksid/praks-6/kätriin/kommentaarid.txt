@@ -1,0 +1,13 @@
+Lahendasin ikka veel oma tuletusega seotud probleeme - enam-vähem sain tööle, samas rikkusin ära süsi käänamise. Nokk kinni, saba lahti.
+
+Püüdsin lahendada ka xfst ja lexc abiga liitsõnade genereerimist.
+Ei saanud kahjuks tööle seda, et kindlas käändes sõnad liituvad kindlale käändele.
+Ei saanud eemaldatud ka -ig liidet.
+Aga vähemalt sain sõnad üksteisele liituma.
+
+xfstga proovides on build6.sh fail ja lexc katsetus on build6grup.sh
+
+Kuigi tööle ei saanud, siis xfst-ga tundus reegeleid lihtsam implementeerida kui lexc-ga.
+Ma arvan, et ehk saaks parima tulemuse mõlemat koos kasutades.
+
+Küsiksin, kuidas peaks mõlemal juhul kirjeldama -gi liite ärajätmist?

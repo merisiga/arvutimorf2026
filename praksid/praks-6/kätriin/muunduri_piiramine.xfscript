@@ -1,0 +1,13 @@
+# kõik sõnad võivad liituda kõigi sõnadega
+define lihtsonamuundur [?*] + [?*] ;
+
+define PiiratumMuundur [[?* "+N" ?*] "+Gen" ?*] & [~[?* "gi" ?*]] + [[?* "N"?*] "+Nom" ?*] ;
+
+
+# piirame muundurit
+
+#define KoikSonad [[PiiratumMuundur ]* lihtsonamuundur] ;
+
+define KoikSonad [[PiiratumMuundur ]* lihtsonamuundur] ;
+
+regex KoikSonad ;
