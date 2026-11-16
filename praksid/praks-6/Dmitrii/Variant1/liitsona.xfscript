@@ -1,0 +1,18 @@
+! 1. lihtsõnade muundur (kõik käänded, ka -gi)
+define lihtsonamuundur @"lihtsonamuundur.hfst" ;
+
+! 2. piiratum muundur: filter analüüsipoolel (märgid on "" sees, sest + on xfst-is operaator)
+define SobivSonaliik [ "+N" | "+A" ] ;
+define SobivKaane    "+Sg" [ "+Nom" | "+Gen" ] ;     ! vajadusel: | "+Pl" "+Gen"
+
+! rada peab lõppema käändega, seega +Rohk (-gi) välistub ise
+define PiiratudRada  [ ?* SobivSonaliik SobivKaane ] ;
+
+define piiratum_muundur [ PiiratudRada .o. lihtsonamuundur ] ;
+
+! 3. liitsõnamuundur
+define koik_sonad [ piiratum_muundur* lihtsonamuundur ] ;
+
+read regex koik_sonad ;
+save stack liitsona_xfst.hfst
+quit
