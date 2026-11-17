@@ -1,0 +1,14 @@
+kapp+N+Pl+Part:kappisid
+kapp+N+Sg+Part:kappi
+kodu+N+Pl+Nom:kodud
+kodu+N+Pl+Part:kodusid
+maja+N+Pl+Nom:majad
+maja+N+Pl+Part:majasid
+mark+N+Pl+Nom:margid
+mark+N+Pl+Part:markisid
+mark+N+Sg+Part:marki
+pere+N+Pl+Nom:pered
+pere+N+Pl+Part:peresid
+pere+N+Sg+Part:peret
+pukk+N+Pl+Part:pukkisid
+pukk+N+Sg+Part:pukki

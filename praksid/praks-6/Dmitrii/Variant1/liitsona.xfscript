@@ -8,11 +8,11 @@ define SobivKaane    "+Sg" [ "+Nom" | "+Gen" ] ;     ! vajadusel: | "+Pl" "+Gen"
 ! rada peab lõppema käändega, seega +Rohk (-gi) välistub ise
 define PiiratudRada  [ ?* SobivSonaliik SobivKaane ] ;
 
-define piiratum_muundur [ PiiratudRada .o. lihtsonamuundur ] ;
+define piiratummuundur [ PiiratudRada .o. lihtsonamuundur ] ;
 
 ! 3. liitsõnamuundur
-define koik_sonad [ piiratum_muundur* lihtsonamuundur ] ;
+define koiksonad [ piiratummuundur* lihtsonamuundur ] ;
 
-read regex koik_sonad ;
-save stack liitsona_xfst.hfst
+read regex koiksonad ;
+save stack liitsonaxfst.hfst
 quit
