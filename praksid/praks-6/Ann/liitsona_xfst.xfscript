@@ -1,0 +1,17 @@
+! Liitsõnamuundur xfst abil (võimalus 1).
+! Analüüsi tasemel on liitsõna piir %# (nt koli+N+Sg+Nom%#vidin+N+Sg+Nom).
+
+! 1. Lihtsõnamuundur: lexc-ist tehtud Ann.hfst (analüüs : lexc-i alumine tase, tuletus lubatud),
+!    siin ainult algsed 10 sõna.
+define Algsonad [{Ann} | {Salutee} | {Ilmatsalu} | {Tartu} | {koli} | {kena} | {sugu} | {vidin} | {redel} | {torssis}] ;
+define lihtsona [[Algsonad ?*] .o. @"Ann.hfst"] ;
+
+! 2. Piiratum muundur: liitsõna mitte-viimane osa.
+!    Ainult nimi- ja omadussõnad, ainult ainsuse nimetav, ainsuse omastav ja mitmuse omastav,
+!    ilma gi-liiteta (analüüs lõpeb käändega, +Gi seega ei sobi).
+define Kaanded [["+Sg" "+Nom"] | ["+Sg" "+Gen"] | ["+Pl" "+Gen"]] ;
+define PiiratumFilter [?* ["+N" | "+A"] ?* Kaanded] ;
+define piiratum [PiiratumFilter .o. lihtsona] ;
+
+! 3. Liitsõnamuundur: null kuni lõpmatu arv esiosi, millele järgneb lihtsõna.
+read regex [[piiratum %#]* lihtsona] ;

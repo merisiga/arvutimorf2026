@@ -1,0 +1,15 @@
+! Filter liitsõnade jaoks: sobimatud tuletused välja (sama mis blokeeri_tuletus.xfscript),
+! aga nii, et filter toimiks liitsõna mistahes osas (%# on liitsõna piir analüüsis).
+
+! liitsõna mistahes osa algus: kas sõna algus või midagi, mis lõppeb liitsõna piiriga
+define Algus ( [?* %#] ) ;
+
+define NimisonaTuletus [?* "+N" ["+Der/m" | "+Der/im" | "+Der/lt"] ?*] ;
+define LikOmadussonale [?* ["+A" | "+Comp" | "+Super"] "+Der/lik" ?*] ;
+define VorreUuesti [?* ["+Comp" | "+Super"] ["+Der/m" | "+Der/im"] ?*] ;
+define Parisnimed [Algus [{Ann} | {Salutee} | {Ilmatsalu} | {Tartu}] "+N" "+Der/lik" ?*] ;
+define Pahadsonad [Algus [{pikk} | {kõva}] "+A" "+Der/m" ?*] ;
+
+define Halvad [NimisonaTuletus | LikOmadussonale | VorreUuesti | Parisnimed | Pahadsonad] ;
+
+read regex ~Halvad ;

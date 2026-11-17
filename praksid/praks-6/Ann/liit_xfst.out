@@ -1,0 +1,40 @@
+koli+N+Sg+Nom	koli	0.000000
+
+koli+N+Sg+Nom#vidin+N+Sg+Nom	kolividin	0.000000
+
+koli+N+Sg+Nom#vidin+N+Sg+Ill	kolividinasse	0.000000
+
+sugu+N+Sg+Gen#koli+N+Sg+Nom	sookoli	0.000000
+
+sugu+N+Sg+Gen#koli+N+Sg+Nom+Gi	sookoligi	0.000000
+
+vidin+N+Pl+Gen#koli+N+Sg+Ine	vidinatekolis	0.000000
+
+kena+A+Sg+Nom#koli+N+Sg+Nom	kenakoli	0.000000
+
+kena+A+Der/m+A+Comp+Sg+Nom#sugu+N+Sg+Nom	kenamsugu	0.000000
+
+Tartu+N+Sg+Nom#koli+N+Sg+Gen	Tartukoli	0.000000
+
+redel+N+Sg+Gen#kena+A+Sg+Gen	redelikena	0.000000
+
+koli+N+Sg+Nom#koli+N+Sg+Nom#koli+N+Sg+Nom	kolikolikoli	0.000000
+
+koli+N+Sg+Nom#torssis+A	kolitorssis	0.000000
+
+koli+N+Sg+Nom+Gi#vidin+N+Sg+Nom	koli+N+Sg+Nom+Gi#vidin+N+Sg+Nom+?	inf
+
+koli+N+Sg+Par#vidin+N+Sg+Nom	koli+N+Sg+Par#vidin+N+Sg+Nom+?	inf
+
+koli+N+Sg+Ill#vidin+N+Sg+Nom	koli+N+Sg+Ill#vidin+N+Sg+Nom+?	inf
+
+kena+A+Der/lt+Adv#koli+N+Sg+Nom	kena+A+Der/lt+Adv#koli+N+Sg+Nom+?	inf
+
+koli+N+Der/m+A+Comp+Sg+Nom#vidin+N+Sg+Nom	koli+N+Der/m+A+Comp+Sg+Nom#vidin+N+Sg+Nom+?	inf
+
+Ann+N+Der/lik+A+Sg+Nom#koli+N+Sg+Nom	Ann+N+Der/lik+A+Sg+Nom#koli+N+Sg+Nom+?	inf
+
+torssis+A#koli+N+Sg+Nom	torssis+A#koli+N+Sg+Nom+?	inf
+
+ 	 +?	inf
+
