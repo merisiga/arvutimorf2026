@@ -1,0 +1,94 @@
+
+
+Ann
+
+# Võimalus 1: xfst
+#   lihtsona -> piiratum (filter) -> [piiratum %#]* lihtsona -> filter -> häälikureeglid
+# Võimalus 2: lexc
+#   sõnarühmad ja liitsõna piir lexc failis -> filter -> häälikureeglid
+
+Mulle meeldib ilmselt xfst-i variant rohkem. Selles jääb Ann.lexc puutumata ja liitsõnareeglid olid ühes lühikeses failis, nii et neid on lihtne muuta. Lexc-i variandis peab igale käändetüübile lisama jätkuleksikoni ja sõnad rühmadesse jaotama.
+
+
+HJK
+
+Tehtu kirjeldus ja kommentaarid build-failis on väga head, s.t. väga hea oli aru saada, mis on tehtud.
+Lisaks oli väga hea, et tegite muundurite võrdluse (hfst-compare) ja diff
+
+Häälikureeglite muunduri (mis tehtud twolc-failist) oleks võinud komponeerida ka juba lihtsõnade tegemise etapis.  
+
+Miks on lihtsõnamuundur piiratud 10 sõnaga, s.t. ei lubata kõiki lexc failis võimalikke sõnu?
+Praegu on lubatud ka liitsõnad nagu AnnAnn
+
+Kokkuvõtes: muundur ei tee päris seda, mis oleks õige, aga olete välja tulnud ka mõne lisanõksuga.
+
+Punktid: 3
+------------
+
+Dmitrii 
+
+ 
+
+HJK
+
+Variant1/liitsona.xfscript sisaldas rumalat viga: xfst keel ei luba defineeritud muutuja nimes alakriipsu, 
+st define piiratum_muundur ja define koik_sonad on lubamatud. Kui sellised asjad ära parandada, siis skript töötab
+
+Variant2 on ilmselt üldse pooleli jäänud...
+
+punktid: 1
+
+--------------
+karoliina
+
+Piiritlesin liitsõnu nii, et esiosa võis olla ainsuse nimetavas või omastavas, Noun+Noun/Noun+Adj/Adj+Adj ja sinise jätsin esiosana hetkel välja. tegin kummagi meetodi jaoks erinevad kausta.
+
+Ma ei saanud xfst skripti versiooni tööle. ma proovisin lihtsalt "KoikSonad [[PiiratumMuundur]* LihtsonaMuundur] ;" ja "KoikSonad [[PiiratumMuundur "+#"]* LihtsonaMuundur] ;", kus "+#" tähistab piiri kahe sõna vahel, aga mõlemad annavad ainult tuletisi.
+(Vb on probleem hw6.sh failis, kus peaks hfst failid liitma vms aga ma ei oska seda teha)
+
+Mulle tundus, et sain lexc versiooni lihtsamini tööle, mistõttu oli see mulle meeldivam. Jätkusuutlikum on ilmselt xfst skript, sest siis ei muutu lexc fail nii pikaks.
+
+Ma proovisin vahepeal vigade parandamiseks kasutada copilotit ja mõned näpuvead leidis see üles, aga vahel suunas mind täiesti vales suunas...
+
+
+HJK
+
+lexc versioon:
+Vana viga: pärisnimele lubab mistahes tuletust, sest seda keelama pidav xfscript fail ei arvesta pärisnime sõnaliigiga.
+Samal põhjusel on pärisnimi ja sellest tehtud tuletus lubatud igasuguse liitsõna esiosana.
+
+xfst versioon:
+Viga on tõepoolest hw6.sh failis.
+Täpsemalt selles, milliseid muundureid te omavahel kompositsiooni kaudu kombineerite;
+hw6.xfscript sisaldab käske, mis võiksid mingit muundurit muuta, aga hw6.sh skript ei anna seda muundurit neile käskudele edasi. 
+
+punktid: 2
+------------
+
+kätriin
+
+Lahendasin ikka veel oma tuletusega seotud probleeme - enam-vähem sain tööle, samas rikkusin ära süsi käänamise. Nokk kinni, saba lahti.
+
+Püüdsin lahendada ka xfst ja lexc abiga liitsõnade genereerimist.
+Ei saanud kahjuks tööle seda, et kindlas käändes sõnad liituvad kindlale käändele.
+Ei saanud eemaldatud ka -ig liidet.
+Aga vähemalt sain sõnad üksteisele liituma.
+
+xfstga proovides on build6.sh fail ja lexc katsetus on build6grup.sh
+
+Kuigi tööle ei saanud, siis xfst-ga tundus reegeleid lihtsam implementeerida kui lexc-ga.
+Ma arvan, et ehk saaks parima tulemuse mõlemat koos kasutades.
+
+Küsiksin, kuidas peaks mõlemal juhul kirjeldama -gi liite ärajätmist?
+
+HJK
+
+Olete teinud kaks twolc faili - ühes on lisamärgipaarina #:0. Tegelikult seda teist twolc faili polekski enam vaja, sest selle uue märgipaari lisamine midagi katki ei teeks.
+
+gi-liite ärajätmist oleks vist kõige lihtsam teha filtri kaudu.
+Leksikaalsele poolele lisada kompositsioon umbes nii: ~$[+GI] .o. lihtsõnamuundur
+
+punktid: 2
+
+
+
