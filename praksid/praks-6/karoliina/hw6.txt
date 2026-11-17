@@ -1,0 +1,7 @@
+Piiritlesin liitsõnu nii, et esiosa võis olla ainsuse nimetavas või omastavas, Noun+Noun/Noun+Adj/Adj+Adj ja sinise jätsin esiosana hetkel välja. tegin kummagi meetodi jaoks erinevad kausta.
+
+Ma ei saanud xfst skripti versiooni tööle. ma proovisin lihtsalt "KoikSonad [[PiiratumMuundur]* LihtsonaMuundur] ;" ja "KoikSonad [[PiiratumMuundur "+#"]* LihtsonaMuundur] ;", kus "+#" tähistab piiri kahe sõna vahel, aga mõlemad annavad ainult tuletisi.
+
+Mulle tundus, et sain lexc versiooni lihtsamini tööle, mistõttu oli see mulle meeldivam. Jätkusuutlikum on ilmselt xfst skript, sest siis ei muutu lexc fail nii pikaks.
+
+Ma proovisin vahepeal vigade parandamiseks kasutada copilotit ja mõned näpuvead leidis see üles, aga vahel suunas mind täiesti vales suunas...

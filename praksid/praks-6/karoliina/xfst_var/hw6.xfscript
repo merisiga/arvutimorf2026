@@ -1,0 +1,51 @@
+# lihtsõna muundur
+define Tuletused ["+Der/m" | "+Der/im" | "+Der/lt" | "+Der/lik"];
+
+# defineeri pahad rajad
+
+# mis sõnaliigile järgnema peab
+
+define PahaTuletus [~[?* "+A"] "+Der/m" ?*] | [~[?* "+A"] "+Der/im" ?*] | [~[?* "+A"] "+Der/lt" ?*] | [~[?* "+N" | ?* "+PropN"] "+Der/lik" ?*] ;
+
+# sama tuletust mitu korda ei luba
+
+define PahaKordus [["+Der/m"] ?* ["+Der/m"]] |  [["+Der/im"] ?* ["+Der/im"]] | [["+Der/lt"] ?* ["+Der/lt"]] | [["+Der/lik"] ?* ["+Der/lik"]];
+
+# tuletusel vale vokaal -> jätab välja
+
+define PahaVokTuletus [ [{pikk}] "+A" ["+Der/m" | "+Der/im"] ?*] | [[{kena}] "+A" "+Der/im" ?*] ;
+
+# head rajad on need, mis pole ei need ega teised pahad rajad
+
+define LihtsonaMuundur [~[PahaTuletus] & ~[?* PahaKordus ?*] & ~[PahaVokTuletus]] ;
+
+
+# liitsõna esi/keskosa muundur
+
+!define Number ["+Sg" | "+Pl"] ;
+define SobivKaane ["+Nom" | "+Gen" ] ;
+!define MuuKaane [ "+Par" | "+Ill" | "+Ine" | "+Ela" | "+All" | "+Ade" | "+Abl" | "+Tra" | "+Trm" | "+Ess" | "+Abe" | "+Com"] ;
+define LiitKaane [ "+Sg" SobivKaane ];
+!define ValeKaane [ Number MuuKaane | "+Pl" SobivKaane] ;
+
+
+# eemaldab tuletused
+define OnTuletus [?* Tuletused ?*] ;
+
+# õige sõnaliik
+define SobivSonaliik [[?* "+N" ?*] | [?* "+A" ?*]] ;
+
+# vale lõpp, nt sinine ei saa olla liitsõna esiosa, peaks olema sini, aga jätan selle välja
+define ValeLopp [?* [{ne}] "+A" ?*] ;
+
+# eemaldab gi-lõppudega ja valede käändelõppudega vormid
+# kuna kasutan %# ja +Gi järele ei pannud seda, ss pole pmst vaja gi-d eraldada,
+# aga igaks juhuks jätsin sisse
+define SobivLopp [~[?* "+Gi" ?*] & [?* LiitKaane ?*] & ~[ValeLopp]] ;
+
+# paneb kokku liitsõnaesiosa muunduri e piiratuma muunduri
+define PiiratumMuundur [~[OnTuletus] & [SobivSonaliik] & [SobivLopp]] ;
+
+define KoikSonad [[PiiratumMuundur]* LihtsonaMuundur] ;
+
+regex KoikSonad ; 
