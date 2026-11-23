@@ -9,7 +9,7 @@ A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y
 
  %>:0   ! Morfeemipiir ei tule pindesituses kunagi esile
 
-%#:0 ! liitsõna piir
+ %#:0   ! liitsõna piir
 
 ! astmevaheldus
 J1:0
@@ -37,7 +37,7 @@ P2:b
 T2:t      ! paaT2 : paat ~ paadi
 T2:d
 
-! -gi / -ki 
+! -gi / -ki
 GK:k
 GK:g
 
@@ -65,17 +65,12 @@ Rules
 "J1 muutub j-ks vokaalide vahel"
 J1:j <=> Vowel _ %{NA%}: Vowel ;
 
-
 "N1 muutub nulliks enne %{NA%}"
 N1:0 <=> _ %{NA%}: ;
-
-
 
 "Nõrgas astmes G1 B1 D1 S1 K1 P1 T1 kaovad"
 Cx:0 <=> _ :Vowel* %{NA%}:0 ;
      where Cx in ( G1 B1 D1 S1 K1 P1 T1 ) ;
-
-
 
 "Nõrgas astmes K2 P2 T2 muutuvad g b d-ks"
 Cx:Cy <=> _ :Vowel* %{NA%}:0 ;
@@ -83,16 +78,12 @@ Cx:Cy <=> _ :Vowel* %{NA%}:0 ;
            Cy in (  g  b  d )
      matched ;
 
-
-
-
 "u > o ja i > e, kui nõrga sulghääliku kadumise järel jääb vokaal kõrvale"
-Vx:Vy <=> [.#. | Consonant] _ [ G1:0 | B1:0 | D1:0 ] [ %{NA%}:0 | %>:0 ]* :Vowel ;
-          [.#. | Consonant] :Vowel [ G1:0 | B1:0 | D1:0 ] _ ;
+Vx:Vy <=> [.#. | %#:0 | Consonant] _ [ G1:0 | B1:0 | D1:0 ] [ %{NA%}:0 | %>:0 ]* :Vowel ;
+          [.#. | %#:0 | Consonant] :Vowel [ G1:0 | B1:0 | D1:0 ] _ ;
      where Vx in ( u i )
            Vy in ( o e )
      matched ;
-
 
 "GK > k pärast hääletut kaashäälikut"
 GK:k <=> :Voiceless [ %{NA%}:0 | %>:0 ]* _ ;

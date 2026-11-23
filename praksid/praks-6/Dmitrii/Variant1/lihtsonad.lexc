@@ -1,53 +1,27 @@
 Multichar_Symbols
 
-+N                ! Nimisõna
-+A                ! Omadussõna
-+Sg
-+Pl
-+Nom
-+Gen
-+Part
-+Ill
-+In
-+El
-+All              ! Alaleütlev
-+Ad
-+Abl
-+Tr
-+Term
-+Es
-+Abes
-+Kom
++N +A
++Sg +Pl
++Nom +Gen +Part +Ill +In +El +All +Ad +Abl +Tr +Term +Es +Abes +Kom
 +Rohk
-
 
 %>                ! morfeemi piir
 %{NA%}            ! nõrk aste
 
-G1                ! g või null
-B1                ! b või null
-D1                ! d või null
-S1                ! s või null
-K1
-K2
-P1
-P2
-T1
-T2
-GK
+G1 B1 D1 S1 K1 K2 P1 P2 T1 T2 GK
 
 
 LEXICON Root
 
-maja+N:maja tüüp_ema ;     ! leksikaalne pool : pindesitus
+maja+N:maja tüüp_ema ;
 kodu+N:kodu tüüp_ema ;
 pere+N:pere tüüp_pere ;
-kapp+N:kapP1 tüüp_täpp ;   ! kapp - kapi
-pukk+N:pukK1 tüüp_täpp ;   ! pukk - puki
-mark+N:marK2 tüüp_täpp ;   ! mark - margi
-käsi+N:käS1 tüüp_käsi ;    ! käsi - käe - kätt
-nimi+N:nim tüüp_tugi ;     ! nimi - nime
-tugi+N:tuG1 tüüp_tugi ;    ! tugi - toe
+kapp+N:kapP1 tüüp_täpp ;
+pukk+N:pukK1 tüüp_täpp ;
+mark+N:marK2 tüüp_täpp ;
+käsi+N:käS1 tüüp_käsi ;
+nimi+N:nim tüüp_tugi ;
+tugi+N:tuG1 tüüp_tugi ;
 vana+A:van tüüp_kena ;
 
 

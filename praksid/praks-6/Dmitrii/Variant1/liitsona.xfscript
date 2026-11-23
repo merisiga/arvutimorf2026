@@ -1,18 +1,18 @@
-! 1. lihtsõnade muundur (kõik käänded, ka -gi)
-define lihtsonamuundur @"lihtsonamuundur.hfst" ;
+! 1. lihtsõnamuundur: lexc + twolc, kõik käänded, ka -gi
+define Lihtsonamuundur @"lihtsonamuundur.hfst" ;
 
-! 2. piiratum muundur: filter analüüsipoolel (märgid on "" sees, sest + on xfst-is operaator)
-define SobivSonaliik [ "+N" | "+A" ] ;
-define SobivKaane    "+Sg" [ "+Nom" | "+Gen" ] ;     ! vajadusel: | "+Pl" "+Gen"
+! 2. piiratum muundur: ainult rajad, mis sobivad liitsõna mitte-viimaseks osaks
+define Sonaliik  [ "+N" | "+A" ] ;
+define EsiKaane  [ "+Sg" [ "+Nom" | "+Gen" ] ] ;
 
-! rada peab lõppema käändega, seega +Rohk (-gi) välistub ise
-define PiiratudRada  [ ?* SobivSonaliik SobivKaane ] ;
+! rada peab SELLEGA LÕPPEMA, seega +Rohk (-gi) välistub ise
+define EsiRada   [ ?* Sonaliik EsiKaane ] ;
 
-define piiratummuundur [ PiiratudRada .o. lihtsonamuundur ] ;
+define PiiratumMuundur [ EsiRada .o. Lihtsonamuundur ] ;
 
-! 3. liitsõnamuundur
-define koiksonad [ piiratummuundur* lihtsonamuundur ] ;
+! 3. liitsõnamuundur: null või rohkem esiosa + lihtsõna
+define KoikSonad [ PiiratumMuundur^{0,2} Lihtsonamuundur ] ;
 
-read regex koiksonad ;
+read regex KoikSonad ;
 save stack liitsonaxfst.hfst
 quit
