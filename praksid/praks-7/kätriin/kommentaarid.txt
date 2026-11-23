@@ -1,0 +1,4 @@
+Töötasin oma mitmete vigade kallal. Muudetud sain vähe, kuid panen tehtu ikkagi üles.
+Põhifaili vigadest: lexc failis jäi veel katki osa sõna süsi käänamisest, sõnad kaup ja vaat said ühe reegli alla kokku.
+Kodutöö 6 osas: tundub, et mõistan ikkagi liiga vähe, et kodutöö tagasisidet osata implementeerida. Katsetasin mitut moodi eemaldada gi-liidet, ei saanud pihta ikkagi ka sellele, et kuidas need sõnad üksteise otsa liidetakse.
+Xfst variant on build6.sh fail ja lexc katsetus on build6grup.sh

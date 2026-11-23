@@ -1,0 +1,20 @@
+# kõik sõnad võivad liituda kõigi sõnadega
+define lihtsonamuundur [?*] + [?*] ;
+
+define ValitudSonaliik [ "+N" | "+A" ] ;
+
+# Esimene pool võib olla ainsuse omastavas, nimetavas
+define OigeKaane "+Sg" [ "+Nom" | "+Gen" ] ; 
+
+# liidame kokku õiged sõnaliigid ja käänded, välistab -gi liite
+define PiiravadReeglid  [ ?* ValitudSonaliik OigeKaane ] ;
+
+# piirame muundurit
+define PiiratumMuundur [ PiiravadReeglid .o. ~$["+gi"] .o. lihtsonamuundur ] ;
+
+#define KoikSonad [[PiiratumMuundur ]* lihtsonamuundur] ;
+
+define KoikSonad [[PiiratumMuundur „#“:0]* lihtsonamuundur] ;
+
+regex KoikSonad ;
+# .o. ~$[+gi] .o. 
