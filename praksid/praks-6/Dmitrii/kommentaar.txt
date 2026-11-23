@@ -1,2 +1,2 @@
-Variant 2 puhul tekkisid tähenduseta, kuid õigesti moodustatud liitsõnad. Neid võiks välja filtreerida normeerimise mõttes. 
-Variant 1 on vähem näiteid, kuid selgem moodustus. Mõned sõnad lõppfailis puuduvad. 
+Variant 1 jaoks õnnestus luua variant 2-le sarnase muunduri. vt tulemused failist output.txt
+Variant 2 tulemused on failis liitsona_lexc.strings
