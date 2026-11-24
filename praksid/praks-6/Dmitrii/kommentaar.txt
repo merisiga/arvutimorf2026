@@ -1,2 +1,2 @@
-Variant 1 jaoks õnnestus luua variant 2-le sarnase muunduri. vt tulemused failist output.txt
+Variant 1 jaoks õnnestus luua variant 2-le sarnase muunduri, kuigi see on tsükliline. vt tulemused failist output.txt
 Variant 2 tulemused on failis liitsona_lexc.strings
