@@ -1,0 +1,91 @@
+
+Ann
+
+Mis ebaõnnestus ja kuidas parandasin:
+- Esimene versioon piiras algsele 10 sõnale, kuigi lexc failis on rohkem. Nüüd on
+  kasutusel kõik sõnad.
+- Esimene versioon lubas pärisnimesid liitsõnas (AnnAnn). Lisasin liit_filter.xfscript failis filtri
+  ParisnimiLiitsonas.
+
+HJK
+
+Minu meelest on kõik korras.
+Pärisnimed oleks võinud tegelikult juba lexc-failis tähistada teisiti kui üldnimed, nt. +N asemel +N+Prop
+Sel juhul oleks saanud filtrid lihtsamalt teha, sest oleks piisanud sõna alamliigi +Prop arvestamisest. 
+
+Punktid: 3
+------------
+
+Dmitrii 
+
+Variant 1 jaoks õnnestus luua variant 2-le sarnase muunduri. vt tulemused failist output.txt
+Variant 2 tulemused on failis liitsona_lexc.strings
+
+HJK
+
+Oleks võinud lisada ka mingi märgi liitsõna osade vahelise piiri tähistamiseks.
+
+punktid: 3
+
+--------------
+karoliina
+
+Piiritlesin liitsõnu nii, et esiosa võis olla ainsuse nimetavas või omastavas, Noun+Noun/Noun+Adj/Adj+Adj ja sinise jätsin esiosana hetkel välja. tegin kummagi meetodi jaoks erinevad kausta.
+
+Okei, ma proovisin mõlemat parandada, aga kumbki ei saanud täielikult korda.
+
+Lexc puhul proovisin PropN liitsõnu eemaldada, aga millegipärast Jõgi-algusega liitsõnad jäid sisse ja tundus, et neist ei tuvastatud "+PropN" osa??? (Muude nimede puhul seda ei juhtu vist?)
+
+Xfst puhul sain tekitada liitsõnu, aga reeglid ei töötanud. Alguses näitas nii õigeid kui ka valesid, lõpus olid vist ainult vales käändes esiosadega liitsõnad...
+Ma sain lisatud liitsõna osade vahele liite "+Cmp" hw6.sh sees ja see jäi lõpuks ka nii, et on ainult leksikaalsel poolel, mitte pinnal.
+Samas ei tööta reeglid mul ikka veel. Copilot soovitas muuta xfscripti selliseks, et see oleks pigem filter ja eemaldaks valede esiosadega ja see tundus mulle loogiline, aga see ei tööta. (Kuigi KoikSonad [[PiiratudMuundur ]* LihtsonaMuundur] ka ei töötanud, ka "+Cmp"-ga, nii et ma ei tea)
+
+Olen väga segaduses.
+
+HJK
+
+lexc versioon:
+
+Pärisnimed lubavad teatud liitsõnamoodustust, sest teil on pärisnimed ja üldnimed eri muuttüüpides (lihtsalt sõnavalikuga on nii juhtunud), jätkuleksikonide Nimisonad ja Omadussonad peale viidatakse eri kohtadest eri muuttüüpides ning üks koht, kust
+neile viidatakse, on mitmele muuttüübile ühine jätkuleksikon  gen_jt.
+
+xfst versioon:
+Ma pean üle küsima, et mida üksikud filtrid peaksid tegema, sest ma ei saa ka praegu aru, milles viga on.
+
+punktid: 2
+------------
+
+kätriin
+
+Töötasin oma mitmete vigade kallal. Muudetud sain vähe, kuid panen tehtu ikkagi üles.
+Põhifaili vigadest: lexc failis jäi veel katki osa sõna süsi käänamisest, sõnad kaup ja vaat said ühe reegli alla kokku.
+Kodutöö 6 osas: tundub, et mõistan ikkagi liiga vähe, et kodutöö tagasisidet osata implementeerida. Katsetasin mitut moodi eemaldada gi-liidet, ei saanud pihta ikkagi ka sellele, et kuidas need sõnad üksteise otsa liidetakse.
+Xfst variant on build6.sh fail ja lexc katsetus on build6grup.sh
+
+HJK
+
+gi-liite segaduse põhjuseks on arvatavasti see, et lexc ja xfst käsitlevad üksikmärkide ja nende jadade esitamist erinevalt:
+
+lexc-failis on:
+LEXICON gi
+        +gi:G2i # ;          <-- +gi on 3 tähemärki
+        # ;
+
+xfst-failis on:
+define PiiratumMuundur [ PiiravadReeglid .o. ~$["+gi"] .o. lihtsonamuundur ] ;     <-- "+gi" on üks tähemärk; õige oleks vist {+gi}
+
+Teine lahendus oleks defineerida lexc-failis +gi kui üksikmärk, analoogiliselt G2 defineerimisega. 
++gi on tegelt halb tava kategooria tähistamiseks, sest läheb segi tavaliste tähtedega; parem oleks nt +GI
+
+lexc-fail kahe erineva liitsõnamoodustusviisi jaoks võiks olla peaaegu sama; 
+ainus erinevus võiks olla see, et ühes on lisaks õigetes jätkuleksikonides viidad teatud teistele jätkuleksikonidele.
+Aga teil on lexc failides erinevused ka muuttüüpide kirjeldustes, kusjuures minu meelest on näpuvead sisse tulnud, nt. +Pl on puudu.
+Võiks aluseks võtta ühe faili, see ära parandada, nii et lihtsõnad korras on, ja sellest edasi minna.
+
+Paistab, et teil pole selge, et kuidas erinevaid muundureid kompositsiooni abil kokku panna. 
+Arvatavasti on probleem selles, et skripti kaudu muunduri tegemine ja selle sidumine ei paista korralikult läbi.
+
+punktid: 2
+
+
+
