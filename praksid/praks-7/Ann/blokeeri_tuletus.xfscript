@@ -1,0 +1,22 @@
+! Filtrid, mis blokeerivad lexc-is lubatud, aga sobimatud tuletused.
+! Filtreerime analüüsi taset (generaatori ülemist poolt).
+! Mitmemärgilised sümbolid on jutumärkides, tavalised stringid loogelistes sulgudes.
+
+! 1. -m, -im ja -lt liituvad omadussõnale, mitte nimisõnale (kolim, kolilt)
+define NimisonaTuletus [?* "+N" ["+Der/m" | "+Der/im" | "+Der/lt"] ?*] ;
+
+! 2. -lik liitub nimisõnale, mitte omadussõnale, kesk- või ülivõrdele (kenalik)
+define LikOmadussonale [?* ["+A" | "+Comp" | "+Super"] "+Der/lik" ?*] ;
+
+! 3. kesk- ja ülivõrret ei tehta uuesti (kenamam, kenaimim, kenaimam)
+define VorreUuesti [?* ["+Comp" | "+Super"] ["+Der/m" | "+Der/im"] ?*] ;
+
+! 4. pärisnimedest ei tehta -lik tuletist (Annlik)
+define Parisnimed [[{Ann} | {Salutee} | {Ilmatsalu} | {Tartu}] "+N" "+Der/lik" ?*] ;
+
+! 5. sõnad, mille tuletus vaikereegliga läheb valesti (pikk -> pikem, mitte pikam)
+define Pahadsonad [[{pikk} | {kõva}] "+A" "+Der/m" ?*] ;
+
+define Halvad [NimisonaTuletus | LikOmadussonale | VorreUuesti | Parisnimed | Pahadsonad] ;
+
+read regex ~Halvad ;
