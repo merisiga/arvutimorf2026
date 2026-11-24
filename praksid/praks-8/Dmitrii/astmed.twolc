@@ -1,0 +1,92 @@
+! Eesti morfofonoloogia
+
+Alphabet
+
+a b c d e f g h i j k l m n o p q r s š z ž t u v w õ ä ö ü x y
+A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y
+
+ %{NA%}:0 ! Nõrga astme tähis ei tule pindesituses kunagi esile
+
+ %>:0   ! Morfeemipiir ei tule pindesituses kunagi esile
+
+ %#:0   ! liitsõna piir
+
+! astmevaheldus
+J1:0
+J1:j
+N1:n
+N1:0
+D1:d
+D1:0
+G1:g
+G1:0
+B1:b
+B1:0
+S1:s
+S1:0
+K1:k      ! vokK1 : vokk ~ voki
+K1:0
+P1:p      ! täpP1 : täpp ~ täpi
+P1:0
+T1:t      ! kotT1 : kott ~ koti
+T1:0
+K2:k      ! kurK2 : kurk ~ kurgi
+K2:g
+P2:p
+P2:b
+T2:t      ! paaT2 : paat ~ paadi
+T2:d
+
+! -gi / -ki
+GK:k
+GK:g
+
+;
+
+Sets
+
+Vowel = A E I O U Õ Ä Ö Ü Y
+        a e i o u õ ä ö ü y ;
+
+Consonant = b c d f g h j k l m n p q r s š z ž t v w x
+            B C D F G H J K L M N P Q R S Š Z Ž T V W X ;
+
+Voiceless = g b d k p t s š h f
+            G B D K P T S Š H F ;
+
+Voiced = A E I O U Õ Ä Ö Ü Y
+         a e i o u õ ä ö ü y
+         l m n r v j
+         L M N R V J ;
+
+
+Rules
+
+"J1 muutub j-ks vokaalide vahel"
+J1:j <=> Vowel _ %{NA%}: Vowel ;
+
+"N1 muutub nulliks enne %{NA%}"
+N1:0 <=> _ %{NA%}: ;
+
+"Nõrgas astmes G1 B1 D1 S1 K1 P1 T1 kaovad"
+Cx:0 <=> _ :Vowel* %{NA%}:0 ;
+     where Cx in ( G1 B1 D1 S1 K1 P1 T1 ) ;
+
+"Nõrgas astmes K2 P2 T2 muutuvad g b d-ks"
+Cx:Cy <=> _ :Vowel* %{NA%}:0 ;
+     where Cx in ( K2 P2 T2 )
+           Cy in (  g  b  d )
+     matched ;
+
+"u > o ja i > e, kui nõrga sulghääliku kadumise järel jääb vokaal kõrvale"
+Vx:Vy <=> [.#. | %#:0 | Consonant] _ [ G1:0 | B1:0 | D1:0 ] [ %{NA%}:0 | %>:0 ]* :Vowel ;
+          [.#. | %#:0 | Consonant] :Vowel [ G1:0 | B1:0 | D1:0 ] _ ;
+     where Vx in ( u i )
+           Vy in ( o e )
+     matched ;
+
+"GK > k pärast hääletut kaashäälikut"
+GK:k <=> :Voiceless [ %{NA%}:0 | %>:0 ]* _ ;
+
+"GK > g pärast vokaali ja helilisi"
+GK:g <=> :Voiced [ %{NA%}:0 | %>:0 ]* _ ;

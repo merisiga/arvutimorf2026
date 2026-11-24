@@ -1,0 +1,91 @@
+Multichar_Symbols
+
++N +A
++Sg +Pl
++Nom +Gen +Part +Ill +In +El +All +Ad +Abl +Tr +Term +Es +Abes +Kom
++Rohk
+
+%>                ! morfeemi piir
+%{NA%}            ! nõrk aste
+
+G1 B1 D1 S1 K1 K2 P1 P2 T1 T2 GK
+
+
+LEXICON Root
+
+maja+N:maja tüüp_ema ;
+kodu+N:kodu tüüp_ema ;
+pere+N:pere tüüp_pere ;
+kapp+N:kapP1 tüüp_täpp ;
+pukk+N:pukK1 tüüp_täpp ;
+mark+N:marK2 tüüp_täpp ;
+käsi+N:käS1 tüüp_käsi ;
+nimi+N:nim tüüp_tugi ;
+tugi+N:tuG1 tüüp_tugi ;
+vana+A:van tüüp_kena ;
+
+
+LEXICON tüüp_ema
+  +Sg+Nom: gi_lopp ;
+  :%{NA%} sg_gen_jt ;
+  +Sg+Part:%> gi_lopp ;
+  +Pl:%>de semkäänded ;
+  +Pl+Part:%>sid gi_lopp ;
+
+LEXICON tüüp_kena
+  +Sg+Nom:%>a gi_lopp ;
+  :%{NA%}%>a sg_gen_jt ;
+  +Sg+Part:%>a gi_lopp ;
+  +Pl:%>ade semkäänded ;
+  +Pl+Part:%>asid gi_lopp ;
+
+LEXICON tüüp_pere
+  +Sg+Nom: gi_lopp ;
+  :%{NA%} sg_gen_jt ;
+  +Sg+Part:%>t gi_lopp ;
+  +Pl:%>de semkäänded ;
+  +Pl+Part:%>sid gi_lopp ;
+
+LEXICON tüüp_täpp
+  +Sg+Nom: gi_lopp ;
+  :%{NA%}%>i sg_gen_jt ;
+  +Sg+Part:%>i gi_lopp ;
+  +Pl:%>ide semkäänded ;
+  +Pl+Part:%>isid gi_lopp ;
+
+LEXICON tüüp_käsi
+  +Sg+Nom:%>i gi_lopp ;
+  :%{NA%}%>e sg_gen_jt ;
+  +Sg+Part:%{NA%}%>tt gi_lopp ;
+  +Pl:%{NA%}%>te semkäänded ;
+  +Pl+Part:%>i gi_lopp ;
+
+LEXICON tüüp_tugi
+  +Sg+Nom:%>i gi_lopp ;
+  :%{NA%}%>e sg_gen_jt ;
+  +Sg+Part:%>e gi_lopp ;
+  +Pl:%>ede semkäänded ;
+  +Pl+Part:%>esid gi_lopp ;
+
+LEXICON sg_gen_jt
+  +Sg+Gen: gi_lopp ;
+  +Sg: semkäänded ;
+  +Pl+Nom:%>d gi_lopp ;
+
+LEXICON gi_lopp
+  +Rohk:%>GKi # ;
+  : # ;
+
+LEXICON semkäänded
+  +Gen: gi_lopp ;
+  +Ill:%>sse gi_lopp ;
+  +In:%>s gi_lopp ;
+  +El:%>st gi_lopp ;
+  +All:%>le gi_lopp ;
+  +Ad:%>l gi_lopp ;
+  +Abl:%>lt gi_lopp ;
+  +Tr:%>ks gi_lopp ;
+  +Term:%>ni gi_lopp ;
+  +Es:%>na gi_lopp ;
+  +Abes:%>ta gi_lopp ;
+  +Kom:%>ga gi_lopp ;
