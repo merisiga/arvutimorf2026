@@ -1,0 +1,33 @@
+# liitsõna esi/keskosa muundur
+
+# muutujad
+
+define Number ["+Sg" | "+Pl"] ;
+define SobivKaane ["+Nom" | "+Gen" ] ;
+define MuuKaane [ "+Par" | "+Ill" | "+Ine" | "+Ela" | "+All" | "+Ade" | "+Abl" | "+Tra" | "+Trm" | "+Ess" | "+Abe" | "+Com"] ;
+define LiitKaane [ "+Sg" SobivKaane ];
+define ValeKaane [ Number MuuKaane | "+Pl" SobivKaane ] ;
+define Tuletused ["+Der/m" | "+Der/im" | "+Der/lt" | "+Der/lik" ];
+
+
+# eemaldab tuletused
+define OnTuletus [?* Tuletused ?* "+Cmp" ?*] ;
+
+# õige sõnaliik
+define ValeSonaliik [?* ["+PropN" | "+Adv"] ?* "+Cmp" ?*] ;
+
+# vale lõpp, nt sinine ei saa olla liitsõna esiosa, peaks olema sini, aga jätan selle välja
+define ValeStringLopp [?* [{ne}] "+A" ?* "+Cmp" ?*] ;
+
+# eemaldab gi-lõppudega ja valede käändelõppudega vormid
+define ValeLopp [[?* "+Gi" ?* "+Cmp" ?*] | [?* ValeKaane ?* "+Cmp" ?*] | [ValeStringLopp]] ;
+
+# põhi
+define LihtsonaMuundur [?*] ;
+
+# paneb kokku liitsõnaesiosa muunduri e piiratuma muunduri
+define HalbEsiosa [OnTuletus | ValeSonaliik | ValeLopp] ;
+
+define KoikSonad [~[HalbEsiosa]* LihtsonaMuundur] ;
+
+regex KoikSonad ; 

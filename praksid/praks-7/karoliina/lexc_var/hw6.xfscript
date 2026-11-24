@@ -1,0 +1,44 @@
+# tuletamine
+
+# defineeri pahad rajad
+
+# mis sõnaliigile järgnema peab
+
+define PahaTuletus [~[?* "+A"] "+Der/m" ?*] | [~[?* "+A"] "+Der/im" ?*] | [~[?* "+A"] "+Der/lt" ?*] | [~[?* "+N"] "+Der/lik" ?*] ;
+
+# sama tuletust mitu korda ei luba
+
+define PahaKordus [["+Der/m"] ?* ["+Der/m"]] |  [["+Der/im"] ?* ["+Der/im"]] | [["+Der/lt"] ?* ["+Der/lt"]] | [["+Der/lik"] ?* ["+Der/lik"]];
+
+# tuletusel vale vokaal -> jätab välja
+
+define PahaVokTuletus [ [{pikk}] "+A" ["+Der/m" | "+Der/im"] ?*] | [[{kena}] "+A" "+Der/im" ?*] ;
+
+# head rajad 
+
+define HeaTuletus [~[PahaTuletus] & ~[?* PahaKordus ?*] & ~[PahaVokTuletus]] ;
+
+# liitsõnad
+
+# mis sõnaliigile järgnema peab
+
+define SobivSonaliik [[[?* "+N"] ?* "+N" ?*] | [[?* "+N"] ?* "+A" ?*] | [[?* "+A"] ?* "+A" ?*]] & ~[?* "+PropN" ?*] ; 
+
+# vale lõpp, nt sinine ei saa olla liitsõna esiosa, peaks olema sini, aga jätan selle välja
+
+define ValeLopp [?* [{ne}] "+A" ?*] ;
+
+# ei tohi olla tuletus 
+define Tuletused ["+Der/m" | "+Der/im" | "+Der/lt" | "+Der/lik"] ;
+
+define OnTuletus [?* Tuletused ?*] ;
+
+# head rajad 
+
+define HeaLiide [[SobivSonaliik] & ~[ValeLopp] & ~[OnTuletus]] ;
+
+# kokkupanek
+
+define KoikSonad [HeaTuletus | HeaLiide] ; 
+
+regex KoikSonad ;
