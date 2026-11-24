@@ -1,0 +1,159 @@
+Multichar_Symbols
+
++N +A
++Sg +Pl
++Nom +Gen +Part +Ill +In +El +All +Ad +Abl +Tr +Term +Es +Abes +Kom
++Rohk
+
+%>                ! morfeemi piir
+%{NA%}            ! nõrk aste
+
+G1 B1 D1 S1 K1 K2 P1 P2 T1 T2 GK
+
+Definitions
+
+C = [ b|c|d|f|g|h|j|k|l|m|n|p|r|s|t|v ] ;
+V = [ a|e|i|o|u|õ|ä|ö|ü ] ;
+L = V | C ;
+
+
+LEXICON Root
+
+Nimisonad ;
+Omadussonad ;
+Oletused ;
+
+LEXICON Oletused
+
+< C* V C "+N":0 > tüüp_täpp ; ! või muu jätkuleksikon, mis sobib 1-silbilise kaashäälikulõpulise sõna lõppude kirjeldamiseks
+< C+ V C+ V "+N":0 > tüüp_pere ;
+< C* V C [a|i|o|u] "+N":0 > tüüp_ema ;
+< C V [s] [i] "+N":0 > tüüp_käsi ;
+< C V C [i] "+N":0 > tüüp_tugi ;
+< C V C [a] "+N":0 > tüüp_kena ;
+!UUED TÜÜBID
+< V+ C+ V C+ V "+N":0 > tüüp_aasta ; 
+< V+ C+ [ik] "+N":0 > tüüp_õpik ; 
+< V C V "+N":0 > tüüp_ase ;
+< C V+ C [e] "+N":0 > tüüp_liige ;
+< V C+ V [s] "+N":0 > tüüp_armas ;
+
+
+LEXICON Nimisonad
+
+maja+N:maja tüüp_ema ;
+kodu+N:kodu tüüp_ema ;
+pere+N:pere tüüp_pere ;
+kapp+N:kapP1 tüüp_täpp ;
+pukk+N:pukK1 tüüp_täpp ;
+mark+N:marK2 tüüp_täpp ;
+käsi+N:käS1 tüüp_käsi ;
+nimi+N:nim tüüp_tugi ;
+tugi+N:tuG1 tüüp_tugi ;
+vana+A:van tüüp_kena ;
+!UUED TÜÜBID
+aasta+N:aasta tüüp_aasta ;
+õpik+N:õpik tüüp_õpik ;
+ese+N:ese tüüp_ese ;
+liige+N:liik tüüp_liige ;
+armas+N:arm tüüp_armas ; 
+
+
+LEXICON tüüp_ema
+  +Sg+Nom: gi_lopp ;
+  :%{NA%} sg_gen_jt ;
+  +Sg+Part:%> gi_lopp ;
+  +Pl:%>de semkäänded ;
+  +Pl+Part:%>sid gi_lopp ;
+
+
+LEXICON tüüp_pere
+  +Sg+Nom: gi_lopp ;
+  :%{NA%} sg_gen_jt ;
+  +Sg+Part:%>t gi_lopp ;
+  +Pl:%>de semkäänded ;
+  +Pl+Part:%>sid gi_lopp ;
+
+LEXICON tüüp_täpp
+  +Sg+Nom: gi_lopp ;
+  :%{NA%}%>i sg_gen_jt ;
+  +Sg+Part:%>i gi_lopp ;
+  +Pl:%>ide semkäänded ;
+  +Pl+Part:%>isid gi_lopp ;
+
+LEXICON tüüp_käsi
+  +Sg+Nom:%>i gi_lopp ;
+  :%{NA%}%>e sg_gen_jt ;
+  +Sg+Part:%{NA%}%>tt gi_lopp ;
+  +Pl:%{NA%}%>te semkäänded ;
+  +Pl+Part:%>i gi_lopp ;
+
+LEXICON tüüp_tugi
+  +Sg+Nom:%>i gi_lopp ;
+  :%{NA%}%>e sg_gen_jt ;
+  +Sg+Part:%>e gi_lopp ;
+  +Pl:%>ede semkäänded ;
+  +Pl+Part:%>esid gi_lopp ;
+
+LEXICON tüüp_ese
+  +Sg+Nom: gi_lopp ;
+  :%{NA%}>me sg_gen_jt ; 
+  +Sg+Part:%>t gi_lopp ;            
+  +Pl:%>mete semkäänded ;
+  +Pl+Part:%>meid gi_lopp ;
+
+LEXICON tüüp_liige
+  +Sg+Nom: gi_lopp ;
+  :%>me sg_gen_jt ; 
+  +Sg+Part:%>et gi_lopp ;            
+  +Pl:%>mete semkäänded ;
+  +Pl+Part:%>meid gi_lopp ;
+
+LEXICON tüüp_õpik
+  +Sg+Nom: gi_lopp ;
+  :%{NA%}%>u sg_gen_jt ; 
+  +Sg+Part:%>ut gi_lopp ;            
+  +Pl:%>ute semkäänded ;
+  +Pl+Part:%>uid gi_lopp ;
+
+
+LEXICON Omadussonad
+
+LEXICON tüüp_kena
+  +Sg+Nom:%>a gi_lopp ;
+  :%{NA%}%>a sg_gen_jt ;
+  +Sg+Part:%>a gi_lopp ;
+  +Pl:%>ade semkäänded ;
+  +Pl+Part:%>asid gi_lopp ;
+
+
+LEXICON tüüp_armas
+  +Sg+Nom: gi_lopp ;
+  :%{NA%}%>sa sg_gen_jt ; 
+  +Sg+Part:%>sat gi_lopp ;            
+  +Pl:%>sate semkäänded ;
+  +Pl+Part:%>sasid gi_lopp ;
+	
+
+LEXICON sg_gen_jt
+  +Sg+Gen: gi_lopp ;
+  +Sg: semkäänded ;
+  +Pl+Nom:%>d gi_lopp ;
+
+LEXICON gi_lopp
+  +Rohk:%>GKi # ;
+  : # ;
+
+LEXICON semkäänded
+  +Gen: gi_lopp ;
+  +Ill:%>sse gi_lopp ;
+  +In:%>s gi_lopp ;
+  +El:%>st gi_lopp ;
+  +All:%>le gi_lopp ;
+  +Ad:%>l gi_lopp ;
+  +Abl:%>lt gi_lopp ;
+  +Tr:%>ks gi_lopp ;
+  +Term:%>ni gi_lopp ;
+  +Es:%>na gi_lopp ;
+  +Abes:%>ta gi_lopp ;
+  +Kom:%>ga gi_lopp ;
