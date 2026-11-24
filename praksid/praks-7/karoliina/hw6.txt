@@ -1,3 +1,11 @@
 Piiritlesin liitsõnu nii, et esiosa võis olla ainsuse nimetavas või omastavas, Noun+Noun/Noun+Adj/Adj+Adj ja sinise jätsin esiosana hetkel välja. tegin kummagi meetodi jaoks erinevad kausta.
 
-kohe kirjutan siia
+Okei, ma proovisin mõlemat parandada, aga kumbki ei saanud täielikult korda.
+
+Lexc puhul proovisin PropN liitsõnu eemaldada, aga millegipärast Jõgi-algusega liitsõnad jäid sisse ja tundus, et neist ei tuvastatud "+PropN" osa??? (Muude nimede puhul seda ei juhtu vist?)
+
+Xfst puhul sain tekitada liitsõnu, aga reeglid ei töötanud. Alguses näitas nii õigeid kui ka valesid, lõpus olid vist ainult vales käändes esiosadega liitsõnad...
+Ma sain lisatud liitsõna osade vahele liite "+Cmp" hw6.sh sees ja see jäi lõpuks ka nii, et on ainult leksikaalsel poolel, mitte pinnal.
+Samas ei tööta reeglid mul ikka veel. Copilot soovitas muuta xfscripti selliseks, et see oleks pigem filter ja eemaldaks valede esiosadega ja see tundus mulle loogiline, aga see ei tööta. (Kuigi KoikSonad [[PiiratudMuundur ]* LihtsonaMuundur] ka ei töötanud, ka "+Cmp"-ga, nii et ma ei tea)
+
+Olen väga segaduses.
